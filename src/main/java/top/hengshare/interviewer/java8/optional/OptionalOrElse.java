@@ -5,7 +5,7 @@ import java.util.Optional;
 /**
  * @author: Yang Jiaheng
  * @date: 2019/3/28
- * @description:
+ * @description: Optional类的orElse方法使用
  */
 public class OptionalOrElse {
     public static void main(String[] args) {
