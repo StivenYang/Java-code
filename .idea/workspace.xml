@@ -2,12 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e70de5c9-3ec2-45e7-9010-3d3da22e6b9d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/top/hengshare/interviewer/thread/concurrency/ADaemon.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/top/hengshare/interviewer/thread/concurrency/Deamons.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/top/hengshare/interviewer/thread/concurrency/SelfManaged.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/top/hengshare/interviewer/thread/concurrency/SimpleThread.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/top/hengshare/interviewer/thread/concurrency/AnonymousRunnable.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/top/hengshare/interviewer/thread/concurrency/AnonymousThread.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/top/hengshare/interviewer/thread/concurrency/CaptureUncaughtException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/top/hengshare/interviewer/thread/concurrency/ExceptionThread.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/top/hengshare/interviewer/thread/concurrency/InnerNamedRunnable.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/top/hengshare/interviewer/thread/concurrency/InnerNamedThread.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/top/hengshare/interviewer/thread/concurrency/Joining.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/top/hengshare/interviewer/thread/concurrency/SettingDefaultHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/top/hengshare/interviewer/thread/concurrency/ThreadMethod.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/top/hengshare/interviewer/thread/concurrency/UnresponsiveUI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/top/hengshare/interviewer/java8/optional/OptionalOrElse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/top/hengshare/interviewer/java8/optional/OptionalOrElse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/top/hengshare/interviewer/thread/concurrency/SelfManaged.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/top/hengshare/interviewer/thread/concurrency/SelfManaged.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/top/hengshare/interviewer/thread/concurrency/SelfManaged.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/top/hengshare/interviewer/thread/concurrency/SelfManaged.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -39,7 +46,7 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="class" value="1" />
-          <entry key="java" value="32" />
+          <entry key="java" value="44" />
           <entry key="md" value="1" />
           <entry key="xml" value="2" />
         </counts>
@@ -47,20 +54,20 @@
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CLASS" value="1" />
-          <entry key="JAVA" value="32" />
+          <entry key="JAVA" value="44" />
           <entry key="Markdown" value="1" />
           <entry key="XML" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="5315" />
+          <entry key="java" value="8936" />
           <entry key="xml" value="14" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="5315" />
+          <entry key="JAVA" value="8936" />
           <entry key="XML" value="14" />
         </counts>
       </usages-collector>
@@ -69,109 +76,40 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pom.xml">
+        <entry file="file://$PROJECT_DIR$/src/main/java/top/hengshare/interviewer/thread/concurrency/ExceptionThread.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="560">
-              <caret line="28" column="8" selection-start-line="28" selection-start-column="8" selection-end-line="28" selection-end-column="8" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/top/hengshare/interviewer/regix/PatternCredit.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="600">
-              <caret line="37" column="57" selection-start-line="37" selection-start-column="57" selection-end-line="37" selection-end-column="57" />
+            <state relative-caret-position="132">
+              <caret line="20" column="30" selection-start-line="20" selection-start-column="30" selection-end-line="20" selection-end-column="30" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#212#213#0" expanded="true" />
+                <element signature="e#249#250#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/top/hengshare/interviewer/java8/optional/OptionalTest.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/top/hengshare/interviewer/thread/concurrency/CaptureUncaughtException.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="780">
-              <caret line="42" column="34" selection-start-line="42" selection-start-column="34" selection-end-line="42" selection-end-column="34" />
+            <state relative-caret-position="432">
+              <caret line="47" column="5" lean-forward="true" selection-start-line="47" selection-start-column="5" selection-end-line="47" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/top/hengshare/interviewer/java8/optional/OptionalMap.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="840">
-              <caret line="43" column="21" selection-start-line="43" selection-start-column="21" selection-end-line="43" selection-end-column="21" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/top/hengshare/interviewer/java8/optional/OptionalFilter.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
-              <caret line="21" column="60" selection-start-line="21" selection-start-column="60" selection-end-line="21" selection-end-column="60" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/top/hengshare/interviewer/java8/optional/OptionalOrElse.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="17" column="17" lean-forward="true" selection-start-line="17" selection-start-column="17" selection-end-line="17" selection-end-column="17" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/top/hengshare/interviewer/thread/concurrency/Deamons.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="178">
-              <caret line="44" column="26" lean-forward="true" selection-start-line="44" selection-start-column="26" selection-end-line="44" selection-end-column="26" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/top/hengshare/interviewer/thread/concurrency/ADaemon.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="292">
-              <caret line="29" column="29" lean-forward="true" selection-start-line="29" selection-start-column="29" selection-end-line="29" selection-end-column="29" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/top/hengshare/interviewer/thread/concurrency/SimpleThread.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="140">
-              <caret line="10" column="41" selection-start-line="10" selection-start-column="41" selection-end-line="10" selection-end-column="41" />
-              <folding>
-                <element signature="e#381#382#0" expanded="true" />
-                <element signature="e#442#443#0" expanded="true" />
+                <element signature="e#563#564#0" expanded="true" />
+                <element signature="e#599#600#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/top/hengshare/interviewer/thread/concurrency/SelfManaged.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/top/hengshare/interviewer/thread/concurrency/SettingDefaultHandler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="31" column="30" selection-start-line="31" selection-start-column="30" selection-end-line="31" selection-end-column="30" />
+            <state relative-caret-position="220">
+              <caret line="14" column="42" selection-start-line="14" selection-start-column="42" selection-end-line="14" selection-end-column="42" />
               <folding>
-                <element signature="e#269#270#0" expanded="true" />
-                <element signature="e#294#295#0" expanded="true" />
-                <element signature="e#340#341#0" expanded="true" />
-                <element signature="e#428#429#0" expanded="true" />
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -224,6 +162,17 @@
         <option value="$PROJECT_DIR$/src/main/java/top/hengshare/interviewer/thread/concurrency/ADaemon.java" />
         <option value="$PROJECT_DIR$/src/main/java/top/hengshare/interviewer/thread/concurrency/SimpleThread.java" />
         <option value="$PROJECT_DIR$/src/main/java/top/hengshare/interviewer/thread/concurrency/SelfManaged.java" />
+        <option value="$PROJECT_DIR$/src/main/java/top/hengshare/interviewer/thread/concurrency/InnerNamedThread.java" />
+        <option value="$PROJECT_DIR$/src/main/java/top/hengshare/interviewer/thread/concurrency/Anonymous.java" />
+        <option value="$PROJECT_DIR$/src/main/java/top/hengshare/interviewer/thread/concurrency/AnonymousThread.java" />
+        <option value="$PROJECT_DIR$/src/main/java/top/hengshare/interviewer/thread/concurrency/InnerNamedRunnable.java" />
+        <option value="$PROJECT_DIR$/src/main/java/top/hengshare/interviewer/thread/concurrency/AnonymousRunnable.java" />
+        <option value="$PROJECT_DIR$/src/main/java/top/hengshare/interviewer/thread/concurrency/ThreadMethod.java" />
+        <option value="$PROJECT_DIR$/src/main/java/top/hengshare/interviewer/thread/concurrency/Joining.java" />
+        <option value="$PROJECT_DIR$/src/main/java/top/hengshare/interviewer/thread/concurrency/UnresponsiveUI.java" />
+        <option value="$PROJECT_DIR$/src/main/java/top/hengshare/interviewer/thread/concurrency/ExceptionThread.java" />
+        <option value="$PROJECT_DIR$/src/main/java/top/hengshare/interviewer/thread/concurrency/CaptureUncaughtException.java" />
+        <option value="$PROJECT_DIR$/src/main/java/top/hengshare/interviewer/thread/concurrency/SettingDefaultHandler.java" />
       </list>
     </option>
   </component>
@@ -323,7 +272,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553956801023" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1554024040564" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../mybatis-generator-gui" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -344,9 +293,9 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.SelfManaged">
-    <configuration name="Daemon" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="top.hengshare.interviewer.thread.concurrency.Daemon" />
+  <component name="RunManager" selected="Application.SettingDefaultHandler">
+    <configuration name="CaptureUncaughtException" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="top.hengshare.interviewer.thread.concurrency.CaptureUncaughtException" />
       <module name="interview" />
       <extension name="coverage">
         <pattern>
@@ -358,8 +307,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DaemonDontRunFinally" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="top.hengshare.interviewer.thread.concurrency.DaemonDontRunFinally" />
+    <configuration name="ExceptionThread" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="top.hengshare.interviewer.thread.concurrency.ExceptionThread" />
       <module name="interview" />
       <extension name="coverage">
         <pattern>
@@ -371,21 +320,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="OptionalOrElse" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="top.hengshare.interviewer.java8.optional.OptionalOrElse" />
-      <module name="interview" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="top.hengshare.interviewer.java8.optional.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="SelfManaged" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="top.hengshare.interviewer.thread.concurrency.SelfManaged" />
+    <configuration name="ResponsiveUI" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="top.hengshare.interviewer.thread.concurrency.ResponsiveUI" />
       <module name="interview" />
       <extension name="coverage">
         <pattern>
@@ -397,8 +333,21 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SimpleThread" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="top.hengshare.interviewer.thread.concurrency.SimpleThread" />
+    <configuration name="SettingDefaultHandler" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="top.hengshare.interviewer.thread.concurrency.SettingDefaultHandler" />
+      <module name="interview" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="top.hengshare.interviewer.thread.concurrency.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UnresponsiveUI" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="top.hengshare.interviewer.thread.concurrency.UnresponsiveUI" />
       <module name="interview" />
       <extension name="coverage">
         <pattern>
@@ -411,19 +360,19 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.OptionalOrElse" />
-      <item itemvalue="Application.Daemon" />
-      <item itemvalue="Application.DaemonDontRunFinally" />
-      <item itemvalue="Application.SimpleThread" />
-      <item itemvalue="Application.SelfManaged" />
+      <item itemvalue="Application.UnresponsiveUI" />
+      <item itemvalue="Application.ResponsiveUI" />
+      <item itemvalue="Application.ExceptionThread" />
+      <item itemvalue="Application.CaptureUncaughtException" />
+      <item itemvalue="Application.SettingDefaultHandler" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.SelfManaged" />
-        <item itemvalue="Application.SimpleThread" />
-        <item itemvalue="Application.DaemonDontRunFinally" />
-        <item itemvalue="Application.Daemon" />
-        <item itemvalue="Application.OptionalOrElse" />
+        <item itemvalue="Application.SettingDefaultHandler" />
+        <item itemvalue="Application.CaptureUncaughtException" />
+        <item itemvalue="Application.ExceptionThread" />
+        <item itemvalue="Application.ResponsiveUI" />
+        <item itemvalue="Application.UnresponsiveUI" />
       </list>
     </recent_temporary>
   </component>
@@ -447,12 +396,12 @@
       <workItem from="1553612135218" duration="9034000" />
       <workItem from="1553681206864" duration="16429000" />
       <workItem from="1553913397757" duration="828000" />
-      <workItem from="1553914861201" duration="4502000" />
+      <workItem from="1553914861201" duration="21353000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="41420000" />
+    <option name="totallyTimeSpent" value="58271000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -722,23 +671,111 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/top/hengshare/interviewer/thread/concurrency/ADaemon.java">
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_181/src.zip!/java/lang/Thread.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="292">
-          <caret line="29" column="29" lean-forward="true" selection-start-line="29" selection-start-column="29" selection-end-line="29" selection-end-column="29" />
+        <state relative-caret-position="356">
+          <caret line="549" column="11" selection-start-line="549" selection-start-column="11" selection-end-line="549" selection-end-column="11" />
+          <folding>
+            <element signature="e#17619#17620#0" expanded="true" />
+            <element signature="e#17660#17661#0" expanded="true" />
+            <element signature="e#19132#19133#0" expanded="true" />
+            <element signature="e#19175#19176#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_181/src.zip!/java/lang/Thread.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/top/hengshare/interviewer/thread/concurrency/UnresponsiveUI.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="9958">
-          <caret line="677" column="13" lean-forward="true" selection-start-line="677" selection-start-column="13" selection-end-line="677" selection-end-column="13" />
+        <state relative-caret-position="152">
+          <caret line="37" lean-forward="true" selection-start-line="37" selection-end-line="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/top/hengshare/interviewer/thread/concurrency/Joining.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="212">
+          <caret line="63" column="1" lean-forward="true" selection-start-line="63" selection-start-column="1" selection-end-line="63" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/top/hengshare/interviewer/thread/concurrency/ThreadMethod.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
+          <folding>
+            <element signature="e#204#205#0" expanded="true" />
+            <element signature="e#236#237#0" expanded="true" />
+            <element signature="e#988#989#0" expanded="true" />
+            <element signature="e#1077#1078#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/top/hengshare/interviewer/thread/concurrency/AnonymousRunnable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="218">
+          <caret line="39" column="53" selection-start-line="39" selection-start-column="53" selection-end-line="39" selection-end-column="53" />
+          <folding>
+            <element signature="e#810#811#0" expanded="true" />
+            <element signature="e#912#913#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/top/hengshare/interviewer/thread/concurrency/InnerNamedRunnable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-428">
+          <caret line="18" column="23" lean-forward="true" selection-start-line="18" selection-start-column="23" selection-end-line="18" selection-end-column="23" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#919#920#0" expanded="true" />
+            <element signature="e#986#987#0" expanded="true" />
+            <element signature="e#1074#1075#0" expanded="true" />
+            <element signature="e#1113#1114#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/top/hengshare/interviewer/thread/concurrency/AnonymousThread.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="32" column="18" lean-forward="true" selection-start-line="32" selection-start-column="18" selection-end-line="32" selection-end-column="18" />
+          <folding>
+            <element signature="e#807#808#0" expanded="true" />
+            <element signature="e#879#880#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/top/hengshare/interviewer/thread/concurrency/InnerNamedThread.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="5" column="29" lean-forward="true" selection-start-line="5" selection-start-column="29" selection-end-line="5" selection-end-column="29" />
+          <folding>
+            <element signature="e#796#797#0" expanded="true" />
+            <element signature="e#844#845#0" expanded="true" />
+            <element signature="e#912#913#0" expanded="true" />
+            <element signature="e#938#939#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/top/hengshare/interviewer/thread/concurrency/SelfManaged.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="38" column="27" lean-forward="true" selection-start-line="38" selection-start-column="27" selection-end-line="38" selection-end-column="27" />
+          <folding>
+            <element signature="e#269#270#0" expanded="true" />
+            <element signature="e#294#295#0" expanded="true" />
+            <element signature="e#340#341#0" expanded="true" />
+            <element signature="e#428#429#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/top/hengshare/interviewer/thread/concurrency/SimpleThread.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
+        <state relative-caret-position="20">
           <caret line="10" column="41" selection-start-line="10" selection-start-column="41" selection-end-line="10" selection-end-column="41" />
           <folding>
             <element signature="e#381#382#0" expanded="true" />
@@ -747,15 +784,43 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/top/hengshare/interviewer/thread/concurrency/SelfManaged.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/top/hengshare/interviewer/thread/concurrency/ADaemon.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="31" column="30" selection-start-line="31" selection-start-column="30" selection-end-line="31" selection-end-column="30" />
+        <state relative-caret-position="292">
+          <caret line="29" column="29" lean-forward="true" selection-start-line="29" selection-start-column="29" selection-end-line="29" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/top/hengshare/interviewer/thread/concurrency/ExceptionThread.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="20" column="30" selection-start-line="20" selection-start-column="30" selection-end-line="20" selection-end-column="30" />
           <folding>
-            <element signature="e#269#270#0" expanded="true" />
-            <element signature="e#294#295#0" expanded="true" />
-            <element signature="e#340#341#0" expanded="true" />
-            <element signature="e#428#429#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#212#213#0" expanded="true" />
+            <element signature="e#249#250#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/top/hengshare/interviewer/thread/concurrency/CaptureUncaughtException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="432">
+          <caret line="47" column="5" lean-forward="true" selection-start-line="47" selection-start-column="5" selection-end-line="47" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#563#564#0" expanded="true" />
+            <element signature="e#599#600#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/top/hengshare/interviewer/thread/concurrency/SettingDefaultHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="14" column="42" selection-start-line="14" selection-start-column="42" selection-end-line="14" selection-end-column="42" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
