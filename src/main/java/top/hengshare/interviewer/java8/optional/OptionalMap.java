@@ -1,6 +1,5 @@
 package top.hengshare.interviewer.java8.optional;
 
-import javax.swing.text.html.Option;
 import java.util.Optional;
 
 /**
@@ -19,10 +18,8 @@ public class OptionalMap {
 
         //未使用Optional类的时候，我们会按照下面的写法写
         int weel = 0;
-        if (test != null) {
-            if (test.getCar() != null) {
-                weel = test.getCar().getWeels();
-            }
+        if (test.getCar() != null) {
+            weel = test.getCar().getWeels();
         }
         System.out.println("传统：" + weel);
         //4
