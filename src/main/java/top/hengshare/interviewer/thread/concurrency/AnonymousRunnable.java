@@ -5,7 +5,7 @@ import java.util.concurrent.TimeUnit;
 /**
  * @author: Yang Jiaheng
  * @date: 2019/3/31
- * @description:
+ * @description: 匿名线程
  */
 public class AnonymousRunnable {
     private int countDown = 5;
