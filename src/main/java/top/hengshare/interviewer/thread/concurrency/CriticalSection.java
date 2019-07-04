@@ -152,6 +152,7 @@ class PairManipulator implements Runnable { //Pair机械手
         }
     }
 
+    @Override
     public String toString() {
         return "pair: " + pm.getPair() + "; checkCounter: " + pm.checkCounter.get();
     }
@@ -159,7 +160,7 @@ class PairManipulator implements Runnable { //Pair机械手
 
 class PairChecker implements Runnable { //Pair检查者
     private PairManager pm;
-    public PairChecker(PairManager pm) {
+    PairChecker(PairManager pm) {
         this.pm = pm;
     }
 
