@@ -26,6 +26,7 @@ public class NLoops {
             }
         }
         int size = list.size();
+        System.out.println(list.size());
     }
 
     private void fun(int length, int n){
