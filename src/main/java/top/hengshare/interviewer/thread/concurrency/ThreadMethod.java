@@ -14,11 +14,11 @@ public class ThreadMethod {
     private Thread t;
     private int countDown = 5;
 
-    public ThreadMethod(String name){
+    private ThreadMethod(String name){
         this.name = name;
     }
 
-    public void runTask(){
+    private void runTask(){
         if (t == null) {
             t = new Thread(name){
                 @Override

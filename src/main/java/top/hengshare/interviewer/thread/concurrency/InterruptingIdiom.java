@@ -20,7 +20,7 @@ class NeedsCleanup {
         System.out.println("NeedsCleanup:" + id);
     }
 
-    public void cleanup(){
+    public void cleanup() {
         System.out.println("Cleaning up :" + id);
     }
 }
@@ -29,6 +29,6 @@ class Blocked3 implements Runnable {
 
     @Override
     public void run() {
-
+        
     }
 }
