@@ -26,7 +26,7 @@ public class Apple {
 
     private String color;
 
-    private double weight;
+    private Double weight;
 
     public static List<Apple> filterGreenApples(List<Apple> inventory) {
         List<Apple> result = new ArrayList<Apple>();
@@ -129,4 +129,3 @@ public class Apple {
         return result;
     }
 }
-    
