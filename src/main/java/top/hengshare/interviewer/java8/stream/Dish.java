@@ -2,6 +2,7 @@ package top.hengshare.interviewer.java8.stream;
 
 import lombok.Data;
 
+import java.sql.SQLOutput;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
@@ -154,7 +155,7 @@ public class Dish {
         //使用map-reduce进行计数（容易并行化）
         menu.stream()
                 .map(d -> 1)
-                .reduce((a, b) -> a+b)
+                .reduce((a, b) -> a + b)
                 .ifPresent(System.out::println);
 
         //映射到数值流，mapToInt\mapToDouble\mapToLong
@@ -188,10 +189,17 @@ public class Dish {
         long count1 = IntStream.range(1, 100)
                 .filter(n -> n % 2 == 0)
                 .count();
+
         System.out.println(count1);
 
         //勾股数
-
+        Stream<int[]> stream = IntStream.rangeClosed(1, 100).boxed()
+                .flatMap(a -> IntStream.rangeClosed(a, 100)
+                        .filter(b -> Math.sqrt(a * a + b * b) % 1 == 0)
+                        .mapToObj(b -> new int[]{a, b, (int) Math.sqrt(a * a + b * b)})
+                );
+        stream.limit(5)
+                .forEach(t-> System.out.println(t[0] + "," + t[1] + "," + t[2]));
 
     }
 }
