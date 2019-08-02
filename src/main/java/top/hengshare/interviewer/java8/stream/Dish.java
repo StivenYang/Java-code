@@ -199,7 +199,7 @@ public class Dish {
                         .mapToObj(b -> new int[]{a, b, (int) Math.sqrt(a * a + b * b)})
                 );
         stream.limit(5)
-                .forEach(t-> System.out.println(t[0] + "," + t[1] + "," + t[2]));
+                .forEach(t -> System.out.println(t[0] + "," + t[1] + "," + t[2]));
 
     }
 }
