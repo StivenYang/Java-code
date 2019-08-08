@@ -17,11 +17,11 @@ public class NLoops {
 
         String[] arg = str.split(",");
         List<Integer> list = new ArrayList<>();
-        for (int i=0; i<arg.length; i++){
+        for (int i = 0; i < arg.length; i++) {
             try {
                 Integer n = Integer.valueOf(arg[i]);
                 list.add(n);
-            }catch (Exception e) {
+            } catch (Exception e) {
                 System.out.println("参数转换失败，请输入正确的参数[0-9]");
             }
         }
@@ -29,8 +29,8 @@ public class NLoops {
         System.out.println(list.size());
     }
 
-    private void fun(int length, int n){
-        if (length == 0){
+    private void fun(int length, int n) {
+        if (length == 0) {
             return;
         }
         System.out.println(n);

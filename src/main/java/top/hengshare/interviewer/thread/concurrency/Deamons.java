@@ -12,12 +12,12 @@ public class Deamons implements Runnable {
 
     @Override
     public void run() {
-        for (int i=0; i<t.length; i++) {
+        for (int i = 0; i < t.length; i++) {
             t[i] = new Thread(new DaemonSpawn());
             t[i].start();
             System.out.println("DaemonSpawn " + i + " started.");
         }
-        for (int i=0; i<t.length; i++) {
+        for (int i = 0; i < t.length; i++) {
             System.out.println("t[" + i + "].isDaemon() = " + t[i].isDaemon() + ".");
         }
         while (true) {
@@ -36,7 +36,7 @@ class DaemonSpawn implements Runnable {
     }
 }
 
-class Daemon{
+class Daemon {
     public static void main(String[] args) throws InterruptedException {
         Thread d = new Thread(new Deamons());
         d.setDaemon(true);

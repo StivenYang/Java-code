@@ -13,13 +13,13 @@ import javax.annotation.PostConstruct;
 @Component
 public class Factory {
 
-	private static List<Indexalculation> indexalculations = Lists.newArrayList();
+    private static List<Indexalculation> indexalculations = Lists.newArrayList();
 
-	@PostConstruct
-	public void init() {
-		// 注册所有的计算逻辑类到set里
+    @PostConstruct
+    public void init() {
+        // 注册所有的计算逻辑类到set里
         indexalculations.add(new Index1());
-	}
+    }
 
     public static List<Indexalculation> getIndexalculations() {
         indexalculations.add(new Index1());

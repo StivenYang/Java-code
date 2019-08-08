@@ -15,14 +15,16 @@ public class FunctionComplex {
     }
 }
 
-class Letter{
-    public static String addHeader(String text){
+class Letter {
+    public static String addHeader(String text) {
         return "亲爱的xxx: \n    " + text;
     }
-    public static String addFooter(String text){
+
+    public static String addFooter(String text) {
         return text + " \n    此致！敬礼！";
     }
-    public static String checkSpelling(String text){
+
+    public static String checkSpelling(String text) {
         return text.replaceAll("labda", "lambda");
     }
 }

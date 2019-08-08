@@ -16,7 +16,7 @@ public class Processor {
         ArrayList<Future<Result>> submitList = Lists.newArrayList();
         Future<Result> submit = null;
         Task task = new Task();
-        for (int i=0; i<indexalculations.size(); i++) {
+        for (int i = 0; i < indexalculations.size(); i++) {
             task.setIndexalculation(indexalculations.get(i));
             task.setObj(obj);
 //            ThreadPoolExecutor threadPoolExecutor = new ThreadPoolExecutor(5, 7, 5, TimeUnit.SECONDS, new ArrayBlockingQueue<>(14));

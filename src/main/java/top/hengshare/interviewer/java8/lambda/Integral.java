@@ -11,8 +11,8 @@ public class Integral {
     }
 
     //2. 完成函数的定义
-    public static double integral(DoubleFunction<Double> f, double a, double b){
+    public static double integral(DoubleFunction<Double> f, double a, double b) {
         //上底加下底乘高除以2是梯形的面积
-        return (f.apply(a)+f.apply(b))*(b-a)/2.0;
+        return (f.apply(a) + f.apply(b)) * (b - a) / 2.0;
     }
 }

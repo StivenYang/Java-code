@@ -19,7 +19,7 @@ public class SimplePriorities implements Runnable {
     }
 
     @Override
-    public String toString(){
+    public String toString() {
         return Thread.currentThread() + ": " + countDown;
     }
 
@@ -41,7 +41,7 @@ public class SimplePriorities implements Runnable {
 
     public static void main(String[] args) {
         ExecutorService exec = Executors.newCachedThreadPool();
-        for (int i=0; i<5; i++) {
+        for (int i = 0; i < 5; i++) {
             exec.execute(new SimplePriorities(Thread.MIN_PRIORITY));
             exec.execute(new SimplePriorities(Thread.MAX_PRIORITY));
             exec.shutdown();

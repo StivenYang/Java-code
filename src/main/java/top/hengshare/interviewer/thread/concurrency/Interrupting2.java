@@ -21,14 +21,14 @@ public class Interrupting2 {
     }
 }
 
-class BlockedMutex{
+class BlockedMutex {
     private Lock lock = new ReentrantLock();
 
     public BlockedMutex() {
         lock.lock();
     }
 
-    public void f(){
+    public void f() {
         try {
             lock.lockInterruptibly();
             System.out.println("f()任务打断完毕，没有抛出异常");
@@ -38,7 +38,7 @@ class BlockedMutex{
     }
 }
 
-class Blocked2 implements Runnable{
+class Blocked2 implements Runnable {
     BlockedMutex lock = new BlockedMutex();
 
     @Override

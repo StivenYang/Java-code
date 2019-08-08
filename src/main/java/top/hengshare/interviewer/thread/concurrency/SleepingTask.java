@@ -12,7 +12,7 @@ import java.util.concurrent.TimeUnit;
 public class SleepingTask extends LiffOff {
 
     @Override
-    public void run(){
+    public void run() {
         while (countDown-- > 0) {
             System.out.println(status());
             try {
@@ -25,7 +25,7 @@ public class SleepingTask extends LiffOff {
 
     public static void main(String[] args) {
         ExecutorService exec = Executors.newCachedThreadPool();
-        for (int i=0; i<5; i++) {
+        for (int i = 0; i < 5; i++) {
             exec.execute(new SleepingTask());
         }
         exec.shutdown();

@@ -9,13 +9,14 @@ public class InnerNamedThread {
     private int countDown = 5;
     private Inner inner;
 
-    private class Inner extends Thread{
-        Inner(String name){
+    private class Inner extends Thread {
+        Inner(String name) {
             super(name);
             start();
         }
+
         @Override
-        public void run(){
+        public void run() {
             try {
                 while (true) {
                     System.out.println(this);
@@ -28,18 +29,20 @@ public class InnerNamedThread {
                 e.printStackTrace();
             }
         }
+
         @Override
-        public String toString(){
-            return "线程对象"+getName()+"第"+countDown+"次运行.";
+        public String toString() {
+            return "线程对象" + getName() + "第" + countDown + "次运行.";
         }
     }
-    public InnerNamedThread(String name){
+
+    public InnerNamedThread(String name) {
         inner = new Inner(name);
     }
 
     public static void main(String[] args) {
-        for (int i=0; i<5; i++){
-            new InnerNamedThread("线程"+i);
+        for (int i = 0; i < 5; i++) {
+            new InnerNamedThread("线程" + i);
         }
     }
 }

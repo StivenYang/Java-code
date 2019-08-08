@@ -11,7 +11,9 @@ public class TaskWithResult implements Callable {
 
     private int id;
 
-    public TaskWithResult(){}
+    public TaskWithResult() {
+    }
+
     public TaskWithResult(int id) {
         this.id = id;
     }

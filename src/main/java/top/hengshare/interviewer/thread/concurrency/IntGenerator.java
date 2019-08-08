@@ -14,6 +14,7 @@ public abstract class IntGenerator {
 
     /**
      * 抽象方法，用来生成下一个数字
+     *
      * @return
      */
     public abstract int next();
@@ -21,15 +22,16 @@ public abstract class IntGenerator {
     /**
      * 设置标志位，取消生成的标志位
      */
-    public void cancel(){
+    public void cancel() {
         canceled = true;
     }
 
     /**
      * 取得内部的取消标志位
+     *
      * @return
      */
-    public boolean isCanceled(){
+    public boolean isCanceled() {
         return canceled;
     }
 }

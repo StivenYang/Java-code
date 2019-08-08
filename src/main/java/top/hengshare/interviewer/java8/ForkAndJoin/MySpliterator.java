@@ -37,6 +37,7 @@ public class MySpliterator {
 
     /**
      * 使用函数式风格对字符串中单词个数进行统计
+     *
      * @param stream
      * @return
      */

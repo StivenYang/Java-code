@@ -23,7 +23,7 @@ public class DaemonFromFactory implements Runnable {
 
     public static void main(String[] args) throws InterruptedException {
         ExecutorService exec = Executors.newCachedThreadPool(new DaemonThreadFactory());
-        for (int i=0; i<10; i++) {
+        for (int i = 0; i < 10; i++) {
             exec.execute(new DaemonFromFactory());
         }
         System.out.println("所有的线程都已启动");

@@ -13,12 +13,14 @@ public class InnerNamedRunnable {
     private int countDown = 5;
     private Inner inner;
 
-    private class Inner implements Runnable{
+    private class Inner implements Runnable {
         Thread t;
-        public Inner(String name){
+
+        public Inner(String name) {
             t = new Thread(this, name);
             t.start();
         }
+
         @Override
         public void run() {
             try {
@@ -33,17 +35,19 @@ public class InnerNamedRunnable {
                 e.printStackTrace();
             }
         }
+
         @Override
-        public String toString(){
-            return "线程" + t.getName() + "第" +countDown +"次运行。";
+        public String toString() {
+            return "线程" + t.getName() + "第" + countDown + "次运行。";
         }
     }
 
     public InnerNamedRunnable(String name) {
         this.inner = new Inner(name);
     }
+
     public static void main(String[] args) {
-        for (int i=0; i<5; i++) {
+        for (int i = 0; i < 5; i++) {
             new InnerNamedRunnable(String.valueOf(i));
         }
     }

@@ -11,16 +11,16 @@ public class SimpleDeamons implements Runnable {
     public void run() {
         try {
             while (true) {
-                    TimeUnit.MILLISECONDS.sleep(100);
-                    System.out.println(Thread.currentThread() + ": " + this);
+                TimeUnit.MILLISECONDS.sleep(100);
+                System.out.println(Thread.currentThread() + ": " + this);
             }
-        }catch (InterruptedException e) {
+        } catch (InterruptedException e) {
             e.printStackTrace();
         }
     }
 
     public static void main(String[] args) throws InterruptedException {
-        for (int i=0; i<10; i++) {
+        for (int i = 0; i < 10; i++) {
             Thread t = new Thread(new SimpleDeamons());
             t.setDaemon(true);
             t.start();

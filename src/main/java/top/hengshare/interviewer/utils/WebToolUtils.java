@@ -34,11 +34,11 @@ public class WebToolUtils {
                     Enumeration<InetAddress> ips = ni.getInetAddresses();
                     while (ips.hasMoreElements()) {
                         inetAddress = (InetAddress) ips.nextElement();
-                        if (inetAddress.isSiteLocalAddress()         
-                                && !inetAddress.isLoopbackAddress() 
-                                && inetAddress.getHostAddress().indexOf(":") == -1) {   
-                            bFindIP = true;    
-                            break;             
+                        if (inetAddress.isSiteLocalAddress()
+                                && !inetAddress.isLoopbackAddress()
+                                && inetAddress.getHostAddress().indexOf(":") == -1) {
+                            bFindIP = true;
+                            break;
                         }
                     }
                 }

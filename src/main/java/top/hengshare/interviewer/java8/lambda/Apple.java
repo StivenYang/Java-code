@@ -30,8 +30,8 @@ public class Apple {
 
     public static List<Apple> filterGreenApples(List<Apple> inventory) {
         List<Apple> result = new ArrayList<Apple>();
-        for(Apple apple: inventory){
-            if( "green".equals(apple.getColor()) ){
+        for (Apple apple : inventory) {
+            if ("green".equals(apple.getColor())) {
                 result.add(apple);
             }
         }
@@ -52,10 +52,11 @@ public class Apple {
 
         return result;
     }
+
     public static List<Apple> filterApplesByColor(List<Apple> inventory, String color) {
         List<Apple> result = new ArrayList<Apple>();
-        for (Apple apple: inventory){
-            if ( apple.getColor().equals(color) ) {
+        for (Apple apple : inventory) {
+            if (apple.getColor().equals(color)) {
                 result.add(apple);
             }
         }
@@ -65,9 +66,9 @@ public class Apple {
     public static List<Apple> filterApples(List<Apple> inventory, String color,
                                            double weight, boolean flag) {
         List<Apple> result = new ArrayList<Apple>();
-        for (Apple apple: inventory){
-            if ( (flag && apple.getColor().equals(color)) ||
-                    (!flag && apple.getWeight() > weight) ){
+        for (Apple apple : inventory) {
+            if ((flag && apple.getColor().equals(color)) ||
+                    (!flag && apple.getWeight() > weight)) {
                 result.add(apple);
             }
         }
@@ -121,8 +122,8 @@ public class Apple {
 
     public static List<Apple> filterApplesByWeight(List<Apple> inventory, double weight) {
         List<Apple> result = new ArrayList<Apple>();
-        for (Apple apple: inventory){
-            if ( apple.getWeight() > weight ){
+        for (Apple apple : inventory) {
+            if (apple.getWeight() > weight) {
                 result.add(apple);
             }
         }

@@ -32,11 +32,11 @@ class HandlerThreadFactory implements ThreadFactory {
 
     @Override
     public Thread newThread(Runnable r) {
-        System.out.println("工厂"+this+"正在创建新的线程");
+        System.out.println("工厂" + this + "正在创建新的线程");
         Thread t = new Thread(r);
-        System.out.println("创建的线程是"+t);
+        System.out.println("创建的线程是" + t);
         t.setUncaughtExceptionHandler(new MyUnCaughtExceptionHandler());
-        System.out.println("线程的异常处理器是："+t.getUncaughtExceptionHandler());
+        System.out.println("线程的异常处理器是：" + t.getUncaughtExceptionHandler());
         return t;
     }
 }

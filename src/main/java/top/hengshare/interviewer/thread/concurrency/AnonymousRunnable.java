@@ -10,6 +10,7 @@ import java.util.concurrent.TimeUnit;
 public class AnonymousRunnable {
     private int countDown = 5;
     private Thread t;
+
     public AnonymousRunnable(String name) {
         t = new Thread(new Runnable() {
             @Override
@@ -36,7 +37,7 @@ public class AnonymousRunnable {
     }
 
     public static void main(String[] args) {
-        for (int i=0; i<5; i++) {
+        for (int i = 0; i < 5; i++) {
             new AnonymousRunnable(String.valueOf(i));
         }
     }

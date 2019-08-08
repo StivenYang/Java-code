@@ -12,7 +12,7 @@ public class UnresponsiveUI {
 
     public UnresponsiveUI() throws IOException {
         while (d > 0) {
-            d=d+(Math.PI+Math.E)/d;
+            d = d + (Math.PI + Math.E) / d;
         }
         System.in.read();
     }
@@ -22,15 +22,16 @@ public class UnresponsiveUI {
     }
 }
 
-class ResponsiveUI extends Thread{
+class ResponsiveUI extends Thread {
     private static double d = 1;
 
-    public ResponsiveUI(){
+    public ResponsiveUI() {
         setDaemon(true);
         start();
     }
+
     @Override
-    public void run(){
+    public void run() {
         while (true) {
             d = d + (Math.PI + Math.E) / d;
         }

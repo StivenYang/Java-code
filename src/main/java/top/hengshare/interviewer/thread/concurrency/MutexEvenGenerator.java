@@ -7,7 +7,7 @@ import java.util.concurrent.locks.ReentrantLock;
  * @author: Yang Jiaheng
  * @date: 2019/4/14
  * @description: 使用Lock显式加锁
- *
+ * <p>
  * 使用Lock来替代synchronized实现加锁机制
  */
 public class MutexEvenGenerator extends IntGenerator {
@@ -22,7 +22,7 @@ public class MutexEvenGenerator extends IntGenerator {
             Thread.yield();
             ++currentEvenValue;
             return currentEvenValue;
-        }finally {
+        } finally {
             lock.unlock();
         }
     }

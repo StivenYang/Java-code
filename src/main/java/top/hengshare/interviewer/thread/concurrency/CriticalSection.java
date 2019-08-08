@@ -16,7 +16,7 @@ import java.util.concurrent.atomic.AtomicInteger;
  * 通过使用同步控制块，而不是对整个方法进行同步控制，可以使多个任务访问对象的时间性能显著提高。
  * 下面的代码演示了两个不同的控制方法。
  * 此外，他也演示了如何把一个非保护类型的类，在其他类的保护和控制之下，应用于多线程的环境中
- *
+ * <p>
  * 结论：请更多的使用局部块进行同步控制
  **/
 public class CriticalSection {
@@ -160,6 +160,7 @@ class PairManipulator implements Runnable { //Pair机械手
 
 class PairChecker implements Runnable { //Pair检查者
     private PairManager pm;
+
     PairChecker(PairManager pm) {
         this.pm = pm;
     }

@@ -7,7 +7,7 @@ import java.util.concurrent.locks.ReentrantLock;
  * @author: Yang Jiaheng
  * @date: 2019/4/14
  * @description: Lock加锁 - 定制
- *
+ * <p>
  * 该类会演示对资源加锁一段时间，然后释放锁的情况
  */
 public class AttemptLocking {
@@ -17,7 +17,7 @@ public class AttemptLocking {
         boolean captured = lock.tryLock();
         try {
             System.out.println("尝试加锁" + captured);
-        }finally {
+        } finally {
             lock.unlock();
         }
     }
@@ -31,7 +31,7 @@ public class AttemptLocking {
         }
         try {
             System.out.println("尝试加锁两秒钟" + captured);
-        }finally {
+        } finally {
             if (captured) {
                 lock.unlock();
             }
@@ -42,9 +42,12 @@ public class AttemptLocking {
         final AttemptLocking al = new AttemptLocking();
         al.unTimed();
         al.timed();
-        new Thread(){
-            {setDaemon(true);}
-            public void run(){
+        new Thread() {
+            {
+                setDaemon(true);
+            }
+
+            public void run() {
                 al.lock.lock();
                 System.out.println("拿到锁");
             }

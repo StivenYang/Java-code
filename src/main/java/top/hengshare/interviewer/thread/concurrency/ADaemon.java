@@ -15,7 +15,7 @@ public class ADaemon implements Runnable {
             TimeUnit.SECONDS.sleep(1);
         } catch (InterruptedException e) {
             e.printStackTrace();
-        }finally {
+        } finally {
             System.out.println("finally语句被执行了");
         }
     }

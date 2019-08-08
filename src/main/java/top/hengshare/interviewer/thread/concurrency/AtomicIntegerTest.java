@@ -14,6 +14,7 @@ import java.util.concurrent.atomic.AtomicInteger;
  **/
 public class AtomicIntegerTest implements Runnable {
     private AtomicInteger i = new AtomicInteger(0);
+
     public int getValue() {
         return i.get();
     }

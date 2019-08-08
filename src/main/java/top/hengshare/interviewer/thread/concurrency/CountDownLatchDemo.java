@@ -24,6 +24,7 @@ class TaskPortion implements Runnable {
     private static Random random = new Random(47);
     //countDownLatch
     private final CountDownLatch latch;
+
     //构造函数
     public TaskPortion(CountDownLatch latch) {
         this.latch = latch;
@@ -56,6 +57,7 @@ class WaitingTask implements Runnable {
     private final int id = counter++;
     //CountDownLatch
     private final CountDownLatch latch;
+
     //构造函数
     public WaitingTask(CountDownLatch latch) {
         this.latch = latch;
@@ -80,14 +82,15 @@ class WaitingTask implements Runnable {
 public class CountDownLatchDemo {
     //countdownlatch的大小
     static final int SIZE = 100;
+
     public static void main(String[] args) {
         ExecutorService exec = Executors.newCachedThreadPool();
         CountDownLatch latch = new CountDownLatch(SIZE);
         //所有的CountDownLatch对象共享一个CountDownLatch
-        for (int i=0; i<10; i++) {
+        for (int i = 0; i < 10; i++) {
             exec.execute(new WaitingTask(latch));
         }
-        for (int i=0; i<SIZE; i++) {
+        for (int i = 0; i < SIZE; i++) {
             exec.execute(new TaskPortion(latch));
         }
         //运行两种任务

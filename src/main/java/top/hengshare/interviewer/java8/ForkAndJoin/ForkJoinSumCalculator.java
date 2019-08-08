@@ -7,6 +7,7 @@ import java.util.stream.LongStream;
 
 /**
  * 分支合并框架代码
+ *
  * @author Yang
  */
 public class ForkJoinSumCalculator extends RecursiveTask {
@@ -54,6 +55,7 @@ public class ForkJoinSumCalculator extends RecursiveTask {
 
     /**
      * 在子任务不可再划分的时候计算结果的简单算法
+     *
      * @return 一个长整型的值
      */
     private long computeSequentially() {

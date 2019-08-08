@@ -40,19 +40,19 @@ public class FileSizeCalc {
         return new SubDirsAndSize(total, subDirs);
     }
 
-    private long getFileSize(File file) throws Exception{
+    private long getFileSize(File file) throws Exception {
         final int cpuCore = Runtime.getRuntime().availableProcessors();
-        final int poolSize = cpuCore+1;
+        final int poolSize = cpuCore + 1;
         ExecutorService service = Executors.newFixedThreadPool(poolSize);
         long total = 0;
         List<File> directories = new ArrayList<File>();
         directories.add(file);
         SubDirsAndSize subDirsAndSize = null;
-        try{
-            while(!directories.isEmpty()){
-                List<Future<SubDirsAndSize>> partialResults= new ArrayList<Future<SubDirsAndSize>>();
-                for(final File directory : directories){
-                    partialResults.add(service.submit(new Callable<SubDirsAndSize>(){
+        try {
+            while (!directories.isEmpty()) {
+                List<Future<SubDirsAndSize>> partialResults = new ArrayList<Future<SubDirsAndSize>>();
+                for (final File directory : directories) {
+                    partialResults.add(service.submit(new Callable<SubDirsAndSize>() {
                         @Override
                         public SubDirsAndSize call() throws Exception {
                             return getSubDirsAndSize(directory);
@@ -60,7 +60,7 @@ public class FileSizeCalc {
                     }));
                 }
                 directories.clear();
-                for(Future<SubDirsAndSize> partialResultFuture : partialResults){
+                for (Future<SubDirsAndSize> partialResultFuture : partialResults) {
                     subDirsAndSize = partialResultFuture.get(100, TimeUnit.SECONDS);
                     total += subDirsAndSize.size;
                     directories.addAll(subDirsAndSize.subDirs);
@@ -73,12 +73,12 @@ public class FileSizeCalc {
     }
 
     public static void main(String[] args) throws Exception {
-        for(int i=0;i<10;i++){
+        for (int i = 0; i < 10; i++) {
             final long start = System.currentTimeMillis();
             long total = new FileSizeCalc().getFileSize(new File("C:\\Users\\StivenYang\\.m2"));
             final long end = System.currentTimeMillis();
-            System.out.format("文件夹大小: %dMB%n" , total/(1024*1024));
-            System.out.format("所用时间: %.3fs%n" , (end - start)/1.0e3);
+            System.out.format("文件夹大小: %dMB%n", total / (1024 * 1024));
+            System.out.format("所用时间: %.3fs%n", (end - start) / 1.0e3);
         }
     }
 }

@@ -7,7 +7,7 @@ import java.util.concurrent.Executors;
  * @author: Yang Jiaheng
  * @date: 2019/3/31
  * @description: 线程的异常捕获
- *
+ * <p>
  * 要点1. 使用try...catch并不能捕获到线程中的异常
  */
 public class ExceptionThread implements Runnable {

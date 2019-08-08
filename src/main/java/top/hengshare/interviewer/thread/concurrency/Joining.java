@@ -4,9 +4,9 @@ package top.hengshare.interviewer.thread.concurrency;
  * @author: Yang Jiaheng
  * @date: 2019/3/31
  * @description: 理解线程的join()方法
- *
+ * <p>
  * 一个线程可以在其他线程之上调用join()方法，效果是等待一段时间，直到第二个线程结束才继续执行。
- *
+ * <p>
  * 也可以在调用join()时带上一个超时参数(单位可以是毫秒，纳秒)，这样如果目标线程在这段时间到期时
  * 还没有结束的话，join()方法总能返回。
  */
@@ -22,17 +22,17 @@ public class Joining {
     }
 }
 
-class Sleeper extends Thread{
+class Sleeper extends Thread {
     private final int duration;
 
-    public Sleeper(String name, int sleepTime){
+    public Sleeper(String name, int sleepTime) {
         super(name);
         duration = sleepTime;
         start();
     }
 
     @Override
-    public void run(){
+    public void run() {
         try {
             sleep(duration);
         } catch (InterruptedException e) {
@@ -53,7 +53,7 @@ class Joiner extends Thread {
     }
 
     @Override
-    public void run(){
+    public void run() {
         try {
             sleeper.join();
         } catch (InterruptedException e) {

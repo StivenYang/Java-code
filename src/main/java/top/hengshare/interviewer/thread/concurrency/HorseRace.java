@@ -23,6 +23,7 @@ class Horse implements Runnable {
     //tracks方法，跑马的进度
 
 }
+
 public class HorseRace {
     //赛道长度
     //马匹列表

@@ -14,7 +14,7 @@ import java.util.concurrent.TimeUnit;
  * @description 线程中断-使用excutor的shutdownnow
  * @date 2019-06-30 17:10
  * <p>
- *     主要用来测试不同类型的阻塞在遇到interrupt信号之后会产生什么样的结果（异常或者正常退出）
+ * 主要用来测试不同类型的阻塞在遇到interrupt信号之后会产生什么样的结果（异常或者正常退出）
  * </p>
  **/
 public class Interrupting {
@@ -32,12 +32,13 @@ public class Interrupting {
     /**
      * 结论是：SleepBlocked是可中断的阻塞，而IOBlocked和SynchronizedBlocked是不可中断的阻塞
      * 前者中断后会抛出interrupt异常，而后面两者会直接关闭，程序不会向下继续执行
-     *
+     * <p>
      * 造成的结果就是：在第一种阻塞中，我们可以进行中断，这并不会影响我们的程序；而后面两种则会对我们
      * 的程序造成影响，因为IOBlocked阻塞会在不正常退出后继续占用io设备，sychronizedBlocked不会释放
      * 对资源的加锁
-     *
+     * <p>
      * 有一个略显笨拙但是却行之有效的办法：关闭任务在其上发生阻塞的底层资源 {@link CloseResource}
+     *
      * @param args
      * @throws InterruptedException
      */
@@ -82,6 +83,7 @@ class SleepBlocked implements Runnable {
  */
 class IOBlocked implements Runnable {
     private InputStream in;
+
     public IOBlocked(InputStream is) {
         this.in = is;
     }
@@ -94,7 +96,7 @@ class IOBlocked implements Runnable {
         } catch (IOException e) {
             if (Thread.currentThread().isInterrupted()) {
                 System.out.println("中断发生在IOBlocked中");
-            }else{
+            } else {
                 throw new RuntimeException(e);
             }
         }
@@ -107,17 +109,19 @@ class IOBlocked implements Runnable {
  */
 class SynchronizedBlocked implements Runnable {
 
-    public synchronized void f(){
+    public synchronized void f() {
         while (true) {
             Thread.yield();
         }
     }
 
-    /**在初始化的时候对该对象进行加锁*/
-    public SynchronizedBlocked(){
+    /**
+     * 在初始化的时候对该对象进行加锁
+     */
+    public SynchronizedBlocked() {
         new Thread() {
             @Override
-            public void run () {
+            public void run() {
                 f();
             }
         }.start();

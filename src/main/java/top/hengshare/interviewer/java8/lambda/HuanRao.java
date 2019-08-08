@@ -8,23 +8,25 @@ public class HuanRao {
 
     /**
      * 记得行为参数化
+     *
      * @return
      * @throws IOException
      */
     public static String processFile() throws IOException {
-        try(BufferedReader br = new BufferedReader(new FileReader("data.txt"))){
+        try (BufferedReader br = new BufferedReader(new FileReader("data.txt"))) {
             return br.readLine();
         }
     }
 
     /**
      * 执行一个行为
+     *
      * @param bufferedReaderProcessor
      * @return
      * @throws IOException
      */
-    public static String processFile(BufferedReaderProcessor bufferedReaderProcessor) throws IOException{
-        try(BufferedReader br = new BufferedReader(new FileReader("data.txt"))){
+    public static String processFile(BufferedReaderProcessor bufferedReaderProcessor) throws IOException {
+        try (BufferedReader br = new BufferedReader(new FileReader("data.txt"))) {
             return bufferedReaderProcessor.process(br);
         }
     }
@@ -40,12 +42,12 @@ public class HuanRao {
  * 反应到函数定义就是：返回值为String，函数的参数为BuffereReader类型
  */
 @FunctionalInterface
-interface BufferedReaderProcessor{
-    String process(BufferedReader b)throws IOException;
+interface BufferedReaderProcessor {
+    String process(BufferedReader b) throws IOException;
 
     public static void main(String[] args) throws IOException {
         //传递lambda表达式
         HuanRao.processFile(BufferedReader::readLine);
-        HuanRao.processFile((BufferedReader br) -> br.readLine()+br.readLine());
+        HuanRao.processFile((BufferedReader br) -> br.readLine() + br.readLine());
     }
 }

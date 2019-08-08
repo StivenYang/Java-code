@@ -17,9 +17,7 @@ import java.util.concurrent.TimeUnit;
 public class Toast0Matic {
     public static void main(String[] args) throws InterruptedException {
         //新建三个队列，用来放加工的吐司
-        ToastQueue dryQueue = new ToastQueue()
-                , butteredQueue = new ToastQueue()
-                , jammedQueue = new ToastQueue();
+        ToastQueue dryQueue = new ToastQueue(), butteredQueue = new ToastQueue(), jammedQueue = new ToastQueue();
         ExecutorService exec = Executors.newCachedThreadPool();
         //对队列中的吐司进行相应的加工
         exec.execute(new Toaster(dryQueue));
@@ -210,7 +208,7 @@ class Eater implements Runnable {
             Toast take = finishQueue.take();
             if (take.getId() != counter++ || take.getStatus() != Toast.Status.JAMMED) {
                 System.out.println(take + "该吐司还没加工完，无法食用");
-            }else {
+            } else {
                 System.out.println(take + "被吃掉了！");
             }
         } catch (InterruptedException e) {

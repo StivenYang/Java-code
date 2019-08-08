@@ -10,9 +10,9 @@ public class AnonymousThread {
     private Thread t;
 
     public AnonymousThread(String name) {
-        t = new Thread(name){
+        t = new Thread(name) {
             @Override
-            public void run(){
+            public void run() {
                 try {
                     while (true) {
                         System.out.println(this);
@@ -25,16 +25,17 @@ public class AnonymousThread {
                     e.printStackTrace();
                 }
             }
+
             @Override
-            public String toString(){
-                return "线程对象"+ getName() + "第"+ countDown+"次运行。";
+            public String toString() {
+                return "线程对象" + getName() + "第" + countDown + "次运行。";
             }
         };
         t.start();
     }
 
     public static void main(String[] args) {
-        for (int i=0; i<5; i++) {
+        for (int i = 0; i < 5; i++) {
             new AnonymousThread(String.valueOf(i));
         }
     }

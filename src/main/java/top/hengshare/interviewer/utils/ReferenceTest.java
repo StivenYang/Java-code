@@ -22,7 +22,7 @@ public class ReferenceTest {
         System.out.println(referenceTest);
     }
 
-    void testSet(ReferenceTest referenceTest){
+    void testSet(ReferenceTest referenceTest) {
         referenceTest.name = "yang";
         referenceTest.password = "123456";
     }

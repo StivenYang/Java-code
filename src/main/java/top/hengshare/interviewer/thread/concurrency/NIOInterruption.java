@@ -50,9 +50,9 @@ class NIOBlocked implements Runnable {
             sc.read(ByteBuffer.allocate(1));
         } catch (ClosedByInterruptException e) {
             System.out.println("中断异常关闭");
-        } catch (AsynchronousCloseException e){
+        } catch (AsynchronousCloseException e) {
             System.out.println("同步关闭");
-        } catch (IOException e){
+        } catch (IOException e) {
             throw new RuntimeException(e);
         }
         System.out.println("退出NIO的run()方法了");

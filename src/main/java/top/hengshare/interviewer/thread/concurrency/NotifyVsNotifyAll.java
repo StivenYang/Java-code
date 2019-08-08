@@ -18,7 +18,7 @@ import java.util.concurrent.TimeUnit;
 public class NotifyVsNotifyAll {
     public static void main(String[] args) throws InterruptedException {
         ExecutorService exec = Executors.newCachedThreadPool();
-        for (int i=0; i<5; i++) {
+        for (int i = 0; i < 5; i++) {
             exec.execute(new Task1());
         }
         exec.execute(new Task2());
@@ -33,7 +33,7 @@ public class NotifyVsNotifyAll {
                     System.out.println("\nnotify");
                     Task1.blocker.prod();
                     prod = false;
-                }else{
+                } else {
                     System.out.println("\nnotifyAll");
                     Task1.blocker.prodAll();
                     prod = true;
@@ -63,10 +63,12 @@ class Blocker {
             System.out.println("正常退出这个方法");
         }
     }
-    synchronized void prod(){
+
+    synchronized void prod() {
         notify();
     }
-    synchronized void prodAll(){
+
+    synchronized void prodAll() {
         notifyAll();
     }
 }
