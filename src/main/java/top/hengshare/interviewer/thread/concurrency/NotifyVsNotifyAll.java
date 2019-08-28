@@ -1,8 +1,5 @@
 package top.hengshare.interviewer.thread.concurrency;
 
-import jdk.nashorn.internal.ir.Block;
-import top.hengshare.interviewer.thread.concurrency.ThreadPoolDemo.Task;
-
 import java.util.Timer;
 import java.util.TimerTask;
 import java.util.concurrent.ExecutorService;

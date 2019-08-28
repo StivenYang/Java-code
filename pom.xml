@@ -7,6 +7,7 @@
     <groupId>top.hengshare</groupId>
     <artifactId>Java-Interview</artifactId>
     <version>1.0-SNAPSHOT</version>
+    
     <build>
         <plugins>
             <plugin>
@@ -47,5 +48,18 @@
             <version>RELEASE</version>
             <scope>compile</scope>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/org.springframework.data/spring-data-redis -->
+        <dependency>
+            <groupId>org.springframework.data</groupId>
+            <artifactId>spring-data-redis</artifactId>
+            <version>2.1.4.RELEASE</version>
+        </dependency>
+        <dependency>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+            <version>1.2.17</version>
+        </dependency>
+
+
     </dependencies>
 </project>
