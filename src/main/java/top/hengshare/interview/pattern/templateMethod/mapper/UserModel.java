@@ -1,11 +1,6 @@
 package top.hengshare.interview.pattern.templateMethod.mapper;
 
-import com.google.common.collect.Lists;
 import lombok.Data;
-import org.apache.commons.lang3.StringUtils;
-
-import java.sql.*;
-import java.util.Collection;
 
 /**
  * @program: Java-Interview
