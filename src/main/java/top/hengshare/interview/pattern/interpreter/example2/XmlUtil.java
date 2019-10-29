@@ -1,4 +1,4 @@
-package top.hengshare.interview.pattern.interpreter.example2.example;
+package top.hengshare.interview.pattern.interpreter.example2;
 
 import org.w3c.dom.Document;
 import org.xml.sax.SAXException;

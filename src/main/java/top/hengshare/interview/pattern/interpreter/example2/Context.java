@@ -1,4 +1,4 @@
-package top.hengshare.interview.pattern.interpreter.example2.example;
+package top.hengshare.interview.pattern.interpreter.example2;
 
 import com.google.common.collect.Lists;
 import lombok.Getter;

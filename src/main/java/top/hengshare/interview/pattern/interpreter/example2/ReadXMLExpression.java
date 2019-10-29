@@ -1,4 +1,4 @@
-package top.hengshare.interview.pattern.interpreter.example2.example;
+package top.hengshare.interview.pattern.interpreter.example2;
 
 /**
  * @program: Java-Interview

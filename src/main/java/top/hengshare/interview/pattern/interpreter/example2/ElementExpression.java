@@ -1,9 +1,8 @@
-package top.hengshare.interview.pattern.interpreter.example2.example;
+package top.hengshare.interview.pattern.interpreter.example2;
 
 import com.google.common.collect.Lists;
 import org.w3c.dom.Element;
 
-import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
@@ -48,20 +47,21 @@ public class ElementExpression extends ReadXMLExpression {
     public String[] interpret(Context ctx) {
         //先取出当前元素作为父级元素
         //查找当前元素名称对应的xml元素，并设置回到上下文中
-        List<Element> preEles = ctx.getPreEles();
-        Element element = null;
+        List<Element> preEle = ctx.getPreEles();
+        Element ele;
+
         //把当前获取的元素放到上下文中
-        ArrayList<Element> nowEles = Lists.newArrayList();
-        if (preEles.size()==0) {
+        List<Element> nowEles = Lists.newArrayList();
+        if (preEle.size()==0) {
             //说明现在获取的是根元素
-            element = ctx.getDocument().getDocumentElement();
-            preEles.add(element);
-            ctx.setPreEles(preEles);
+            Element e = ctx.getDocument().getDocumentElement();
+            preEle.add(e);
+            ctx.setPreEles(preEle);
         }else {
-            for (Element preEle : preEles) {
-                nowEles.addAll(ctx.getNowEles(preEle, eleName));
+            //不是根元素，则根据父级元素和当前要查找的元素名称查找元素
+            for (Element element : preEle) {
+                nowEles.addAll(ctx.getNowEles(element, eleName));
                 if (nowEles.size() > 0) {
-                    //找到一个就停止
                     break;
                 }
             }
@@ -72,9 +72,10 @@ public class ElementExpression extends ReadXMLExpression {
 
         //循环调用子元素的interpret方法
         String[] ss = null;
-        for (ReadXMLExpression ele : eles) {
-            ss = ele.interpret(ctx);
+        for (ReadXMLExpression tempEle : eles) {
+            ss = tempEle.interpret(ctx);
         }
+
         return ss;
     }
 }

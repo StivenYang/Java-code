@@ -1,4 +1,4 @@
-package top.hengshare.interview.pattern.interpreter.example2.example;
+package top.hengshare.interview.pattern.interpreter.example2;
 
 /**
  * @program: Java-Interview
@@ -6,7 +6,7 @@ package top.hengshare.interview.pattern.interpreter.example2.example;
  * @author: StivenYang
  * @create: 2019-10-24 21:48
  **/
-public class Client {
+public class Client2 {
     public static void main(String[] args) throws Exception {
         //准备上下文
         Context ctx = new Context("test.xml");
@@ -16,15 +16,19 @@ public class Client {
         ElementExpression root = new ElementExpression("root");
         ElementExpression a = new ElementExpression("a");
         ElementExpression b = new ElementExpression("b");
-        ElementTerminalExpression c = new ElementTerminalExpression("c");
+        ElementsExpression d = new ElementsExpression("d");
+        PropertysTerminalExpression prop = new PropertysTerminalExpression("id");
 
         //组合起来
         root.addEle(a);
         a.addEle(b);
-        b.addEle(c);
+        b.addEle(d);
+        d.addEle(prop);
 
         //调用
         String[] ss = root.interpret(ctx);
-        System.out.println("c的值是：" + ss[0]);
+        for (String s : ss) {
+            System.out.println("d的属性id值是=" + s);
+        }
     }
 }
