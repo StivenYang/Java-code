@@ -49,7 +49,10 @@ public class Parser {
 
     private static List<ReadXMLExpression> mapPath2Interpreter(Map<String, ParserModel> mapPath) {
         List<ReadXMLExpression> list = Lists.newArrayList();
+        //一定要按照分解的先后顺序来转换成解释器对象
+        for (String key : listEle) {
 
+        }
     }
 
     /**
