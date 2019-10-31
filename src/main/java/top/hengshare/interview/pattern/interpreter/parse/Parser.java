@@ -2,12 +2,11 @@ package top.hengshare.interview.pattern.interpreter.parse;
 
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
-import top.hengshare.interview.pattern.interpreter.example2.ReadXMLExpression;
+import top.hengshare.interview.pattern.interpreter.example2.*;
 
 import java.util.List;
 import java.util.Map;
 import java.util.StringTokenizer;
-import java.util.TreeMap;
 
 /**
  * @program: Java-Interview
@@ -42,17 +41,79 @@ public class Parser {
 
         //3. 结合抽象语法树，按照先后顺序来组合元素
         //否则对象的包含关系就乱了
-        ReadXMLExpression returnRe = buildTree(list);
 
+        return buildTree(list);
+    }
+
+    private static ReadXMLExpression buildTree(List<ReadXMLExpression> list) {
+        //构建树
+        //第一个对象，也是返回去的对象，就是抽象语法树的根
+        ReadXMLExpression returnRe = null;
+        //定义上一个对象
+        ReadXMLExpression preRe = null;
+        for (ReadXMLExpression re : list) {
+            if (preRe == null) {
+                //说明是第一个元素
+                preRe = re;
+                returnRe = re;
+            }else {
+                if (preRe instanceof ElementExpression) {
+                    //不是第一个元素的花，就把元素添加到上一个元素的下面,同时把对象设置成oldRe
+                    ElementExpression ele = (ElementExpression) preRe;
+                    ele.addEle(re);
+                    preRe = re;
+                } else if (preRe instanceof ElementExpression) {
+                    ElementsExpression eles = (ElementsExpression)preRe;
+                    eles.addEle(re);
+                    preRe = re;
+                }
+            }
+        }
         return returnRe;
     }
 
+    /**
+     * 把分解出来的元素名称根据对应的解析模型转换成为相应的解释器对象
+     * @param mapPath 分解出来的需要解析的元素名称，还有该元素对应的解析模型
+     * @return 把每个元素转换成为相应的解析器对象后的集合
+     */
     private static List<ReadXMLExpression> mapPath2Interpreter(Map<String, ParserModel> mapPath) {
         List<ReadXMLExpression> list = Lists.newArrayList();
         //一定要按照分解的先后顺序来转换成解释器对象
         for (String key : listEle) {
-
+            ParserModel parserModel = mapPath.get(key);
+            ReadXMLExpression obj = null;
+            if (!parserModel.isEnd()) {
+                if (parserModel.isSingleValue()) {
+                    //如果是一个值
+                    obj = new ElementExpression(key);
+                }else {
+                    //是多个之
+                    obj = new ElementsExpression(key);
+                }
+            }else {
+                if (parserModel.isPropertyValue()) {
+                    if (parserModel.isSingleValue()) {
+                        //是最后一个，是一个值，取属性的之
+                        obj  = new PropertyTerminalExpression(key);
+                    }else {
+                        //是最后一个，是多个之，取属性的值
+                        obj = new PropertysTerminalExpression(key);
+                    }
+                }else {
+                    if (parserModel.isSingleValue()) {
+                        //是最后一个，是一个值
+                        obj = new ElementTerminalExpression(key);
+                    }else {
+                        //是最后一个，取多个元素的之
+                        obj = new ElementsTerminalExpression(key);
+                    }
+                }
+            }
+            //把转换后的对象添加到集合中
+            list.add(obj);
         }
+        return list;
     }
 
     /**
