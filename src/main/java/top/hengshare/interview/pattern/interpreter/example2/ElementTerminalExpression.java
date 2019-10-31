@@ -33,26 +33,15 @@ public class ElementTerminalExpression extends ReadXMLExpression {
         List<Element> preEle = ctx.getPreEles();
         //查找当前元素名称所对象的元素
         Element element = null;
-        List<Element> nowEles = Lists.newArrayList();
-        if (preEle == null) {
-            //说明现在获取的是根元素
-            ctx.getDocument().getDocumentElement();
-            nowEles.add(element);
-            ctx.setPreEles(nowEles);
+        if (preEle.size() == 0) {
+            element = ctx.getDocument().getDocumentElement();
         }else {
-            //根据父级元素和当前有的元素名字查找当前元素
-            for (Element element1 : preEle) {
-                nowEles.addAll(ctx.getNowEles(element1, eleName));
-            }
-            //吧当前获取的元素放到上下文中
-            ctx.setPreEles(nowEles);
+            element = ctx.getNowEles(preEle.get(0), eleName).get(0);
         }
 
         //然后需要去获取这个元素的值
-        String[] ss = new String[nowEles.size()];
-        for (int i = 0 ;i < nowEles.size(); i++){
-            ss[i] = nowEles.get(i).getNodeValue();
-        }
+        String[] ss = new String[1];
+        ss[0] =  element.getFirstChild().getNodeValue();
         return ss;
 
     }

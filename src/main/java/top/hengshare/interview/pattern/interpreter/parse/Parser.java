@@ -11,6 +11,7 @@ import java.util.StringTokenizer;
 /**
  * @program: Java-Interview
  * @description: 根据语法来解析表达式，转换为相应的抽象语法树
+ *  todo： 针对表达式：root/a/b/d$.id 还有个bug，暂时不修复了，之后修复
  * @author: StivenYang
  * @create: 2019-10-29 20:07
  **/

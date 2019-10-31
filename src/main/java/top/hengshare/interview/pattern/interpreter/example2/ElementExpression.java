@@ -54,8 +54,8 @@ public class ElementExpression extends ReadXMLExpression {
         List<Element> nowEles = Lists.newArrayList();
         if (preEle.size()==0) {
             //说明现在获取的是根元素
-            Element e = ctx.getDocument().getDocumentElement();
-            preEle.add(e);
+            ele= ctx.getDocument().getDocumentElement();
+            preEle.add(ele);
             ctx.setPreEles(preEle);
         }else {
             //不是根元素，则根据父级元素和当前要查找的元素名称查找元素

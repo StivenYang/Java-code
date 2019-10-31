@@ -44,7 +44,7 @@ public class Context {
      * 重新初始化上下文
      */
     public void reInit(){
-        preEles =null;
+        preEles = Lists.newArrayList();
     }
 
     /**
