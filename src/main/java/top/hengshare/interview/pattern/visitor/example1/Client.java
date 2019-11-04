@@ -6,7 +6,7 @@ import java.util.Collection;
 
 /**
  * @program: Java-Interview
- * @description: Client
+ * @description: 测试访问者模式
  * @author: StivenYang
  * @create: 2019-11-03 19:25
  **/
