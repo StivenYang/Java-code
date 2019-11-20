@@ -23,6 +23,8 @@ public abstract class Decorator extends Component {
     @Override
     public void operation() {
         //转发请求给组件对象，可以在转发前后执行一些附加动作
+        System.out.println();
         component.operation();
+        System.out.println();
     }
 }

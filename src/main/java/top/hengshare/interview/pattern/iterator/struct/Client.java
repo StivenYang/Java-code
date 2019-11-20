@@ -1,5 +1,10 @@
 package top.hengshare.interview.pattern.iterator.struct;
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 public class Client {
     public static void main(String[] args) {
         String[] names = {"张三", "李四", "王五"};
@@ -17,5 +22,6 @@ public class Client {
             //如果还没有迭代到最后，那么就向下迭代一个
             iterator.next();
         }
+
     }
 }
