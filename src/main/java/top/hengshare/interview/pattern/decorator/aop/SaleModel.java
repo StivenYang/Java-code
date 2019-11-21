@@ -2,6 +2,8 @@ package top.hengshare.interview.pattern.decorator.aop;
 
 import lombok.Data;
 
+import java.nio.file.Files;
+
 /**
  * @program: Java-Interview
  * @description: 封装销售单的数据
@@ -18,4 +20,5 @@ public class SaleModel {
      * 销售的数量
      */
     private int saleNum;
+
 }
