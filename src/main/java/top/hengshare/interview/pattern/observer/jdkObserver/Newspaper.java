@@ -1,8 +1,12 @@
 package top.hengshare.interview.pattern.observer.jdkObserver;
 
+import lombok.Getter;
+
 import java.util.Observable;
 
 public class Newspaper extends Observable {
+
+    @Getter
     private String content;
 
     public void setContent(String content) {
@@ -13,9 +17,5 @@ public class Newspaper extends Observable {
         this.notifyObservers(this.content);
         //下面这个是拉的方式
 //        this.notifyObservers();
-    }
-
-    public String getContent() {
-        return content;
     }
 }

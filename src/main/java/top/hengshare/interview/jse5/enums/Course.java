@@ -4,7 +4,7 @@ import top.hengshare.interview.pattern.command.backCall.version0.Printer;
 
 /**
  * @program: Java-Interview
- * @description: Course
+ * @description: 组合枚举
  * @author: StivenYang
  * @create: 2019-11-21 21:51
  **/

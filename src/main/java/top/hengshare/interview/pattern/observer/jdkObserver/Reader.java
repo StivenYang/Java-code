@@ -1,18 +1,16 @@
 package top.hengshare.interview.pattern.observer.jdkObserver;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import java.util.Observable;
 import java.util.Observer;
 
 public class Reader implements Observer {
+
+    @Getter
+    @Setter
     private String name;
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getName() {
-        return name;
-    }
 
     @Override
     public void update(Observable o, Object arg) {
