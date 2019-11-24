@@ -72,7 +72,7 @@ class WaitingTask implements Runnable {
 
     @Override
     public String toString() {
-        return String.format("等候任务 %1$-3d", id);
+        return String.format(": 等候任务 %1$-3d", id);
     }
 }
 
