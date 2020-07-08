@@ -17,8 +17,7 @@ public class PriceSelector {
             new Shop("BuyItAll"));
 
     public List<String> findPrices(String product){
-        return shops.stream()
-                .map(shop -> String.format("%s 价格是： %.2f", shop.getname))
+        return null;
     }
 
     public static void main(String[] args) {
