@@ -19,7 +19,7 @@ public class OrderProxy implements OrderAPI {
     public void setProductName(String productName, String user) {
         if (StringUtils.isNotEmpty(user) && user.equals(this.getOrderUser())) {
             order.setProductName(productName, user);
-        }else {
+        } else {
             System.out.println("无权限修改订单名称");
         }
     }
@@ -33,7 +33,7 @@ public class OrderProxy implements OrderAPI {
     public void setOrderNum(int orderNum, String user) {
         if (StringUtils.isNotEmpty(user) && user.equals(this.getOrderUser())) {
             order.setOrderNum(orderNum, user);
-        }else {
+        } else {
             System.out.println("无权修改订单数量");
         }
     }
@@ -47,7 +47,7 @@ public class OrderProxy implements OrderAPI {
     public void setOrderUser(String orderUser, String user) {
         if (StringUtils.isNotEmpty(user) && user.equals(this.getOrderUser())) {
             order.setOrderUser(orderUser, user);
-        }else {
+        } else {
             System.out.println("无权修改订单用户名");
         }
     }
