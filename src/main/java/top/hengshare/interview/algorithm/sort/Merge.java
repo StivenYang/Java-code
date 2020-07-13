@@ -36,9 +36,12 @@ public class Merge {
     }
 
     public static void merge(int[] arr, int left, int mid, int right, int[] temp) {
-        int i = left;//左序列指针
-        int j = mid + 1;//右序列指针
-        int t = 0;//临时数组指针
+        int i = left;
+        //左序列指针
+        int j = mid + 1;
+        //右序列指针
+        int t = 0;
+        //临时数组指针
         while (i <= mid && j <= right) {
             if (arr[i] < arr[j]) {
                 temp[t++] = arr[i++];
@@ -46,15 +49,17 @@ public class Merge {
                 temp[t++] = arr[j++];
             }
         }
-        while (i <= mid) {//将左边剩余元素填充进temp中
+        while (i <= mid) {
+            //将左边剩余元素填充进temp中
             temp[t++] = arr[i++];
         }
-        while (j <= right) {//将右边剩余元素填充进temp中
+        while (j <= right) {
+            //将右边剩余元素填充进temp中
             temp[t++] = arr[j++];
         }
         t = 0;
-        //将temp中的元素全部拷贝到原数组中
         while (left <= right) {
+            //将temp中的元素全部拷贝到原数组中
             arr[left++] = temp[t++];
         }
     }

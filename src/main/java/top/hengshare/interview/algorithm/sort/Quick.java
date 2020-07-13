@@ -19,7 +19,8 @@ public class Quick {
             j = r;
             x = arr[i];
             while (i < j) {
-                while (i < j && arr[j] > x) {//右边向左找第一个小于x的元素
+                while (i < j && arr[j] > x) {
+                    //右边向左找第一个小于x的元素
                     j--;
                 }
                 if (i < j) {//
