@@ -24,6 +24,7 @@ public class TwoSum {
                 }
             }
         }
+        throw new IllegalArgumentException("没有满足条件的两个数");
     }
 
     /**
