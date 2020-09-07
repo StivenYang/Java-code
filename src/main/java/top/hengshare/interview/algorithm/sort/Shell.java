@@ -11,16 +11,29 @@ public class Shell {
     public static int count = 0;
 
     private static void sort(int[] arr) {
+//        int len = arr.length;
+//        for (int gap = Math.floorDiv(len, 2); gap > 0; gap = Math.floorDiv(gap, 2)) {
+//            for (int i = gap; i < len; i++) {
+//                int j = i;
+//                int current = arr[i];
+//                while (j - gap >= 0 && current < arr[j - gap]) {
+//                    arr[j] = arr[j - gap];
+//                    j = j - gap;
+//                }
+//                arr[j] = current;
+//            }
+//        }
+
         int len = arr.length;
-        for (int gap = Math.floorDiv(len, 2); gap > 0; gap = Math.floorDiv(gap, 2)) {
-            for (int i = gap; i < len; i++) {
-                int j = i;
+        for (int gap = Math.floorDiv(len, 2); gap > 0; gap = Math.floorDiv(gap, 2)){
+            for (int i = gap; i<len; i++){
+                int preIndex= i;
                 int current = arr[i];
-                while (j - gap >= 0 && current < arr[j - gap]) {
-                    arr[j] = arr[j - gap];
-                    j = j - gap;
+                while (preIndex - gap >= 0 && current < arr[preIndex - gap]){
+                    arr[i] = arr[preIndex-gap];
+                    preIndex = preIndex-gap;
                 }
-                arr[j] = current;
+                arr[preIndex] = current;
             }
         }
     }

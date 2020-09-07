@@ -12,7 +12,7 @@ public class OptionalMap {
         Java8OptionalTest test = new Java8OptionalTest();
         Optional<Java8OptionalTest> optional = Optional.of(test);
 
-        Optional<Car> opt1 = optional.map(a -> a.getCar());
+        Optional<Car> opt1 = optional.map(Java8OptionalTest::getCar);
         System.out.println(opt1.get());
         //Car(weels=4)
 
@@ -24,7 +24,9 @@ public class OptionalMap {
         System.out.println("传统：" + weel);
         //4
 
-        Optional<Integer> opt2 = optional.map(a -> a.getCar()).map(b -> b.getWeels());
+        Optional<Integer> opt2 = optional
+                .map(Java8OptionalTest::getCar)
+                .map(Car::getWeels);
         System.out.println("Optional: " + opt2.get());
         //4
 
@@ -36,7 +38,8 @@ public class OptionalMap {
         System.out.println(opt4);
         //Optional[Car(weels=4)]
 
-        Optional<Integer> opt5 = optional.flatMap(a -> Optional.of(a.getCar())).flatMap(b -> Optional.ofNullable(b.getWeels()));
+        Optional<Integer> opt5 = optional.flatMap(a -> Optional.of(a.getCar()))
+                .flatMap(b -> Optional.ofNullable(b.getWeels()));
         System.out.println(opt5);
         //Optional[4]
     }

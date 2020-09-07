@@ -11,19 +11,22 @@ public class Selection {
     public static int[] arr = {1, 3, 5, 2, 11, 23, 34, 31, 12, 11};
     public static int count = 0;
 
-    private static void sort(int[] arr){
-        int minIndex, temp;
-        for (int i = 0; i<arr.length; i++){
-            minIndex = i;
-            for (int j= i+1; j<arr.length; j++){
-                if (arr[j] < arr[minIndex]){
-                    minIndex = j;
+    /**
+     * 选择排序的原理是：拿开头的数，然后依次让这个数和其他的数进行比较，如果是从大到小排序，那就取最大值，否则取最小值
+     *
+     * @param arr 数组
+     */
+    private static void sort(int[] arr) {
+        for(int i = 0; i<arr.length; i++){
+            int maxIndex = i;
+            for (int j = i; j<arr.length; j++){
+                if(arr[j] > arr[maxIndex]){
+                    maxIndex = j;
                 }
-                count++;
             }
-            temp = arr[i];
-            arr[i] = arr[minIndex];
-            arr[minIndex]= temp;
+            int temp = arr[maxIndex];
+            arr[maxIndex] = arr[i];
+            arr[i] = temp;
         }
     }
 

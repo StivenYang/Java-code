@@ -13,7 +13,9 @@ public class OptionalFilter {
 
         Optional<Java8OptionalTest> optional = Optional.of(test);
 
-        Optional<Java8OptionalTest> result = optional.filter(a -> a.getCar() != null).filter(b -> b.getClass().getName() != null);
+        Optional<Java8OptionalTest> result = optional.
+                filter(a -> a.getCar() != null)
+                .filter(b -> b.getClass().getName() != null);
         System.out.println(result.isPresent() ? result.get().getClass().getName() : false);
         //top.hengshare.interviewer.java8.optional.Java8OptionalTest
 
