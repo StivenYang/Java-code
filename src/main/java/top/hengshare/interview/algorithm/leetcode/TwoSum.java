@@ -66,4 +66,8 @@ public class TwoSum {
         }
         throw new IllegalArgumentException("没有满足条件的两个数");
     }
+
+    public static void main(String[] args) {
+        System.out.println(Math.floorDiv(100, 5));
+    }
 }
