@@ -1,0 +1,12 @@
+server:
+  port: 8089
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3339/test?useSSL=false
+    username: root
+    password: 123456
+  aop:
+    proxy-target-class: true
+    auto: true
