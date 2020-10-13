@@ -11,8 +11,18 @@ public class ThreadMonitor {
      */
     public static void createBusyThread(){
         new Thread(() -> {
-            while (true){
-                ;
+            try {
+                int n=1;
+                while (true){
+                    Thread.sleep(1000);
+                    n++;
+                    System.out.println("dead loop");
+                    if (n > 10) {
+                        return;
+                    }
+                }
+            }catch (Exception e){
+                e.printStackTrace();
             }
         }, "testBusyThread").start();
 
@@ -26,7 +36,8 @@ public class ThreadMonitor {
         new Thread(() -> {
             synchronized (lock){
                 try {
-                    lock.wait();
+                    lock.wait(1000);
+                    System.out.println("object.lock.wait()");
                 }catch (InterruptedException e){
                     e.printStackTrace();
                 }

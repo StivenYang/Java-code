@@ -1,11 +1,11 @@
 package top.hengshare.interview.algorithm.leetcode;
 
-import top.hengshare.interview.utils.net.util.Stack;
+import java.util.Stack;
 
 /**
  * @author StevenYang
  * @description 用栈实现队列的功能
- * @date  2020/7/18
+ * @date 2020/7/18
  **/
 public class StackToQueue {
 

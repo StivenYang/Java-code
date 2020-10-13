@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class JavaInterviewApplication {
 
     @RequestMapping("/")
-    String home(){
+    public String home() {
         return "Hello World!";
     }
 
