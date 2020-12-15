@@ -29,15 +29,12 @@ public class CAS {
         long time = System.currentTimeMillis();
         ExecutorService exec = Executors.newFixedThreadPool(5);
         for (int j=0; j<5; j++){
-            exec.execute(new Runnable() {
-                @Override
-                public void run() {
-                    for (int k=0; k<1000; k++){
-                        p++;    //不是原子操作
-                        i.getAndIncrement();    //调用原子类加1
-                    }
-                    latch.countDown();
+            exec.execute(() -> {
+                for (int k=0; k<1000; k++){
+                    p++;    //不是原子操作
+                    i.getAndIncrement();    //调用原子类加1
                 }
+                latch.countDown();
             });
         }
         latch.await();//保证所有子线程完成
