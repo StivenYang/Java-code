@@ -1,7 +1,5 @@
 package top.hengshare.interview.algorithm.sort;
 
-import com.fasterxml.jackson.core.sym.Name2;
-
 import java.util.Arrays;
 
 public class Heap {
@@ -50,27 +48,6 @@ public class Heap {
 
     public static void main(String[] args) {
         sort(arr);
-        Arrays.stream(arr).forEach(System.out::println);
-    }
-
-    public static void build1(int[] arr){
-
-    }
-
-    public static void heapify1(int[] arr, int mid){
-
-    }
-
-    public static void swap1(int[] arr, int n1, int n2){
-
-    }
-
-    public static void sort1(int[] arr){
-        build(arr);
-        for (int i = arr.length; i>0; i--){
-            swap1(arr, 0, i);
-            len--;
-            heapify1(arr, 0);
-        }
+        System.out.println("Arrays.toString(arr) = " + Arrays.toString(arr));
     }
 }
