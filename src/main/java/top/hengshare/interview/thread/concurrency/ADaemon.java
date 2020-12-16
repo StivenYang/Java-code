@@ -5,7 +5,7 @@ import java.util.concurrent.TimeUnit;
 /**
  * @author: Yang Jiaheng
  * @date: 2019/3/30
- * @description: 线程的Daemon属性
+ * @description: 线程的Daemon属性，后台线程
  */
 public class ADaemon implements Runnable {
     @Override

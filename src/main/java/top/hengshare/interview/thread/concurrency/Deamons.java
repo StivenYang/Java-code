@@ -5,7 +5,7 @@ import java.util.concurrent.TimeUnit;
 /**
  * @author: Yang Jiaheng
  * @date: 2019/3/30
- * @description:
+ * @description: 后台线程产生的新的线程都是后台线程
  */
 public class Deamons implements Runnable {
     private Thread[] t = new Thread[10];
