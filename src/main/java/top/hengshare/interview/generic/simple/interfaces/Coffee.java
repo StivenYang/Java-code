@@ -1,10 +1,7 @@
 package top.hengshare.interview.generic.simple.interfaces;
 
 /**
- * @program: Java-Interview
- * @description: Coffee
- * @author: StivenYang
- * @create: 2019-11-17 12:48
+ * @author StivenYang
  **/
 public class Coffee {
     private static long counter = 0;

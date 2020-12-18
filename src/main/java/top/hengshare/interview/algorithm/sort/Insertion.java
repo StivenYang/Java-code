@@ -7,17 +7,13 @@ package top.hengshare.interview.algorithm.sort;
  * @date 2020/6/24 7:03 下午
  **/
 public class Insertion {
-
-    public static int[] arr = {1, 3, 5, 2, 11, 23, 34, 31, 12, 11};
-    public static int count = 0;
-
     /**
      * 插入排序的原理：有两个下标，preIndex和curIndex,preIndex是已排序数组最大下标，curIndex是当前要插入的数的下标
      * 取这两个数，如果不满足条件交换，满足条件进行下一次循环
      *
      * @param arr 数组
      */
-    private static void sort(int[] arr) {
+    public void sort(int[] arr) {
         int preIndex, current;
         for (int i = 1; i < arr.length; i++) {
             preIndex = i - 1;
@@ -30,12 +26,4 @@ public class Insertion {
         }
     }
 
-    public static void main(String[] args) {
-        sort(arr);
-        for (int i : arr) {
-            System.out.print(i + ", ");
-        }
-        System.out.println();
-        System.out.println(count);
-    }
 }

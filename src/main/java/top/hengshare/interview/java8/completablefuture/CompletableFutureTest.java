@@ -5,8 +5,7 @@ import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.Future;
 
 /**
- * @program: Java-Interview
- * @description: CompletableFuture测试类，最佳价格查询器
+ *  CompletableFuture测试类，最佳价格查询器
  *          业务场景是：
  *                  1. 将两个异步计算合并为一个---这两个异步计算之前相互独立，同时第二个又依赖于第一个的结果
  *                  2. 等待Future中的所有任务都完成
@@ -22,8 +21,8 @@ import java.util.concurrent.Future;
  *                  3. 如何以响应式的方式处理异步操作的完成事件，以及随着各个商店返回它的商品价格，最佳价格查询器如何持续地更新每种商品的最佳推荐，
  *                      而不是等待所有的商店都返回他们各自的价格（这种方式存在着一定的风险，一旦某家商店的服务中断，用户可能遭遇白屏）
  *
- * @author: StivenYang
- * @create: 2019-12-01 21:42
+ * @author StivenYang
+ * @date 2019-12-01 21:42
  **/
 public class CompletableFutureTest {
     public static void main(String[] args) {

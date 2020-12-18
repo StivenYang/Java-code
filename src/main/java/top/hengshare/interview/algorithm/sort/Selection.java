@@ -8,15 +8,12 @@ package top.hengshare.interview.algorithm.sort;
  **/
 public class Selection {
 
-    public static int[] arr = {1, 3, 5, 2, 11, 23, 34, 31, 12, 11};
-    public static int count = 0;
-
     /**
      * 选择排序的原理是：拿开头的数，然后依次让这个数和其他的数进行比较，如果是从大到小排序，那就取最大值，否则取最小值
      *
      * @param arr 数组
      */
-    private static void sort(int[] arr) {
+    public void sort(int[] arr) {
         for(int i = 0; i<arr.length; i++){
             int maxIndex = i;
             for (int j = i; j<arr.length; j++){
@@ -28,13 +25,5 @@ public class Selection {
             arr[maxIndex] = arr[i];
             arr[i] = temp;
         }
-    }
-
-    public static void main(String[] args) {
-        sort(arr);
-        for (int i : arr) {
-            System.out.print(i + "\t");
-        }
-        System.out.println(count);
     }
 }

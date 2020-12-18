@@ -1,17 +1,13 @@
-package top.hengshare.interview.time;
+package top.hengshare.interview.test;
+
+import org.junit.Test;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
-/**
- * @author StivenYang
- * @program interview
- * @description before函数和after测试类
- * @date 2019-06-12 19:13
- **/
-public class AfterAndBeforeTest {
-
-    public static void main(String[] args) {
+public class LocalDateTest {
+    @Test
+    public void testBeforeAndAfter() {
         LocalDate today = LocalDate.now();
         LocalDate tomorrow = LocalDate.now().minusDays(1);
         LocalDate yesterday = LocalDate.now().minusDays(-1);

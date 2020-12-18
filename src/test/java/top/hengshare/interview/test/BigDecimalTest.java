@@ -1,10 +1,14 @@
 package top.hengshare.interview.test;
 
+import org.junit.Test;
+
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 
-public class DecimalTest {
-    public static void main(String[] args) {
+public class BigDecimalTest {
+
+    @Test
+    public void testBigDecimalScale() {
 //        try {
 //            BigDecimal big1 = new BigDecimal(10);
 //            BigDecimal big2 = new BigDecimal(3);

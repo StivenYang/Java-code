@@ -1,11 +1,14 @@
 package top.hengshare.interview.test;
 
+import org.junit.Test;
+
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
-public class MonthTest {
-    public static void main(String[] args) throws ParseException {
+public class SingleDateFormatTest {
+    @Test
+    public void testMonth() throws ParseException {
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM");
         String str1 = "2012-02";
         String str2 = "2010-01";

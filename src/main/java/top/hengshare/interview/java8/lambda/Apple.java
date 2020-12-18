@@ -12,9 +12,9 @@ import java.util.function.Predicate;
 import static com.google.common.collect.Collections2.filter;
 
 /**
+ * 这是一个苹果Apple
+ *
  * @author StivenYang
- * @program interview
- * @description 这是一个苹果Apple
  * @date 2019-06-28 10:20
  **/
 @Data

@@ -1,10 +1,8 @@
 package top.hengshare.interview.generic.simple;
 
 /**
- * @program: Java-Interview
- * @description: LinkedStack
- * @author: StivenYang
- * @create: 2019-11-16 13:55
+ * @author StivenYang
+ * @date 2020年12月18日
  **/
 public class LinkedStack<T> {
     //节点

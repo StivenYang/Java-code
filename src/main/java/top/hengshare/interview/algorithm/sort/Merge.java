@@ -1,9 +1,5 @@
 package top.hengshare.interview.algorithm.sort;
 
-import com.sun.org.apache.bcel.internal.generic.IF_ACMPEQ;
-
-import java.util.Arrays;
-
 /**
  * 归并排序
  * <p>
@@ -15,17 +11,15 @@ import java.util.Arrays;
  * @date 2020/6/30 10:00 上午
  **/
 public class Merge {
-    public static int[] arr = {1, 3, 5, 2, 11, 23, 34, 31, 12, 11};
-    public static int count = 0;
 
-    public static void sort(int[] arr) {
+    public void sort(int[] arr) {
         int[] temp = new int[arr.length];
         //在排序之前，先创建好一个长度等于原数组长度的临时数组
         //避免递归中频繁开辟空间
         sort(arr, 0, arr.length - 1, temp);
     }
 
-    public static void sort(int[] arr, int left, int right, int[] temp) {
+    public void sort(int[] arr, int left, int right, int[] temp) {
         if (left < right) {
             int mid = (left + right) / 2;
             sort(arr, left, mid, temp);
@@ -37,7 +31,7 @@ public class Merge {
         }
     }
 
-    public static void merge(int[] arr, int left, int mid, int right, int[] temp) {
+    public void merge(int[] arr, int left, int mid, int right, int[] temp) {
         int i = left;
         //左序列指针
         int j = mid + 1;
@@ -65,48 +59,4 @@ public class Merge {
             arr[left++] = temp[t++];
         }
     }
-
-    public static void main(String[] args) {
-        sort1(arr);
-        System.out.println(Arrays.toString(arr));
-    }
-
-    public static void sort1(int[] arr) {
-        int[] temp = new int[arr.length];
-        sort1(arr, 0, arr.length - 1, temp);
-    }
-
-    private static void sort1(int[] arr, int left, int right, int[] temp) {
-        if (left < right) {
-            int mid = (left + right) / 2;
-            sort1(arr, left, mid, temp);
-            sort1(arr, mid + 1, right, temp);
-            merge1(arr, left, mid, right, temp);
-
-        }
-    }
-
-    private static void merge1(int[] arr, int left, int mid, int right, int[] temp) {
-        int leftPoint = left;
-        int rightPoint = mid + 1;
-        int tempPoint = 0;
-        while (leftPoint <= mid && rightPoint <= right) {
-            if (arr[leftPoint] < arr[rightPoint]) {
-                temp[tempPoint++] = arr[leftPoint++];
-            } else {
-                temp[tempPoint++] = arr[rightPoint++];
-            }
-        }
-        while (leftPoint <= mid) {
-            temp[tempPoint++] = arr[leftPoint++];
-        }
-        while (rightPoint <= right) {
-            temp[tempPoint++] = arr[rightPoint++];
-        }
-        tempPoint = 0;
-        while (left <= right) {
-            arr[left++] = temp[tempPoint++];
-        }
-    }
-
 }
