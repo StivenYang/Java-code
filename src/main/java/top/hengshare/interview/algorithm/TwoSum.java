@@ -1,17 +1,8 @@
 package top.hengshare.interview.algorithm;
 
-import cn.hutool.http.HttpRequest;
-import cn.hutool.http.HttpUtil;
-import cn.hutool.json.JSONObject;
-import cn.hutool.json.JSONString;
-import com.alibaba.fastjson.JSON;
 import com.google.common.collect.Maps;
 
-import javax.xml.crypto.Data;
-import java.io.UnsupportedEncodingException;
-import java.net.MalformedURLException;
-import java.net.URL;
-import java.util.*;
+import java.util.HashMap;
 
 public class TwoSum {
     public static void main(String[] args) {

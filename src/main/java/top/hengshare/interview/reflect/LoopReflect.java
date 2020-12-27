@@ -7,7 +7,7 @@ import java.lang.reflect.Field;
 import java.util.Map;
 
 /**
- * 循环引用例子
+ * 循环引用例子 类似于TwoSum
  *
  * @author yangjiaheng
  * @date 2020/9/18 4:20 下午
@@ -17,15 +17,15 @@ public class LoopReflect {
     private static Map<String, Object> cacheMap = Maps.newHashMap();
 
     public static void main(String[] args) {
-        Class[] classes = { A.class, B.class };
+        Class[] classes = { TestA.class, TestB.class };
 
         for (Class aClass : classes) {
             getBean(aClass);
         }
 
         // check
-        System.out.println(getBean(B.class).getA() == getBean(A.class));
-        System.out.println(getBean(A.class).getB() == getBean(B.class));
+        System.out.println(getBean(TestB.class).getA() == getBean(TestA.class));
+        System.out.println(getBean(TestA.class).getB() == getBean(TestB.class));
     }
 
     @SneakyThrows
@@ -49,18 +49,3 @@ public class LoopReflect {
     }
 }
 
-class A {
-    private B b;
-
-    public B getB() {
-        return b;
-    }
-}
-
-class B {
-    private A a;
-
-    public A getA() {
-        return a;
-    }
-}
