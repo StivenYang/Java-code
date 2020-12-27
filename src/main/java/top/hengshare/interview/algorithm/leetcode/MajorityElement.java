@@ -6,7 +6,7 @@ package top.hengshare.interview.algorithm.leetcode;
  * @author yangjiaheng
  * @date 2020/10/13 7:43 下午
  **/
-public class P1710 {
+public class MajorityElement {
     public static int majorityElement(int[] nums) {
         if (nums.length == 0) return -1;
         int count = 1;

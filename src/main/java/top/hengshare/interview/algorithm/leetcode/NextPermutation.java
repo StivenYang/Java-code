@@ -6,7 +6,7 @@ package top.hengshare.interview.algorithm.leetcode;
  * @author v_yangjiaheng_dxm
  * @date 2020/11/10 10:34 上午
  **/
-public class P31 {
+public class NextPermutation {
 
     public static void nextPermutation(int[] nums) {
         int i = nums.length - 2;
@@ -36,9 +36,5 @@ public class P31 {
         int temp = nums[i];
         nums[i] = nums[j];
         nums[j] = temp;
-    }
-
-    public static void main(String[] args) {
-
     }
 }

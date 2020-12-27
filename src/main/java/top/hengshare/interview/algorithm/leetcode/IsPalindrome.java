@@ -7,9 +7,9 @@ import java.util.List;
  * P234 回文链表
  *
  * @author v_yangjiaheng_dxm
- * @date 2020/10/23 10:39 上午
+ * @since  2020/10/23 10:39 上午
  **/
-public class P234 {
+public class IsPalindrome {
 
     public boolean isPalindrome(ListNode head) {
         List<Integer> list = new ArrayList<>();
@@ -49,9 +49,5 @@ public class P234 {
             frontPointer = frontPointer.next;
         }
         return true;
-    }
-
-    public static void main(String[] args) {
-
     }
 }

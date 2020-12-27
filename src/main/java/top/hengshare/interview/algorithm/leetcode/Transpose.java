@@ -8,7 +8,7 @@ import java.util.Arrays;
  * @author yangjiaheng
  * @date 2020/10/13 7:01 下午
  **/
-public class P867 {
+public class Transpose {
 
     public static int[][] transpose(int[][] A) {
         int col = A[0].length;

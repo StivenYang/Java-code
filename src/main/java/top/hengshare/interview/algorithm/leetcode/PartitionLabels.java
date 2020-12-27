@@ -9,7 +9,7 @@ import java.util.List;
  * @author v_yangjiaheng_dxm
  * @date 2020/10/22 2:24 下午
  **/
-public class P763 {
+public class PartitionLabels {
     public static List<Integer> partitionLabels(String S) {
         int[] last = new int[26];
         int len = S.length();

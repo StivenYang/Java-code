@@ -4,9 +4,10 @@ import java.util.HashMap;
 import java.util.Stack;
 
 /**
+ * 检查括号字符串是否正确
+ *
  * @author StevenYang
- * @description 检查括号字符串是否正确
- * @date 2020/7/18
+ * @since 2020/7/18
  **/
 public class EffectiveBrackets {
     private HashMap<Character, Character> mapping;

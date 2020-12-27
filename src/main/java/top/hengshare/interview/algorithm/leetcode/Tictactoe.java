@@ -6,7 +6,7 @@ package top.hengshare.interview.algorithm.leetcode;
  * @author yjh
  * @since 2020/10/18
  */
-public class P1275 {
+public class Tictactoe {
     public static String tictactoe(int[][] moves) {
         String[][] arr = new String[3][3];
         for (int x = 0; x< moves.length; x++) {

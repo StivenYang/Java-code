@@ -1,9 +1,10 @@
 package top.hengshare.interview.algorithm.leetcode;
 
 /**
+ * 检查链表是否有环
+ *
  * @author StevenYang
- * @description 检查链表是否有环
- * @date  2020/7/18
+ * @since 2020/7/18
  **/
 public class CheckRing {
 

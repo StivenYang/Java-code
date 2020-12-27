@@ -1,15 +1,14 @@
 package top.hengshare.interview.algorithm.leetcode;
 
-import java.util.Arrays;
-
 /**
  * P832 翻转图像
  *
  * @author v_yangjiaheng_dxm
  * @date 2020/10/17 10:59 上午
  **/
-public class P832 {
-    public static int[][] flipAndInvertImage(int[][] A) {
+public class FlipAndInvertImage {
+
+    public int[][] flipAndInvertImage(int[][] A) {
         int row = A.length;
         int col = A[0].length;
         int[][] b = new int[row][col];
@@ -23,7 +22,7 @@ public class P832 {
         return b;
     }
 
-    public static int[][] flipAndInvertImage1(int[][] A) {
+    public int[][] flipAndInvertImage1(int[][] A) {
         int C = A[0].length;
         for (int[] row : A)
             for (int i = 0; i < (C + 1) / 2; ++i) {
@@ -33,13 +32,5 @@ public class P832 {
             }
 
         return A;
-    }
-
-    public static void main(String[] args) {
-        int[][] arr = new int[][]{{1, 1, 0}, {1, 0, 1}, {0, 0, 0}};
-
-        for (int[] ints : flipAndInvertImage(arr)) {
-            System.out.println(Arrays.toString(ints));
-        }
     }
 }

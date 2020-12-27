@@ -8,7 +8,7 @@ import java.util.*;
  * @author yjh
  * @since 2020/11/1
  */
-public class P51 {
+public class NQueens {
     public static List<List<String>> solveNQueens(int n) {
         int[] queues = new int[n];
         List<List<String>> solutions = new ArrayList<>();

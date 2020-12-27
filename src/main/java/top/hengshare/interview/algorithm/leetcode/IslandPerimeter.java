@@ -6,8 +6,8 @@ package top.hengshare.interview.algorithm.leetcode;
  * @author v_yangjiaheng_dxm
  * @date 2020/10/30 1:05 下午
  **/
-public class P463 {
-    public static int islandPerimeter(int[][] grid) {
+public class IslandPerimeter {
+    public int islandPerimeter(int[][] grid) {
         int sum = 0;
         int up, down, left, right;
         for (int i = 0; i < grid.length; i++) {
@@ -42,10 +42,5 @@ public class P463 {
             }
         }
         return sum;
-    }
-
-    public static void main(String[] args) {
-        int[][] arr = new int[][]{{0, 1, 0, 0}, {1, 1, 1, 0}, {0, 1, 0, 0}, {1, 1, 0, 0}};
-        System.out.println(islandPerimeter(arr));
     }
 }

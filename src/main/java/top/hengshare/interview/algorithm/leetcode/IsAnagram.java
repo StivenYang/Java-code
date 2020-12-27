@@ -3,9 +3,10 @@ package top.hengshare.interview.algorithm.leetcode;
 import java.util.Arrays;
 
 /**
+ * 是否是有效的字母异位词
+ *
  * @author StevenYang
- * @description 是否是有效的字母异位词
- * @date 2020/7/19
+ * @since  2020/7/19
  **/
 public class IsAnagram {
 

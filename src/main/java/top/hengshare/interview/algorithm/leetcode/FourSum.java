@@ -5,9 +5,10 @@ import java.util.Arrays;
 import java.util.List;
 
 /**
+ * 四数之和
+ *
  * @author StevenYang
- * @description 四数之和
- * @date 2020/7/21
+ * @since 2020/7/21
  **/
 public class FourSum {
 

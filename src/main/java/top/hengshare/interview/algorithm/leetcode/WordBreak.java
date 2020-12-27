@@ -11,7 +11,7 @@ import java.util.List;
  * @author yjh
  * @since 2020/11/1
  */
-public class P139 {
+public class WordBreak {
     public static boolean wordBreak(String s, List<String> wordDict) {
         HashSet<String> wordDictSet = new HashSet<>(wordDict);
         boolean[] dp = new boolean[s.length() + 1];

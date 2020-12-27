@@ -16,18 +16,6 @@ public class LoopReflect {
 
     private static Map<String, Object> cacheMap = Maps.newHashMap();
 
-    public static void main(String[] args) {
-        Class[] classes = { TestA.class, TestB.class };
-
-        for (Class aClass : classes) {
-            getBean(aClass);
-        }
-
-        // check
-        System.out.println(getBean(TestB.class).getA() == getBean(TestA.class));
-        System.out.println(getBean(TestA.class).getB() == getBean(TestB.class));
-    }
-
     @SneakyThrows
     public static <T> T getBean(Class<T> beanClass) {
         String beanName = beanClass.getSimpleName().toLowerCase();

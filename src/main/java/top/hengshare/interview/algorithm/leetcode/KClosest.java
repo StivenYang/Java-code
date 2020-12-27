@@ -1,7 +1,5 @@
 package top.hengshare.interview.algorithm.leetcode;
 
-import com.google.common.collect.Queues;
-
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.PriorityQueue;
@@ -12,7 +10,7 @@ import java.util.PriorityQueue;
  * @author v_yangjiaheng_dxm
  * @date 2020/11/9 6:15 下午
  **/
-public class P973 {
+public class KClosest {
 
     static int[][] points = new int[][]{{3, 3}, {5, -1}, {-2, 4}};
 

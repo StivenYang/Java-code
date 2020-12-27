@@ -8,7 +8,7 @@ import java.util.Arrays;
  * @author v_yangjiaheng_dxm
  * @date 2020/10/14 10:20 上午
  **/
-public class P628 {
+public class MaximumProduct {
     public static int maximumProduct(int[] nums) {
         Arrays.sort(nums);
         return Math.max(nums[0] * nums[1] * nums[nums.length - 1],

@@ -6,7 +6,7 @@ package top.hengshare.interview.algorithm.leetcode;
  * @author v_yangjiaheng_dxm
  * @date 2020/10/13 10:28 下午
  **/
-public class P1588 {
+public class SumOddLengthSubarrays {
     public static int sumOddLengthSubarrays(int[] arr) {
         int res = 0;
         int len = arr.length;

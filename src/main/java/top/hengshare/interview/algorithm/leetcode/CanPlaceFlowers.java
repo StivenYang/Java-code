@@ -6,8 +6,8 @@ package top.hengshare.interview.algorithm.leetcode;
  * @author v_yangjiaheng_dxm
  * @date 2020/10/17 10:02 上午
  **/
-public class P605 {
-    public static boolean canPlaceFlowers(int[] flowerbed, int n) {
+public class CanPlaceFlowers {
+    public boolean canPlaceFlowers(int[] flowerbed, int n) {
         if (n == 0) return true;
         if (flowerbed.length == 1 && flowerbed[0] == 0 && n == 1) return true;
         if (flowerbed.length == 1 && flowerbed[0] == 1) return false;
@@ -29,10 +29,5 @@ public class P605 {
             }
         }
         return false;
-    }
-
-    public static void main(String[] args) {
-        int[] arr = new int[]{0, 1, 0};
-        System.out.println(canPlaceFlowers(arr, 1));
     }
 }

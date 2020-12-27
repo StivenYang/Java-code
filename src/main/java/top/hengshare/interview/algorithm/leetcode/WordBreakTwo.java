@@ -8,7 +8,7 @@ import java.util.*;
  * @author yjh
  * @since 2020/11/1
  */
-public class P140 {
+public class WordBreakTwo {
 
     public static List<String> wordBreak(String s, List<String> wordDict) {
         Map<Integer, List<List<String>>> map = new HashMap<>();

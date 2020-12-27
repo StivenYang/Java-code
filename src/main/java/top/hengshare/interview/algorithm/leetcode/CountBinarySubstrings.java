@@ -6,8 +6,8 @@ package top.hengshare.interview.algorithm.leetcode;
  * @author v_yangjiaheng_dxm
  * @date 2020/10/14 8:59 下午
  **/
-public class P696 {
-    public static int countBinarySubstrings(String s) {
+public class CountBinarySubstrings {
+    public int countBinarySubstrings(String s) {
         String[] arr = s.split("");
         int len = arr.length;
         int count = 0;
@@ -29,10 +29,5 @@ public class P696 {
             }
         }
         return count;
-    }
-
-    public static void main(String[] args) {
-        String a = "1010001";
-        System.out.println(countBinarySubstrings(a));
     }
 }

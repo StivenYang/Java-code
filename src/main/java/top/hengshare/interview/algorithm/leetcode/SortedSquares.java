@@ -8,7 +8,7 @@ import java.util.Arrays;
  * @author v_yangjiaheng_dxm
  * @date 2020/10/13 8:40 下午
  **/
-public class P977 {
+public class SortedSquares {
     public static int[] sortedSquares(int[] A) {
         int len = A.length;
         int[] rtn = new int[len];

@@ -6,7 +6,7 @@ package top.hengshare.interview.algorithm.leetcode;
  * @author v_yangjiaheng_dxm
  * @date 2020/10/15 10:16 上午
  **/
-public class P1550 {
+public class ThreeConsecutiveOdds {
     public static boolean threeConsecutiveOdds(int[] arr) {
         if (arr.length < 3) return false;
 

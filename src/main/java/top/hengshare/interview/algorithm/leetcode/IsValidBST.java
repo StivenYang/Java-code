@@ -3,9 +3,10 @@ package top.hengshare.interview.algorithm.leetcode;
 import java.util.Stack;
 
 /**
+ * 验证一个树是否是二叉排序树
+ *
  * @author StevenYang
- * @description 验证一个树是否是二叉排序树
- * @date 2020/7/21
+ * @since  2020/7/21
  **/
 public class IsValidBST {
 
