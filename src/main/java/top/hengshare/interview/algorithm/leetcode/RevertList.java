@@ -1,9 +1,10 @@
 package top.hengshare.interview.algorithm.leetcode;
 
 /**
+ * 翻转单链表  leetCode：206
+ *
  * @author StevenYang
- * @description 翻转单链表  leetCode：206
- * @date 2020/7/16
+ * @since 2020/7/16
  **/
 public class RevertList {
 

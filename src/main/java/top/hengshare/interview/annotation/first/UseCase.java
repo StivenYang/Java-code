@@ -6,7 +6,8 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
- * @description UseCase 统计使用次数
+ * UseCase 统计使用次数
+ *
  * @author StevenYang
  * @date  2020/7/14
  **/

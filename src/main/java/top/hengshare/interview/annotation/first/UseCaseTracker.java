@@ -6,8 +6,9 @@ import java.util.Collections;
 import java.util.List;
 
 /**
+ * 注解处理器，具体的使用注解
+ *
  * @author yang
- * @description 注解处理器，具体的使用注解
  */
 public class UseCaseTracker {
     public static void trackUseCases(List<Integer> useCases, Class<?> cl) {

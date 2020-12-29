@@ -3,8 +3,9 @@ package top.hengshare.interview.algorithm.leetcode;
 import java.util.HashMap;
 
 /**
+ * 两数之和
+ *
  * @author StevenYang
- * @description 两数之和
  * @date 2020/7/20
  **/
 public class TwoSum {
@@ -65,9 +66,5 @@ public class TwoSum {
             map.put(nums[i], i);
         }
         throw new IllegalArgumentException("没有满足条件的两个数");
-    }
-
-    public static void main(String[] args) {
-        System.out.println(Math.floorDiv(100, 5));
     }
 }

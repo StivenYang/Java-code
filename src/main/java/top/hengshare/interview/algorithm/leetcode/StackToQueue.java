@@ -3,8 +3,9 @@ package top.hengshare.interview.algorithm.leetcode;
 import java.util.Stack;
 
 /**
+ * 用栈实现队列的功能
+ *
  * @author StevenYang
- * @description 用栈实现队列的功能
  * @date 2020/7/18
  **/
 public class StackToQueue {

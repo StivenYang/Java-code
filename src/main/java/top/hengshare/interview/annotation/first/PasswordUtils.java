@@ -3,7 +3,8 @@ package top.hengshare.interview.annotation.first;
 import java.util.List;
 
 /**
- * @description PasswordUtils 密码工具类，可以用来对密码进行校验
+ * PasswordUtils 密码工具类，可以用来对密码进行校验
+ *
  * @author StevenYang
  * @date  2020/7/14
  **/
