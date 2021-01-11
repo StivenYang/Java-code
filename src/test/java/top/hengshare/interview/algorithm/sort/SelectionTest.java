@@ -14,4 +14,11 @@ public class SelectionTest {
         selection.sort(arr);
         System.out.println(Arrays.toString(arr));
     }
+
+    @Test
+    public void testSort1(){
+        Selection selection = new Selection();
+        selection.sort1(arr);
+        System.out.println(Arrays.toString(arr));
+    }
 }

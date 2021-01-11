@@ -1,11 +1,14 @@
 package top.hengshare.interview.algorithm.tree;
 
+import lombok.Data;
+
 /**
  * 树节点
  *
  * @author StivenYang
  * @since 2020/12/26
  **/
+@Data
 public class TreeNode {
 
     int val;
@@ -13,10 +16,6 @@ public class TreeNode {
     TreeNode left;
 
     TreeNode right;
-
-    TreeNode() {
-
-    }
 
     public TreeNode(int val) {
         this.val = val;

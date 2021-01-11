@@ -1,5 +1,8 @@
 package top.hengshare.interview.algorithm.tree;
 
+import cn.hutool.core.collection.ListUtil;
+import com.google.common.collect.Lists;
+
 import java.util.*;
 
 /**
@@ -51,39 +54,37 @@ public class LevelTrace {
      * @param node 要遍历的根节点
      */
     public TreeNode levelTraceWithMn(TreeNode node, Integer m, Integer n) {
-        if (node == null) {
+        if (node == null || m <= 0 || n <= 0) {
             return null;
         }
-        // 使用一个map保存各个层级的树节点
-        Map<Integer, List<TreeNode>> allNodes = new HashMap<>();
-        List<TreeNode> rootList = new ArrayList<>();
-        rootList.add(node);
-        allNodes.put(1, rootList);
-        //获取全部的迭代器，一层一层的迭代，直到迭代器里面没有值
-        for (Map.Entry<Integer, List<TreeNode>> curLevelNodes : allNodes.entrySet()) {
-            //获取当前层所有节点，key为层数，list为当前层全部节点信息
-            List<TreeNode> curList = curLevelNodes.getValue();
-            System.out.println(curList);
-            if (curList.size() == 0) {
-                break;
-            }
-            Integer curKey = curLevelNodes.getKey();
-            Integer nextKey = curKey + 1;
-            Map<Integer, List<TreeNode>> nextMap = new HashMap<>();
-            //定义一个list，保存所有的下一层节点
-            List<TreeNode> nextNodes = new ArrayList<>();
-            //遍历当前层，获取所有下层节点信息
-            for (TreeNode treeNode : curList) {
-                if (treeNode.left != null) {
-                    nextNodes.add(treeNode.left);
+        Map<Integer, List<TreeNode>> allNodes = new HashMap<>(64);
+        Queue<TreeNode> nodeQueue = new ArrayDeque<>();
+        nodeQueue.offer(node);
+        int level = 1;
+
+        while (!nodeQueue.isEmpty()) {
+            List<TreeNode> curLevelNodes = new ArrayList<>();
+            int size = nodeQueue.size();
+            for (int i = 0; i < size; i++) {
+                TreeNode treeNode = nodeQueue.poll();
+                if (treeNode == null) {
+                    continue;
                 }
-                if (treeNode.right != null) {
-                    nextNodes.add(treeNode.right);
+                curLevelNodes.add(treeNode);
+                if (treeNode.getLeft() != null) {
+                    nodeQueue.offer(treeNode.getLeft());
+                }
+                if (treeNode.getRight() != null) {
+                    nodeQueue.offer(treeNode.getRight());
                 }
             }
-            allNodes.put(nextKey, nextNodes);
+            allNodes.put(level++, curLevelNodes);
         }
-        List<TreeNode> treeNodes = allNodes.get(m);
-        return treeNodes.get(n);
+
+        List<TreeNode> mLevelNodeList = allNodes.get(m);
+        if (mLevelNodeList == null || mLevelNodeList.size() < n) {
+            return null;
+        }
+        return mLevelNodeList.get(n - 1);
     }
 }

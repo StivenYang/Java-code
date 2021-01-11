@@ -1,6 +1,5 @@
 package top.hengshare.interview.algorithm.tree;
 
-import com.google.common.collect.Lists;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -30,7 +29,7 @@ public class LevelTraceTest {
 
     @Test
     public void levelTraceWithMn() {
-        TreeNode treeNode = new LevelTrace().levelTraceWithMn(root, 2, 1);
+        TreeNode treeNode = new LevelTrace().levelTraceWithMn(root, 3, 1);
         assertEquals(treeNode.val, 2);
     }
 }
