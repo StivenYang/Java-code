@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="top.hengshare.interview.mysql.mapper.ArgRecordLogMapper">
+  <resultMap id="BaseResultMap" type="top.hengshare.interview.mysql.model.ArgRecordLog">
+    <!--@mbg.generated-->
+    <!--@Table arg_record_log-->
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="operator" jdbcType="VARCHAR" property="operator" />
+    <result column="ip_address" jdbcType="VARCHAR" property="ipAddress" />
+    <result column="access_url" jdbcType="VARCHAR" property="accessUrl" />
+    <result column="operate_time" jdbcType="TIMESTAMP" property="operateTime" />
+    <result column="action_code" jdbcType="INTEGER" property="actionCode" />
+    <result column="action_name" jdbcType="VARCHAR" property="actionName" />
+    <result column="content" jdbcType="VARCHAR" property="content" />
+    <result column="success_flag" jdbcType="TINYINT" property="successFlag" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    id, `operator`, ip_address, access_url, operate_time, action_code, action_name, content, 
+    success_flag
+  </sql>
+</mapper>

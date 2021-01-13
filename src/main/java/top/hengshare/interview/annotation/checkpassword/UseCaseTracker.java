@@ -1,4 +1,4 @@
-package top.hengshare.interview.annotation.first;
+package top.hengshare.interview.annotation.checkpassword;
 
 import java.lang.reflect.Method;
 import java.util.ArrayList;

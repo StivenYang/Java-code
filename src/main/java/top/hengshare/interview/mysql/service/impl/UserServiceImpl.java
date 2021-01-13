@@ -3,6 +3,8 @@ package top.hengshare.interview.mysql.service.impl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import top.hengshare.interview.annotation.log.LogRecord;
+import top.hengshare.interview.constant.LogActionEnum;
 import top.hengshare.interview.mysql.mapper.UserMapper;
 import top.hengshare.interview.mysql.model.User;
 import top.hengshare.interview.mysql.service.UserService;
@@ -16,6 +18,7 @@ public class UserServiceImpl implements UserService {
     private UserMapper userMapper;
 
     @Override
+    @LogRecord(action = LogActionEnum.DEFAULT_ACTION)
     public int addUser(User user) {
         return userMapper.insert(user);
     }
