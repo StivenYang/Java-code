@@ -6,7 +6,7 @@ import java.util.List;
  * PasswordUtils 密码工具类，可以用来对密码进行校验
  *
  * @author StevenYang
- * @date  2020/7/14
+ * @since 2020/7/14
  **/
 public class PasswordUtils {
     @UseCase(id = 1, description = "密码必须包含一个数字")
