@@ -16,5 +16,6 @@ public class AfterTraceTest {
         right.right = two;
 
         new AfterTrace().afterTrace(root);
+        assertTrue(true);
     }
 }

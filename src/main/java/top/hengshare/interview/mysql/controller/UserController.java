@@ -1,6 +1,6 @@
 package top.hengshare.interview.mysql.controller;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import top.hengshare.interview.mysql.model.User;
@@ -10,13 +10,13 @@ import java.util.Date;
 
 @RestController
 @RequestMapping("user")
+@RequiredArgsConstructor
 public class UserController {
 
-    @Autowired
-    private UserService userService;
+    private final UserService userService;
 
     @RequestMapping("insert")
-    private void insert() throws Exception {
+    private void insert() {
         User user = new User();
         user.setUsername("abc");
         user.setPassword("adf");

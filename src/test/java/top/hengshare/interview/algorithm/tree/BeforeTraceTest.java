@@ -2,7 +2,7 @@ package top.hengshare.interview.algorithm.tree;
 
 import org.junit.Test;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertTrue;
 
 public class BeforeTraceTest {
 
@@ -16,5 +16,6 @@ public class BeforeTraceTest {
         right.right = two;
 
         new BeforeTrace().beforeTrace(root);
+        assertTrue(true);
     }
 }

@@ -1,11 +1,14 @@
 package top.hengshare.interview.algorithm.tree;
 
+import lombok.extern.slf4j.Slf4j;
+
 /**
  * 后序遍历
  *
  * @author yjh
  * @date 2020/12/29 12:46 上午
  **/
+@Slf4j
 public class AfterTrace {
 
     public void afterTrace(TreeNode node){
@@ -15,6 +18,6 @@ public class AfterTrace {
 
         afterTrace(node.left);
         afterTrace(node.right);
-        System.out.println(node);;
+        log.info("{}", node);
     }
 }
