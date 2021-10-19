@@ -27,17 +27,17 @@
       <point x="856.25" y="184.0" />
       <point x="25.75" y="26.0" />
     </edge>
-    <edge source="io.netty.channel.socket.DuplexChannel" target="io.netty.channel.Channel">
-      <point x="0.0" y="-26.0" />
-      <point x="147.125" y="174.0" />
-      <point x="787.5833333333334" y="174.0" />
-      <point x="-42.91666666666663" y="26.0" />
-    </edge>
     <edge source="io.netty.channel.sctp.SctpChannel" target="io.netty.channel.Channel">
       <point x="0.0" y="-26.0" />
       <point x="911.5" y="194.0" />
       <point x="839.0833333333334" y="194.0" />
       <point x="8.583333333333371" y="26.0" />
+    </edge>
+    <edge source="io.netty.channel.socket.DuplexChannel" target="io.netty.channel.Channel">
+      <point x="0.0" y="-26.0" />
+      <point x="147.125" y="174.0" />
+      <point x="787.5833333333334" y="174.0" />
+      <point x="-42.91666666666663" y="26.0" />
     </edge>
     <edge source="io.netty.channel.socket.ServerSocketChannel" target="io.netty.channel.ServerChannel">
       <point x="0.0" y="-26.0" />
@@ -53,17 +53,17 @@
       <point x="0.0" y="-26.0" />
       <point x="0.0" y="26.0" />
     </edge>
-    <edge source="io.netty.channel.unix.DomainSocketChannel" target="io.netty.channel.unix.UnixChannel">
-      <point x="49.25" y="-26.0" />
-      <point x="317.75" y="291.0" />
-      <point x="349.375" y="291.0" />
-      <point x="-33.5" y="26.0" />
-    </edge>
     <edge source="io.netty.channel.Channel" target="io.netty.channel.ChannelOutboundInvoker">
       <point x="0.0" y="-26.0" />
       <point x="830.5" y="77.0" />
       <point x="911.6666666666666" y="77.0" />
       <point x="-73.33333333333331" y="26.0" />
+    </edge>
+    <edge source="io.netty.channel.unix.DomainSocketChannel" target="io.netty.channel.unix.UnixChannel">
+      <point x="49.25" y="-26.0" />
+      <point x="317.75" y="291.0" />
+      <point x="349.375" y="291.0" />
+      <point x="-33.5" y="26.0" />
     </edge>
     <edge source="io.netty.channel.unix.UnixChannel" target="io.netty.channel.Channel">
       <point x="0.0" y="-26.0" />
@@ -114,7 +114,7 @@
       <point x="-37.5" y="26.0" />
     </edge>
   </edges>
-  <settings layout="Hierarchic Group" zoom="0.7453371592539455" x="687.0" y="184.0" />
+  <settings layout="Hierarchic Group" zoom="1.0" x="688.5" y="184.5" />
   <SelectedNodes>
     <node>io.netty.channel.ChannelOutboundInvoker</node>
   </SelectedNodes>
