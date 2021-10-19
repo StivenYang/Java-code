@@ -14,11 +14,11 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("cache")
 public class RedissonController {
 
-    @Autowired
-    RedissonClient redissonClient;
+	@Autowired
+	RedissonClient redissonClient;
 
-    @GetMapping("stringSet")
-    public void stringSet(){
+	@GetMapping("stringSet")
+	public void stringSet() {
 
-    }
+	}
 }
