@@ -8,26 +8,26 @@ package top.hengshare.interview.pattern.flyweight.struct;
  **/
 public class ConcreteFlyweight implements Flyweight {
 
-    /**
-     * 描述内部状态
-     */
-    private String state;
+	/**
+	 * 描述内部状态
+	 */
+	private String state;
 
-    /**
-     * 设置内部状态
-     * @param state 内部状态
-     */
-    public ConcreteFlyweight(String state) {
-        this.state = state;
-    }
+	/**
+	 * 设置内部状态
+	 * @param state 内部状态
+	 */
+	public ConcreteFlyweight(String state) {
+		this.state = state;
+	}
 
-    /**
-     * 享元具体的处理功能，可能会用到状态
-     * @param state 示例参数，表示外部状态
-     */
-    @Override
-    public void operation(String state) {
+	/**
+	 * 享元具体的处理功能，可能会用到状态
+	 * @param state 示例参数，表示外部状态
+	 */
+	@Override
+	public void operation(String state) {
 
-    }
+	}
 
 }

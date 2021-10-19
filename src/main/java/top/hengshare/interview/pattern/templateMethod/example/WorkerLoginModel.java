@@ -10,5 +10,5 @@ import lombok.Data;
  **/
 @Data
 public class WorkerLoginModel {
-    private String workerId, pwd;
+	private String workerId, pwd;
 }

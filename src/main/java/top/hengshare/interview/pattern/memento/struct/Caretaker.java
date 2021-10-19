@@ -6,24 +6,24 @@ package top.hengshare.interview.pattern.memento.struct;
  */
 public class Caretaker {
 
-    /**
-     * 记录被保存的备忘录对象
-     */
-    private Memento memento;
+	/**
+	 * 记录被保存的备忘录对象
+	 */
+	private Memento memento;
 
-    /**
-     * 保存备忘录对象
-     * @param memento 备忘录对象
-     */
-    public void saveMemento(Memento memento){
-        this.memento = memento;
-    }
+	/**
+	 * 保存备忘录对象
+	 * @param memento 备忘录对象
+	 */
+	public void saveMemento(Memento memento) {
+		this.memento = memento;
+	}
 
-    /**
-     * 获取被保存的备忘录对象
-     * @return 备忘录对象
-     */
-    public Memento retriveMemento(){
-        return this.memento;
-    }
+	/**
+	 * 获取被保存的备忘录对象
+	 * @return 备忘录对象
+	 */
+	public Memento retriveMemento() {
+		return this.memento;
+	}
 }

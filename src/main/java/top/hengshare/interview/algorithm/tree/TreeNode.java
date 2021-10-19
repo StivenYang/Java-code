@@ -11,26 +11,24 @@ import lombok.Data;
 @Data
 public class TreeNode {
 
-    int val;
+	int val;
 
-    TreeNode left;
+	TreeNode left;
 
-    TreeNode right;
+	TreeNode right;
 
-    public TreeNode(int val) {
-        this.val = val;
-    }
+	public TreeNode(int val) {
+		this.val = val;
+	}
 
-    public TreeNode(int val, TreeNode left, TreeNode right) {
-        this.val = val;
-        this.left = left;
-        this.right = right;
-    }
+	public TreeNode(int val, TreeNode left, TreeNode right) {
+		this.val = val;
+		this.left = left;
+		this.right = right;
+	}
 
-    @Override
-    public String toString() {
-        return "TreeNode{" +
-                "val=" + val +
-                '}';
-    }
+	@Override
+	public String toString() {
+		return "TreeNode{" + "val=" + val + '}';
+	}
 }

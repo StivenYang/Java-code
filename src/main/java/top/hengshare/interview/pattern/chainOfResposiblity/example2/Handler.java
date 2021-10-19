@@ -10,10 +10,10 @@ import lombok.Setter;
  **/
 public abstract class Handler {
 
-    @Setter
-    protected Handler successor;
+	@Setter
+	protected Handler successor;
 
-    public abstract String handleFeeRequest(String user, double fee);
+	public abstract String handleFeeRequest(String user, double fee);
 
-    public abstract boolean handlePreRequest(String user, double fee);
+	public abstract boolean handlePreRequest(String user, double fee);
 }

@@ -7,9 +7,9 @@ package top.hengshare.interview.pattern.strategy.price;
  * @create: 2019-10-16 09:19
  **/
 public class LargeCustomerStrategy implements Strategy {
-    @Override
-    public double calcPrice(double goodsPrice) {
-        System.out.println("对于大客户，折扣10%");
-        return goodsPrice * (1 - 0.1);
-    }
+	@Override
+	public double calcPrice(double goodsPrice) {
+		System.out.println("对于大客户，折扣10%");
+		return goodsPrice * (1 - 0.1);
+	}
 }

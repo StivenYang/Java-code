@@ -23,37 +23,37 @@ import java.util.concurrent.SynchronousQueue;
  **/
 public class TestBlockingQueues {
 
-    static void getKey() {
-        try {
-            new BufferedReader(new InputStreamReader(System.in)).readLine();
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-    }
+	static void getKey() {
+		try {
+			new BufferedReader(new InputStreamReader(System.in)).readLine();
+		} catch (IOException e) {
+			throw new RuntimeException(e);
+		}
+	}
 
-    static void getKey(String message) {
-        System.out.println(message);
-        getKey();
-    }
+	static void getKey(String message) {
+		System.out.println(message);
+		getKey();
+	}
 
-    static void test(String msg, BlockingQueue<LiffOff> queue) {
-        System.out.println(msg);
-        LiftOffRunner runner = new LiftOffRunner(queue);
-        Thread t = new Thread(runner);
-        t.start();
-        for (int i = 0; i < 5; i++) {
-            runner.add(new LiffOff(5));
-        }
-        getKey("输入Enter：" + msg);
-        t.interrupt();
-        System.out.println("完成测试：" + msg);
-    }
+	static void test(String msg, BlockingQueue<LiffOff> queue) {
+		System.out.println(msg);
+		LiftOffRunner runner = new LiftOffRunner(queue);
+		Thread t = new Thread(runner);
+		t.start();
+		for (int i = 0; i < 5; i++) {
+			runner.add(new LiffOff(5));
+		}
+		getKey("输入Enter：" + msg);
+		t.interrupt();
+		System.out.println("完成测试：" + msg);
+	}
 
-    public static void main(String[] args) {
-        test("LinkedBlockingQueue", new LinkedBlockingDeque<LiffOff>());
-        test("ArrayBlockingQueue", new ArrayBlockingQueue<LiffOff>(3));
-        test("SynchronousQueue", new SynchronousQueue<LiffOff>());
-    }
+	public static void main(String[] args) {
+		test("LinkedBlockingQueue", new LinkedBlockingDeque<LiffOff>());
+		test("ArrayBlockingQueue", new ArrayBlockingQueue<LiffOff>(3));
+		test("SynchronousQueue", new SynchronousQueue<LiffOff>());
+	}
 }
 
 
@@ -61,30 +61,30 @@ public class TestBlockingQueues {
  * 入队
  */
 class LiftOffRunner implements Runnable {
-    private BlockingQueue<LiffOff> rockets;
+	private BlockingQueue<LiffOff> rockets;
 
-    public LiftOffRunner(BlockingQueue<LiffOff> queue) {
-        rockets = queue;
-    }
+	public LiftOffRunner(BlockingQueue<LiffOff> queue) {
+		rockets = queue;
+	}
 
-    public void add(LiffOff lo) {
-        try {
-            rockets.put(lo);
-        } catch (InterruptedException e) {
-            System.out.println("put()入队时异常");
-        }
-    }
+	public void add(LiffOff lo) {
+		try {
+			rockets.put(lo);
+		} catch (InterruptedException e) {
+			System.out.println("put()入队时异常");
+		}
+	}
 
-    @Override
-    public void run() {
-        try {
-            while (!Thread.interrupted()) {
-                LiffOff rocket = rockets.take();
-                rocket.run();
-            }
-        } catch (InterruptedException e) {
-            System.out.println("从take()中抛出异常");
-        }
-        System.out.println("退出LiftOffRunner");
-    }
+	@Override
+	public void run() {
+		try {
+			while (!Thread.interrupted()) {
+				LiffOff rocket = rockets.take();
+				rocket.run();
+			}
+		} catch (InterruptedException e) {
+			System.out.println("从take()中抛出异常");
+		}
+		System.out.println("退出LiftOffRunner");
+	}
 }

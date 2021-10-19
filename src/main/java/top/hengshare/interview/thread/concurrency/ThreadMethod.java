@@ -10,44 +10,44 @@ package top.hengshare.interview.thread.concurrency;
  * 线程相比，可能是一种更加有用而适合的方式。
  */
 public class ThreadMethod {
-    private final String name;
-    private Thread t;
-    private int countDown = 5;
+	private final String name;
+	private Thread t;
+	private int countDown = 5;
 
-    private ThreadMethod(String name) {
-        this.name = name;
-    }
+	private ThreadMethod(String name) {
+		this.name = name;
+	}
 
-    private void runTask() {
-        if (t == null) {
-            t = new Thread(name) {
-                @Override
-                public void run() {
-                    try {
-                        while (true) {
-                            System.out.println(this);
-                            if (--countDown == 0) {
-                                return;
-                            }
-                            sleep(100);
-                        }
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
-                    }
-                }
+	private void runTask() {
+		if (t == null) {
+			t = new Thread(name) {
+				@Override
+				public void run() {
+					try {
+						while (true) {
+							System.out.println(this);
+							if (--countDown == 0) {
+								return;
+							}
+							sleep(100);
+						}
+					} catch (InterruptedException e) {
+						e.printStackTrace();
+					}
+				}
 
-                @Override
-                public String toString() {
-                    return "这是线程对象" + getName() + "被" + countDown + "次执行";
-                }
-            };
-            t.start();
-        }
-    }
+				@Override
+				public String toString() {
+					return "这是线程对象" + getName() + "被" + countDown + "次执行";
+				}
+			};
+			t.start();
+		}
+	}
 
-    public static void main(String[] args) {
-        for (int i = 0; i < 5; i++) {
-            new ThreadMethod(String.valueOf(i)).runTask();
-        }
-    }
+	public static void main(String[] args) {
+		for (int i = 0; i < 5; i++) {
+			new ThreadMethod(String.valueOf(i)).runTask();
+		}
+	}
 }

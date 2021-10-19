@@ -7,7 +7,7 @@ import lombok.Data;
  */
 @Data
 public class PayModel {
-    private String userName;
+	private String userName;
 
-    private double pay;
+	private double pay;
 }

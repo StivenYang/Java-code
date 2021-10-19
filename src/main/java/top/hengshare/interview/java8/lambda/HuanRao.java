@@ -6,34 +6,34 @@ import java.io.IOException;
 
 public class HuanRao {
 
-    /**
-     * 记得行为参数化
-     *
-     * @return
-     * @throws IOException
-     */
-    public static String processFile() throws IOException {
-        try (BufferedReader br = new BufferedReader(new FileReader("data.txt"))) {
-            return br.readLine();
-        }
-    }
+	/**
+	 * 记得行为参数化
+	 *
+	 * @return
+	 * @throws IOException
+	 */
+	public static String processFile() throws IOException {
+		try (BufferedReader br = new BufferedReader(new FileReader("data.txt"))) {
+			return br.readLine();
+		}
+	}
 
-    /**
-     * 执行一个行为
-     *
-     * @param bufferedReaderProcessor
-     * @return
-     * @throws IOException
-     */
-    public static String processFile(BufferedReaderProcessor bufferedReaderProcessor) throws IOException {
-        try (BufferedReader br = new BufferedReader(new FileReader("data.txt"))) {
-            return bufferedReaderProcessor.process(br);
-        }
-    }
+	/**
+	 * 执行一个行为
+	 *
+	 * @param bufferedReaderProcessor
+	 * @return
+	 * @throws IOException
+	 */
+	public static String processFile(BufferedReaderProcessor bufferedReaderProcessor) throws IOException {
+		try (BufferedReader br = new BufferedReader(new FileReader("data.txt"))) {
+			return bufferedReaderProcessor.process(br);
+		}
+	}
 
-    public static void main(String[] args) throws IOException {
-        String result = HuanRao.processFile();
-    }
+	public static void main(String[] args) throws IOException {
+		String result = HuanRao.processFile();
+	}
 }
 
 /**
@@ -43,11 +43,11 @@ public class HuanRao {
  */
 @FunctionalInterface
 interface BufferedReaderProcessor {
-    String process(BufferedReader b) throws IOException;
+	String process(BufferedReader b) throws IOException;
 
-    public static void main(String[] args) throws IOException {
-        //传递lambda表达式
-        HuanRao.processFile(BufferedReader::readLine);
-        HuanRao.processFile((BufferedReader br) -> br.readLine() + br.readLine());
-    }
+	public static void main(String[] args) throws IOException {
+		//传递lambda表达式
+		HuanRao.processFile(BufferedReader::readLine);
+		HuanRao.processFile((BufferedReader br) -> br.readLine() + br.readLine());
+	}
 }

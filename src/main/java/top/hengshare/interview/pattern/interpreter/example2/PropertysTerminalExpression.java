@@ -12,25 +12,25 @@ import java.util.List;
  **/
 public class PropertysTerminalExpression extends ReadXMLExpression {
 
-    /**
-     * 属性名字
-     */
-    private String propName;
+	/**
+	 * 属性名字
+	 */
+	private String propName;
 
-    public PropertysTerminalExpression(String proName) {
-        this.propName = proName;
-    }
+	public PropertysTerminalExpression(String proName) {
+		this.propName = proName;
+	}
 
-    @Override
-    public String[] interpret(Context ctx) {
-       //获取最后的多个元素
-        List<Element> eles = ctx.getPreEles();
+	@Override
+	public String[] interpret(Context ctx) {
+		//获取最后的多个元素
+		List<Element> eles = ctx.getPreEles();
 
-        String[] ss = new String[eles.size()];
-        //循环多个元素，获取每个元素属性的值
-        for (int i=0; i<ss.length; i++) {
-            ss[i] = eles.get(i).getAttribute(this.propName);
-        }
-        return ss;
-    }
+		String[] ss = new String[eles.size()];
+		//循环多个元素，获取每个元素属性的值
+		for (int i = 0; i < ss.length; i++) {
+			ss[i] = eles.get(i).getAttribute(this.propName);
+		}
+		return ss;
+	}
 }

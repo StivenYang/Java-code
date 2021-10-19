@@ -2,22 +2,22 @@ package top.hengshare.interview.pattern.memento.example1;
 
 public class FlowAMock {
 
-    private String flowName;
+	private String flowName;
 
-    private int tempResult;
+	private int tempResult;
 
-    private String tempState;
+	private String tempState;
 
-    public FlowAMock(String flowName) {
-        this.flowName = flowName;
-    }
+	public FlowAMock(String flowName) {
+		this.flowName = flowName;
+	}
 
-    public void runPhaseOne(){
-        tempResult = 3;
-        tempState = "PhaseOne";
-    }
+	public void runPhaseOne() {
+		tempResult = 3;
+		tempState = "PhaseOne";
+	}
 
-    public void schema1(){
+	public void schema1() {
 
-    }
+	}
 }

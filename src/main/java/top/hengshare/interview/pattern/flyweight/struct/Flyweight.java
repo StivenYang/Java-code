@@ -5,9 +5,9 @@ package top.hengshare.interview.pattern.flyweight.struct;
  */
 public interface Flyweight {
 
-    /**
-     * 一些操作，传入外部状态
-     * @param state 示例参数，表示外部状态
-     */
-    void operation(String state);
+	/**
+	 * 一些操作，传入外部状态
+	 * @param state 示例参数，表示外部状态
+	 */
+	void operation(String state);
 }

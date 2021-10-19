@@ -8,9 +8,9 @@ package top.hengshare.interview.pattern.strategy.price;
  **/
 public class NormalCustomerStrategy implements Strategy {
 
-    @Override
-    public double calcPrice(double goodsPrice) {
-        System.out.println("针对普通客户没有折扣");
-        return goodsPrice;
-    }
+	@Override
+	public double calcPrice(double goodsPrice) {
+		System.out.println("针对普通客户没有折扣");
+		return goodsPrice;
+	}
 }

@@ -8,8 +8,8 @@ package top.hengshare.interview.pattern.strategy.logManager2;
  **/
 public class FileLog extends LogStrategyTemplate {
 
-    @Override
-    protected void doLog(String msg) {
-        System.out.println(msg + "'记录到文件");
-    }
+	@Override
+	protected void doLog(String msg) {
+		System.out.println(msg + "'记录到文件");
+	}
 }

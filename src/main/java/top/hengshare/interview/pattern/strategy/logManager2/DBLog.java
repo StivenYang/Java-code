@@ -8,12 +8,12 @@ package top.hengshare.interview.pattern.strategy.logManager2;
  **/
 public class DBLog extends LogStrategyTemplate {
 
-    @Override
-    protected void doLog(String msg) {
-        //制造错误
-        if (msg != null && msg.trim().length() > 5) {
-            int a = 5 / 0;
-        }
-        System.out.println(msg + "'记录到数据库");
-    }
+	@Override
+	protected void doLog(String msg) {
+		//制造错误
+		if (msg != null && msg.trim().length() > 5) {
+			int a = 5 / 0;
+		}
+		System.out.println(msg + "'记录到数据库");
+	}
 }

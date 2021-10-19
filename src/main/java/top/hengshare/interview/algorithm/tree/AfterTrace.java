@@ -11,13 +11,13 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class AfterTrace {
 
-    public void afterTrace(TreeNode node){
-        if (node == null) {
-            return;
-        }
+	public void afterTrace(TreeNode node) {
+		if (node == null) {
+			return;
+		}
 
-        afterTrace(node.left);
-        afterTrace(node.right);
-        log.info("{}", node);
-    }
+		afterTrace(node.left);
+		afterTrace(node.right);
+		log.info("{}", node);
+	}
 }

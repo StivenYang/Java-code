@@ -13,9 +13,9 @@ import java.util.concurrent.Executors;
  * 2. 检查是否有默认异常捕获处理器
  */
 public class SettingDefaultHandler {
-    public static void main(String[] args) {
-        Thread.setDefaultUncaughtExceptionHandler(new MyUnCaughtExceptionHandler());
-        ExecutorService exec = Executors.newCachedThreadPool();
-        exec.execute(new ExceptionThread());
-    }
+	public static void main(String[] args) {
+		Thread.setDefaultUncaughtExceptionHandler(new MyUnCaughtExceptionHandler());
+		ExecutorService exec = Executors.newCachedThreadPool();
+		exec.execute(new ExceptionThread());
+	}
 }

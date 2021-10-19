@@ -1,7 +1,6 @@
 package top.hengshare.interview.pattern.state.workFlow;
 
 import lombok.Data;
-import lombok.Getter;
 
 /**
  * @program: Java-Interview
@@ -12,18 +11,18 @@ import lombok.Getter;
 @Data
 public class StateMachine {
 
-    /**
-     * 当前审批的状态
-     */
-    private State state;
+	/**
+	 * 当前审批的状态
+	 */
+	private State state;
 
-    /**
-     * 包含流程处理需要的业务数据对象
-     */
-    private Object businessVO;
+	/**
+	 * 包含流程处理需要的业务数据对象
+	 */
+	private Object businessVO;
 
-    public void doWork(){
-        //转调相应的状态对象完成真正的功能处理
-        this.state.doWork(this);
-    }
+	public void doWork() {
+		//转调相应的状态对象完成真正的功能处理
+		this.state.doWork(this);
+	}
 }

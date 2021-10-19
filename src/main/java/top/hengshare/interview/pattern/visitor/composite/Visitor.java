@@ -8,7 +8,7 @@ package top.hengshare.interview.pattern.visitor.composite;
  **/
 public interface Visitor {
 
-    void visitComposite(Composite composite);
+	void visitComposite(Composite composite);
 
-    void visitLeaf(Leaf leaf);
+	void visitLeaf(Leaf leaf);
 }

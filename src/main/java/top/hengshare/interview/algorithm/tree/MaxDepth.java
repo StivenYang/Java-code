@@ -8,14 +8,14 @@ package top.hengshare.interview.algorithm.tree;
  **/
 public class MaxDepth {
 
-    public int maxDepth(TreeNode node) {
-        if (node == null) {
-            return 0;
-        }
+	public int maxDepth(TreeNode node) {
+		if (node == null) {
+			return 0;
+		}
 
-        int leftDepth = maxDepth(node.left);
-        int rightDepth = maxDepth(node.right);
+		int leftDepth = maxDepth(node.left);
+		int rightDepth = maxDepth(node.right);
 
-        return Math.max(leftDepth, rightDepth) + 1;
-    }
+		return Math.max(leftDepth, rightDepth) + 1;
+	}
 }

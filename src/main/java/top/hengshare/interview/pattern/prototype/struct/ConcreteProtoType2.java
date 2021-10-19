@@ -5,9 +5,9 @@ package top.hengshare.interview.pattern.prototype.struct;
  */
 public class ConcreteProtoType2 implements Prototype {
 
-    @Override
-    public Prototype clone() {
-        //最简单的克隆，新建一个自身的对象
-        return new ConcreteProtoType2();
-    }
+	@Override
+	public Prototype clone() {
+		//最简单的克隆，新建一个自身的对象
+		return new ConcreteProtoType2();
+	}
 }

@@ -5,6 +5,6 @@ package top.hengshare.interview.pattern.iterator.struct;
  */
 public abstract class Aggregate {
 
-    public abstract Iterator createIterator();
+	public abstract Iterator createIterator();
 
 }

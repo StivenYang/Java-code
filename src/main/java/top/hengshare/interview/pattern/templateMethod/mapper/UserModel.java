@@ -10,7 +10,7 @@ import lombok.Data;
  **/
 @Data
 public class UserModel {
-    private String uuid;
-    private String name;
-    private int age;
+	private String uuid;
+	private String name;
+	private int age;
 }

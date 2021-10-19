@@ -8,18 +8,18 @@ package top.hengshare.interview.algorithm.list;
  */
 public class ReverseList {
 
-    public ListNode reverseList(ListNode node){
-        if (node == null) {
-            return null;
-        }
-        ListNode pre = null;
-        ListNode head = node;
-        while (head != null) {
-            ListNode tempHead = head.next;
-            head.next = pre;
-            pre = head;
-            head = tempHead;
-        }
-        return pre;
-    }
+	public ListNode reverseList(ListNode node) {
+		if (node == null) {
+			return null;
+		}
+		ListNode pre = null;
+		ListNode head = node;
+		while (head != null) {
+			ListNode tempHead = head.next;
+			head.next = pre;
+			pre = head;
+			head = tempHead;
+		}
+		return pre;
+	}
 }

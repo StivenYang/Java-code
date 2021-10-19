@@ -30,55 +30,57 @@ import java.util.Date;
 @Component
 public class LogAspect {
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(LogAspect.class);
+	private static final Logger LOGGER = LoggerFactory.getLogger(LogAspect.class);
 
-    @Autowired
-    private ArgRecordLogMapper argRecordLogMapper;
+	@Autowired
+	private ArgRecordLogMapper argRecordLogMapper;
 
-    @Pointcut("@annotation(top.hengshare.interview.annotation.log.LogRecord)")
-    public void mapper(){}
+	@Pointcut("@annotation(top.hengshare.interview.annotation.log.LogRecord)")
+	public void mapper() {
+	}
 
-    @Around(value = "mapper()")
-    public Object around(ProceedingJoinPoint pjp) throws Throwable {
-        Method method = ((MethodSignature) pjp.getSignature()).getMethod();
-        LogRecord logRecord = method.getAnnotation(LogRecord.class);
-        LogActionEnum action = logRecord.action();
-        ServletRequestAttributes requestAttributes = (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();
-        assert requestAttributes != null;
-        HttpServletRequest request = requestAttributes.getRequest();
-        String url = request.getRequestURL().toString();
-        String ipFromRequest = RequestUtil.getIpFromRequest(request);
-        ArgRecordLog argRecordLog = new ArgRecordLog();
-        argRecordLog.setOperator("admin");
-        argRecordLog.setAccessUrl(url);
-        argRecordLog.setIpAddress(ipFromRequest);
-        argRecordLog.setActionCode(action.getActionCode());
-        argRecordLog.setActionName(action.getActionDescription());
-        argRecordLog.setOperateTime(new Date());
-        argRecordLog.setContent(JSON.toJSONString(pjp.getArgs()));
-        LOGGER.info(pjp.getKind());
-        LOGGER.info(Arrays.toString(pjp.getArgs()));
-        LOGGER.info(pjp.getThis().toString());
-        LOGGER.info(pjp.getSignature().toString());
-        LOGGER.info(pjp.getSourceLocation().toString());
-        LOGGER.info(pjp.getStaticPart().toString());
-        LOGGER.info(pjp.getTarget().toString());
-        try {
-            argRecordLog.setSuccessFlag((byte) 0);
-            try {
-                argRecordLogMapper.insert(argRecordLog);
-            }catch (Exception e){
-                LOGGER.error("insert arg_record_log failed. argRecordLog={}", argRecordLog);
-            }
-            return pjp.proceed();
-        } catch (Throwable throwable) {
-            argRecordLog.setSuccessFlag((byte) 1);
-            try {
-                argRecordLogMapper.insert(argRecordLog);
-            }catch (Exception e){
-                LOGGER.error("insert arg_record_log failed. argRecordLog={}", argRecordLog);
-            }
-            throw throwable;
-        }
-    }
+	@Around(value = "mapper()")
+	public Object around(ProceedingJoinPoint pjp) throws Throwable {
+		Method method = ((MethodSignature) pjp.getSignature()).getMethod();
+		LogRecord logRecord = method.getAnnotation(LogRecord.class);
+		LogActionEnum action = logRecord.action();
+		ServletRequestAttributes requestAttributes = (ServletRequestAttributes) RequestContextHolder
+				.getRequestAttributes();
+		assert requestAttributes != null;
+		HttpServletRequest request = requestAttributes.getRequest();
+		String url = request.getRequestURL().toString();
+		String ipFromRequest = RequestUtil.getIpFromRequest(request);
+		ArgRecordLog argRecordLog = new ArgRecordLog();
+		argRecordLog.setOperator("admin");
+		argRecordLog.setAccessUrl(url);
+		argRecordLog.setIpAddress(ipFromRequest);
+		argRecordLog.setActionCode(action.getActionCode());
+		argRecordLog.setActionName(action.getActionDescription());
+		argRecordLog.setOperateTime(new Date());
+		argRecordLog.setContent(JSON.toJSONString(pjp.getArgs()));
+		LOGGER.info(pjp.getKind());
+		LOGGER.info(Arrays.toString(pjp.getArgs()));
+		LOGGER.info(pjp.getThis().toString());
+		LOGGER.info(pjp.getSignature().toString());
+		LOGGER.info(pjp.getSourceLocation().toString());
+		LOGGER.info(pjp.getStaticPart().toString());
+		LOGGER.info(pjp.getTarget().toString());
+		try {
+			argRecordLog.setSuccessFlag((byte) 0);
+			try {
+				argRecordLogMapper.insert(argRecordLog);
+			} catch (Exception e) {
+				LOGGER.error("insert arg_record_log failed. argRecordLog={}", argRecordLog);
+			}
+			return pjp.proceed();
+		} catch (Throwable throwable) {
+			argRecordLog.setSuccessFlag((byte) 1);
+			try {
+				argRecordLogMapper.insert(argRecordLog);
+			} catch (Exception e) {
+				LOGGER.error("insert arg_record_log failed. argRecordLog={}", argRecordLog);
+			}
+			throw throwable;
+		}
+	}
 }

@@ -7,9 +7,9 @@ package top.hengshare.interview.pattern.strategy.pay;
  * @create: 2019-10-16 09:38
  **/
 public interface PaymentStrategy {
-    /**
-     * 公司给某人真正支付工资
-     * @param ctx 支付工资的上下文
-     */
-    void pay(PaymentContext ctx);
+	/**
+	 * 公司给某人真正支付工资
+	 * @param ctx 支付工资的上下文
+	 */
+	void pay(PaymentContext ctx);
 }

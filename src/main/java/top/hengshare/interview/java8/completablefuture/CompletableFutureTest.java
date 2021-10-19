@@ -25,101 +25,101 @@ import java.util.concurrent.Future;
  * @date 2019-12-01 21:42
  **/
 public class CompletableFutureTest {
-    public static void main(String[] args) {
-        Shop shop = new Shop("shop");
-        long start = System.nanoTime();
-        Future<Double> futurePrice = shop.getPriceAsync("my favorite product");
-        long invocationTime = ((System.nanoTime()-start)/1_000_000);
-        System.out.println("调用返回之后时间：" + invocationTime + "毫秒");
+	public static void main(String[] args) {
+		Shop shop = new Shop("shop");
+		long start = System.nanoTime();
+		Future<Double> futurePrice = shop.getPriceAsync("my favorite product");
+		long invocationTime = ((System.nanoTime() - start) / 1_000_000);
+		System.out.println("调用返回之后时间：" + invocationTime + "毫秒");
 
-        //执行更多任务，比如查询商店
-//        dosomethingElse();
-        //在计算商品价格的同时
-        try {
-            double price = futurePrice.get();
-            System.out.printf("价格是： %.2f%n", price);
-        }catch (Exception e){
-            throw new RuntimeException(e);
-        }
+		//执行更多任务，比如查询商店
+		//        dosomethingElse();
+		//在计算商品价格的同时
+		try {
+			double price = futurePrice.get();
+			System.out.printf("价格是： %.2f%n", price);
+		} catch (Exception e) {
+			throw new RuntimeException(e);
+		}
 
-        long retrievalTime = ((System.nanoTime()-start)/1_000_000);
-        System.out.println("价格返回花费了"+ retrievalTime+ "毫秒");
-    }
+		long retrievalTime = ((System.nanoTime() - start) / 1_000_000);
+		System.out.println("价格返回花费了" + retrievalTime + "毫秒");
+	}
 }
 
 /**
  * 没有实现异步的商店
  */
-class Shop{
-    private String product;
+class Shop {
+	private String product;
 
-    public Shop(String product) {
-        this.product = product;
-    }
+	public Shop(String product) {
+		this.product = product;
+	}
 
-    //从商店获取商品价格
-    public double getPrice(String product){
-        //计算商品价格
-        return calculatePrice(product);
-    }
+	//从商店获取商品价格
+	public double getPrice(String product) {
+		//计算商品价格
+		return calculatePrice(product);
+	}
 
-    //计算价格
-    private double calculatePrice(String product) {
-        //等待调用服务
-        delay();
-        //返回一个double
-        return new Random().nextDouble()* product.charAt(0)+product.charAt(1);
-    }
+	//计算价格
+	private double calculatePrice(String product) {
+		//等待调用服务
+		delay();
+		//返回一个double
+		return new Random().nextDouble() * product.charAt(0) + product.charAt(1);
+	}
 
-    //模拟商店查询商品价格的延迟和请求的调用延迟
-    public static void delay(){
-        try {
-            Thread.sleep(1000L);
-        }catch (Exception e){
-            throw new RuntimeException(e);
-        }
-    }
+	//模拟商店查询商品价格的延迟和请求的调用延迟
+	public static void delay() {
+		try {
+			Thread.sleep(1000L);
+		} catch (Exception e) {
+			throw new RuntimeException(e);
+		}
+	}
 
-    /**
-     * 优化1：使用异步完成价格获取
-     * @param product
-     * @return
-     */
-    public Future<Double> getPriceAsync(String product){
-        CompletableFuture<Double> futurePrice = new CompletableFuture<>();
-        new Thread(() -> {
-            double price = calculatePrice(product);
-            futurePrice.complete(price);
-        }).start();
-        return futurePrice;
-    }
+	/**
+	 * 优化1：使用异步完成价格获取
+	 * @param product
+	 * @return
+	 */
+	public Future<Double> getPriceAsync(String product) {
+		CompletableFuture<Double> futurePrice = new CompletableFuture<>();
+		new Thread(() -> {
+			double price = calculatePrice(product);
+			futurePrice.complete(price);
+		}).start();
+		return futurePrice;
+	}
 
-    /**
-     * 优化2：捕获future线程中的异常，优化系统的异常处理系统
-     * @param product 产品名称
-     * @return 未来的价格
-     */
-    public Future<Double> getPriceAsync2(String product){
-        CompletableFuture<Double> future = new CompletableFuture<>();
-        new Thread(() -> {
-            try {
-                double price = calculatePrice(product);
-                future.complete(price);
-            }catch (Exception e){
-                future.completeExceptionally(e);
-            }
-        }).start();
-        return future;
-    }
+	/**
+	 * 优化2：捕获future线程中的异常，优化系统的异常处理系统
+	 * @param product 产品名称
+	 * @return 未来的价格
+	 */
+	public Future<Double> getPriceAsync2(String product) {
+		CompletableFuture<Double> future = new CompletableFuture<>();
+		new Thread(() -> {
+			try {
+				double price = calculatePrice(product);
+				future.complete(price);
+			} catch (Exception e) {
+				future.completeExceptionally(e);
+			}
+		}).start();
+		return future;
+	}
 
-    /**
-     * 优化3：使用工厂方法supplyAsync创建CompletableFuture
-     * @param product
-     * @return
-     */
-    public Future<Double> getPriceAsync3(String product){
-        return CompletableFuture.supplyAsync(()->calculatePrice(product));
-    }
+	/**
+	 * 优化3：使用工厂方法supplyAsync创建CompletableFuture
+	 * @param product
+	 * @return
+	 */
+	public Future<Double> getPriceAsync3(String product) {
+		return CompletableFuture.supplyAsync(() -> calculatePrice(product));
+	}
 
 
 }

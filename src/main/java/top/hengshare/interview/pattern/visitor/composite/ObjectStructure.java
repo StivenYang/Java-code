@@ -10,14 +10,14 @@ import lombok.Setter;
  **/
 public class ObjectStructure {
 
-    @Setter
-    private Component root = null;
+	@Setter
+	private Component root = null;
 
-    public void handleRequest(Visitor visitor){
-        if (root != null) {
-            root.accept(visitor);
-        }
-    }
+	public void handleRequest(Visitor visitor) {
+		if (root != null) {
+			root.accept(visitor);
+		}
+	}
 
 
 }

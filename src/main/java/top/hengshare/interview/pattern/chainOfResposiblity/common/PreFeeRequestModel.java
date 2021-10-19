@@ -10,19 +10,19 @@ import lombok.Data;
  **/
 @Data
 public class PreFeeRequestModel extends RequestModel {
-    public final static String FEE_TYPE = "preFee";
+	public final static String FEE_TYPE = "preFee";
 
-    public PreFeeRequestModel() {
-        super(FEE_TYPE);
-    }
+	public PreFeeRequestModel() {
+		super(FEE_TYPE);
+	}
 
-    /**
-     * 申请人
-     */
-    private String user;
+	/**
+	 * 申请人
+	 */
+	private String user;
 
-    /**
-     * 申请金额
-     */
-    private double fee;
+	/**
+	 * 申请金额
+	 */
+	private double fee;
 }

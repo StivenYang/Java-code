@@ -5,10 +5,10 @@ package top.hengshare.interview.pattern.FactoryMethod.test;
  */
 public abstract class ExportOperate {
 
-    public boolean export(){
-        ExportApi exportApi = factoryMethod();
-        return exportApi.export();
-    }
+	public boolean export() {
+		ExportApi exportApi = factoryMethod();
+		return exportApi.export();
+	}
 
-    protected abstract ExportApi factoryMethod();
+	protected abstract ExportApi factoryMethod();
 }

@@ -11,13 +11,13 @@ import lombok.Data;
 @Data
 public class FeeRequestModel extends RequestModel {
 
-    public final  static String FEE_TYPE = "fee";
+	public final static String FEE_TYPE = "fee";
 
-    public FeeRequestModel() {
-        super(FEE_TYPE);
-    }
+	public FeeRequestModel() {
+		super(FEE_TYPE);
+	}
 
-    private String user;
+	private String user;
 
-    private double fee;
+	private double fee;
 }

@@ -5,26 +5,26 @@ package top.hengshare.interview.pattern.iterator.struct;
  */
 public class ConcreteAggregate extends Aggregate {
 
-    private String[] ss;
+	private String[] ss;
 
-    public ConcreteAggregate(String[] ss) {
-        this.ss = ss;
-    }
+	public ConcreteAggregate(String[] ss) {
+		this.ss = ss;
+	}
 
-    @Override
-    public Iterator createIterator() {
-        return new ConcreteIterator(this);
-    }
+	@Override
+	public Iterator createIterator() {
+		return new ConcreteIterator(this);
+	}
 
-    public Object get(int index){
-        Object object = null;
-        if (index < ss.length) {
-            object = ss[index];
-        }
-        return object;
-    }
+	public Object get(int index) {
+		Object object = null;
+		if (index < ss.length) {
+			object = ss[index];
+		}
+		return object;
+	}
 
-    public int size(){
-        return this.ss.length;
-    }
+	public int size() {
+		return this.ss.length;
+	}
 }

@@ -10,14 +10,14 @@ import lombok.Getter;
  **/
 public class PaymentContext2 extends PaymentContext {
 
-    /**
-     * 银行卡账号
-     */
-    @Getter
-    private String account;
+	/**
+	 * 银行卡账号
+	 */
+	@Getter
+	private String account;
 
-    public PaymentContext2(String username, double money, String account, PaymentStrategy strategy) {
-        super(username,money,strategy);
-        this.account = account;
-    }
+	public PaymentContext2(String username, double money, String account, PaymentStrategy strategy) {
+		super(username, money, strategy);
+		this.account = account;
+	}
 }

@@ -7,8 +7,8 @@ package top.hengshare.interview.pattern.state.voteState2;
  * @create: 2019-10-17 20:22
  **/
 public class BlackState implements VoteState {
-    @Override
-    public void vote(String user, String voteItem, VoteManager votemanager) {
-        System.out.println("已经进入黑名单");
-    }
+	@Override
+	public void vote(String user, String voteItem, VoteManager votemanager) {
+		System.out.println("已经进入黑名单");
+	}
 }

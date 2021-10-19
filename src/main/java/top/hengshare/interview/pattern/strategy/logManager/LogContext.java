@@ -8,11 +8,11 @@ package top.hengshare.interview.pattern.strategy.logManager;
  **/
 public class LogContext {
 
-    public void log(String msg){
-        try {
-            new DBLog().log(msg);
-        }catch (Exception e){
-            new FileLog().log(msg);
-        }
-    }
+	public void log(String msg) {
+		try {
+			new DBLog().log(msg);
+		} catch (Exception e) {
+			new FileLog().log(msg);
+		}
+	}
 }

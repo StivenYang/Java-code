@@ -13,17 +13,17 @@ import java.util.Date;
 @RequiredArgsConstructor
 public class UserController {
 
-    private final UserService userService;
+	private final UserService userService;
 
-    @RequestMapping("insert")
-    private void insert() {
-        User user = new User();
-        user.setUsername("abc");
-        user.setPassword("adf");
-        user.setEmail("abc@ac.com");
-        user.setCreateTime(new Date());
-        user.setCreator("abc");
-        userService.addUser(user);
-        System.out.println(user);
-    }
+	@RequestMapping("insert")
+	private void insert() {
+		User user = new User();
+		user.setUsername("abc");
+		user.setPassword("adf");
+		user.setEmail("abc@ac.com");
+		user.setCreateTime(new Date());
+		user.setCreator("abc");
+		userService.addUser(user);
+		System.out.println(user);
+	}
 }

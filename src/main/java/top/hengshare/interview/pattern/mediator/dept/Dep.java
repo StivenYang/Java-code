@@ -4,11 +4,11 @@ import lombok.Data;
 
 @Data
 public class Dep {
-    private String depId;
-    private String depName;
+	private String depId;
+	private String depName;
 
-    public boolean deleteDep(){
-        DepUserMediatorImpl mediator = DepUserMediatorImpl.getInstance();
-        return mediator.deleteDep(depId);
-    }
+	public boolean deleteDep() {
+		DepUserMediatorImpl mediator = DepUserMediatorImpl.getInstance();
+		return mediator.deleteDep(depId);
+	}
 }

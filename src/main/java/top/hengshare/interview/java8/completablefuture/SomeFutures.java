@@ -18,12 +18,11 @@ public class SomeFutures {
 		List<CompletableFuture<String>> futures = Lists.newArrayList();
 		List<String> result = Lists.newArrayList();
 
-		for (int i = 0; i< 10; i++){
+		for (int i = 0; i < 10; i++) {
 			futures.add(CompletableFuture.supplyAsync(SomeFutures::doSome));
 		}
 
-		CompletableFuture<Void> allFuture = CompletableFuture
-				.allOf(futures.toArray(new CompletableFuture[0]))
+		CompletableFuture<Void> allFuture = CompletableFuture.allOf(futures.toArray(new CompletableFuture[0]))
 				.whenComplete((v, t) -> futures.forEach(future -> result.add(future.getNow(null))));
 
 		allFuture.get();
@@ -31,7 +30,7 @@ public class SomeFutures {
 		System.out.println(result);
 	}
 
-	public  static String doSome(){
+	public static String doSome() {
 		return "task" + Thread.currentThread().getId();
 	}
 }

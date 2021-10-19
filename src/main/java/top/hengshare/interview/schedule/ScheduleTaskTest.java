@@ -10,12 +10,12 @@ import java.util.TimerTask;
  * 定时执行任务
  */
 public class ScheduleTaskTest {
-    public static void main(String[] args) {
-        new Timer().schedule(new TimerTask() {
-            @Override
-            public void run() {
-                System.out.println("123");
-            }
-        }, Date.from(LocalDateTime.of(2019, 9,3,14, 33).atZone(ZoneId.systemDefault()).toInstant()));
-    }
+	public static void main(String[] args) {
+		new Timer().schedule(new TimerTask() {
+			@Override
+			public void run() {
+				System.out.println("123");
+			}
+		}, Date.from(LocalDateTime.of(2019, 9, 3, 14, 33).atZone(ZoneId.systemDefault()).toInstant()));
+	}
 }

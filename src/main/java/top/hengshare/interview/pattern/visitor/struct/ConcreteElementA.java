@@ -7,12 +7,12 @@ package top.hengshare.interview.pattern.visitor.struct;
  * @create: 2019-11-03 18:20
  **/
 public class ConcreteElementA extends Element {
-    @Override
-    public void accept(Visitor visitor) {
-        visitor.visitConcreteElementA(this);
-    }
+	@Override
+	public void accept(Visitor visitor) {
+		visitor.visitConcreteElementA(this);
+	}
 
-    public void operationA(){
-        //已有的实现的功能
-    }
+	public void operationA() {
+		//已有的实现的功能
+	}
 }

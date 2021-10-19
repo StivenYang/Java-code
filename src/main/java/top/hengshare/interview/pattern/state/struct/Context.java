@@ -10,10 +10,10 @@ import lombok.Setter;
  **/
 public class Context {
 
-    @Setter
-    private State state;
+	@Setter
+	private State state;
 
-    public void request(String sampleParameter){
-        this.state.handle(sampleParameter);
-    }
+	public void request(String sampleParameter) {
+		this.state.handle(sampleParameter);
+	}
 }

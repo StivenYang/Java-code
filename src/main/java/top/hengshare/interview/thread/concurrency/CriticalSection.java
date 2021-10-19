@@ -20,156 +20,156 @@ import java.util.concurrent.atomic.AtomicInteger;
  * 结论：请更多的使用局部块进行同步控制
  **/
 public class CriticalSection {
-    //测试这两种不同的线程安全方式
-    static void testApproaches(PairManager pman1, PairManager pman2) {
-        ExecutorService exec = Executors.newCachedThreadPool();
-        PairManipulator pm1 = new PairManipulator(pman1);
-        PairManipulator pm2 = new PairManipulator(pman2);
-        PairChecker pChecker1 = new PairChecker(pman1);
-        PairChecker pChecker2 = new PairChecker(pman2);
-        exec.execute(pm1);
-        exec.execute(pm2);
-        exec.execute(pChecker1);
-        exec.execute(pChecker2);
-        try {
-            TimeUnit.MILLISECONDS.sleep(500);
-        } catch (InterruptedException e) {
-            System.out.println("睡眠被打断");
-        }
-        System.out.println("pm1: " + pm1 + "\n pm2: " + pm2);
-        System.exit(0);
-    }
+	//测试这两种不同的线程安全方式
+	static void testApproaches(PairManager pman1, PairManager pman2) {
+		ExecutorService exec = Executors.newCachedThreadPool();
+		PairManipulator pm1 = new PairManipulator(pman1);
+		PairManipulator pm2 = new PairManipulator(pman2);
+		PairChecker pChecker1 = new PairChecker(pman1);
+		PairChecker pChecker2 = new PairChecker(pman2);
+		exec.execute(pm1);
+		exec.execute(pm2);
+		exec.execute(pChecker1);
+		exec.execute(pChecker2);
+		try {
+			TimeUnit.MILLISECONDS.sleep(500);
+		} catch (InterruptedException e) {
+			System.out.println("睡眠被打断");
+		}
+		System.out.println("pm1: " + pm1 + "\n pm2: " + pm2);
+		System.exit(0);
+	}
 
-    public static void main(String[] args) {
-        PairManager1 pman1 = new PairManager1();
-        PairManager2 pman2 = new PairManager2();
-        testApproaches(pman1, pman2);
-    }
+	public static void main(String[] args) {
+		PairManager1 pman1 = new PairManager1();
+		PairManager2 pman2 = new PairManager2();
+		testApproaches(pman1, pman2);
+	}
 }
 
 class Pair { //非线程安全的一个类
-    private int x, y;
+	private int x, y;
 
-    public Pair(int x, int y) {
-        this.x = x;
-        this.y = y;
-    }
+	public Pair(int x, int y) {
+		this.x = x;
+		this.y = y;
+	}
 
-    public Pair() {
-        this(0, 0);
-    }
+	public Pair() {
+		this(0, 0);
+	}
 
-    public int getX() {
-        return x;
-    }
+	public int getX() {
+		return x;
+	}
 
-    public int getY() {
-        return y;
-    }
+	public int getY() {
+		return y;
+	}
 
-    public void incrementX() {
-        this.x++;
-    }
+	public void incrementX() {
+		this.x++;
+	}
 
-    public void incrementY() {
-        this.y++;
-    }
+	public void incrementY() {
+		this.y++;
+	}
 
-    public String toString() {
-        return "x=" + x + "; y=" + y;
-    }
+	public String toString() {
+		return "x=" + x + "; y=" + y;
+	}
 
-    public class PairValuesNotEqualException extends RuntimeException {
-        public PairValuesNotEqualException() {
-            super("Pair 的值不相等：" + Pair.this);
-        }
-    }
+	public class PairValuesNotEqualException extends RuntimeException {
+		public PairValuesNotEqualException() {
+			super("Pair 的值不相等：" + Pair.this);
+		}
+	}
 
-    public void checkStatus() {
-        if (x != y) {
-            throw new PairValuesNotEqualException();
-        }
-    }
+	public void checkStatus() {
+		if (x != y) {
+			throw new PairValuesNotEqualException();
+		}
+	}
 }
 
 abstract class PairManager { //内置了一个线程安全的类来保护Pair这个非线程安全的类
-    AtomicInteger checkCounter = new AtomicInteger(0);
-    protected Pair p = new Pair();
-    private List<Pair> storage = Collections.synchronizedList(new ArrayList<Pair>());
+	AtomicInteger checkCounter = new AtomicInteger(0);
+	protected Pair p = new Pair();
+	private List<Pair> storage = Collections.synchronizedList(new ArrayList<Pair>());
 
-    public synchronized Pair getPair() {
-        //返回一个Pair的副本，确保原pair对象安全
-        return new Pair(p.getX(), p.getY());
-    }
+	public synchronized Pair getPair() {
+		//返回一个Pair的副本，确保原pair对象安全
+		return new Pair(p.getX(), p.getY());
+	}
 
-    // 假定这是一个时间消费的操作
-    protected void store(Pair pair) {
-        storage.add(pair);
-        try {
-            TimeUnit.MILLISECONDS.sleep(50);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-    }
+	// 假定这是一个时间消费的操作
+	protected void store(Pair pair) {
+		storage.add(pair);
+		try {
+			TimeUnit.MILLISECONDS.sleep(50);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+	}
 
-    public abstract void increment();
+	public abstract void increment();
 }
 
 class PairManager1 extends PairManager { //同步整个方法
 
-    @Override
-    public synchronized void increment() {
-        p.incrementX();
-        p.incrementY();
-        store(getPair());
-    }
+	@Override
+	public synchronized void increment() {
+		p.incrementX();
+		p.incrementY();
+		store(getPair());
+	}
 }
 
 class PairManager2 extends PairManager { //同步关键部分
-    @Override
-    public void increment() {
-        Pair temp;
-        synchronized (this) {
-            p.incrementY();
-            p.incrementX();
-            temp = getPair();
-        }
-        store(temp);
-    }
+	@Override
+	public void increment() {
+		Pair temp;
+		synchronized (this) {
+			p.incrementY();
+			p.incrementX();
+			temp = getPair();
+		}
+		store(temp);
+	}
 }
 
 class PairManipulator implements Runnable { //Pair机械手
-    private PairManager pm;
+	private PairManager pm;
 
-    public PairManipulator(PairManager pm) {
-        this.pm = pm;
-    }
+	public PairManipulator(PairManager pm) {
+		this.pm = pm;
+	}
 
-    @Override
-    public void run() {
-        while (true) {
-            pm.increment();
-        }
-    }
+	@Override
+	public void run() {
+		while (true) {
+			pm.increment();
+		}
+	}
 
-    @Override
-    public String toString() {
-        return "pair: " + pm.getPair() + "; checkCounter: " + pm.checkCounter.get();
-    }
+	@Override
+	public String toString() {
+		return "pair: " + pm.getPair() + "; checkCounter: " + pm.checkCounter.get();
+	}
 }
 
 class PairChecker implements Runnable { //Pair检查者
-    private PairManager pm;
+	private PairManager pm;
 
-    PairChecker(PairManager pm) {
-        this.pm = pm;
-    }
+	PairChecker(PairManager pm) {
+		this.pm = pm;
+	}
 
-    @Override
-    public void run() {
-        while (true) {
-            pm.checkCounter.incrementAndGet();
-            pm.getPair().checkStatus();
-        }
-    }
+	@Override
+	public void run() {
+		while (true) {
+			pm.checkCounter.incrementAndGet();
+			pm.getPair().checkStatus();
+		}
+	}
 }

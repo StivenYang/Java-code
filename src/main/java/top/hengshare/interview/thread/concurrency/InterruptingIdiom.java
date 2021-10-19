@@ -13,22 +13,22 @@ public class InterruptingIdiom {
  *
  */
 class NeedsCleanup {
-    private final int id;
+	private final int id;
 
-    public NeedsCleanup(int id) {
-        this.id = id;
-        System.out.println("NeedsCleanup:" + id);
-    }
+	public NeedsCleanup(int id) {
+		this.id = id;
+		System.out.println("NeedsCleanup:" + id);
+	}
 
-    public void cleanup() {
-        System.out.println("Cleaning up :" + id);
-    }
+	public void cleanup() {
+		System.out.println("Cleaning up :" + id);
+	}
 }
 
 class Blocked3 implements Runnable {
 
-    @Override
-    public void run() {
+	@Override
+	public void run() {
 
-    }
+	}
 }

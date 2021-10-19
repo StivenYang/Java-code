@@ -12,22 +12,22 @@ import java.util.Collection;
  **/
 public class ObjectStructure {
 
-    /**
-     * 要操作的客户集合
-     */
-    private Collection<Customer> col = Lists.newArrayList();
+	/**
+	 * 要操作的客户集合
+	 */
+	private Collection<Customer> col = Lists.newArrayList();
 
-    /**
-     * 请求处理器
-     * @param visitor 访问者
-     */
-    public void handleRequest(Visitor visitor){
-        for (Customer customer : col) {
-            customer.accept(visitor);
-        }
-    }
+	/**
+	 * 请求处理器
+	 * @param visitor 访问者
+	 */
+	public void handleRequest(Visitor visitor) {
+		for (Customer customer : col) {
+			customer.accept(visitor);
+		}
+	}
 
-    public void addElement(Customer element){
-        this.col.add(element);
-    }
+	public void addElement(Customer element) {
+		this.col.add(element);
+	}
 }

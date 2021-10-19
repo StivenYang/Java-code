@@ -10,6 +10,6 @@ import lombok.Data;
  **/
 @Data
 public class NormalLoginModel {
-    private String userId, pwd;
+	private String userId, pwd;
 
 }

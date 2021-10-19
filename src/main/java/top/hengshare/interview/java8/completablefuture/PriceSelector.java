@@ -11,19 +11,16 @@ import java.util.List;
  **/
 public class PriceSelector {
 
-    private List<Shop> shops = Arrays.asList(new Shop("BestPrice"),
-            new Shop("LetsSaveBig"),
-            new Shop("MyFavoriteShop"),
-            new Shop("BuyItAll"));
+	private List<Shop> shops = Arrays
+			.asList(new Shop("BestPrice"), new Shop("LetsSaveBig"), new Shop("MyFavoriteShop"), new Shop("BuyItAll"));
 
-//    public List<String> findPrices(String product){
-//        return shops.stream()
-//                .map(shop -> String.format("%s 价格是： %.2f", shop.getname))
-//    }
-//
-//    public static void main(String[] args) {
-//    }
-
+	//    public List<String> findPrices(String product){
+	//        return shops.stream()
+	//                .map(shop -> String.format("%s 价格是： %.2f", shop.getname))
+	//    }
+	//
+	//    public static void main(String[] args) {
+	//    }
 
 
 }

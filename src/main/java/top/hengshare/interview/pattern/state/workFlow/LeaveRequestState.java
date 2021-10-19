@@ -6,5 +6,5 @@ package top.hengshare.interview.pattern.state.workFlow;
  * @author: Steven Yang
  * @create: 2019-10-17 21:31
  **/
-public interface LeaveRequestState extends State{
+public interface LeaveRequestState extends State {
 }

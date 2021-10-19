@@ -7,23 +7,23 @@ import java.util.Scanner;
  */
 public class City {
 
-    public static void main(String[] args) {
-        System.out.println("输入人数：");
-        Scanner scanner = new Scanner(System.in);
-        Integer count = Integer.valueOf(scanner.nextLine());
-        System.out.println("输入对应的x y坐标（用空格隔开）：");
-        for (int i = 0; i < count; i++) {
-        }
-    }
+	public static void main(String[] args) {
+		System.out.println("输入人数：");
+		Scanner scanner = new Scanner(System.in);
+		Integer count = Integer.valueOf(scanner.nextLine());
+		System.out.println("输入对应的x y坐标（用空格隔开）：");
+		for (int i = 0; i < count; i++) {
+		}
+	}
 
 }
 
 class People {
-    private double x;
-    private double y;
+	private double x;
+	private double y;
 
-    public People(double x, double y) {
-        this.x=x;
-        this.y=y;
-    }
+	public People(double x, double y) {
+		this.x = x;
+		this.y = y;
+	}
 }

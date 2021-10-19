@@ -10,17 +10,17 @@ import top.hengshare.interview.pattern.decorator.aop.SaleModel;
  * @create: 2019-11-01 16:35
  **/
 public abstract class SaleHandler {
-    /**
-     * 持有下一个处理请求的对象
-     */
-    @Setter
-    protected SaleHandler successor;
+	/**
+	 * 持有下一个处理请求的对象
+	 */
+	@Setter
+	protected SaleHandler successor;
 
-    /**
-     * 销售的接口
-     * @param user
-     * @param customer
-     * @return
-     */
-    public abstract boolean sale(String user, String customer, SaleModel saleModel);
+	/**
+	 * 销售的接口
+	 * @param user
+	 * @param customer
+	 * @return
+	 */
+	public abstract boolean sale(String user, String customer, SaleModel saleModel);
 }

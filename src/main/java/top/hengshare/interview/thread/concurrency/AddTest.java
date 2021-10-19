@@ -12,26 +12,26 @@ import java.util.concurrent.locks.ReentrantLock;
  * @date 2019-07-05 09:44
  **/
 public class AddTest implements Runnable {
-    private static int i = 0;
-    Lock lock = new ReentrantLock(false);
+	private static int i = 0;
+	Lock lock = new ReentrantLock(false);
 
-    public static void main(String[] args) {
-        ExecutorService exec = Executors.newCachedThreadPool();
-        AddTest test = new AddTest();
-        for (int i = 0; i < 100; i++) {
-            exec.execute(test);
-        }
-        exec.shutdown();
-    }
+	public static void main(String[] args) {
+		ExecutorService exec = Executors.newCachedThreadPool();
+		AddTest test = new AddTest();
+		for (int i = 0; i < 100; i++) {
+			exec.execute(test);
+		}
+		exec.shutdown();
+	}
 
-    @Override
-    public void run() {
-        lock.lock();
-        i++;
-        Thread.yield();
-        System.out.println(i);
-        lock.unlock();
-    }
+	@Override
+	public void run() {
+		lock.lock();
+		i++;
+		Thread.yield();
+		System.out.println(i);
+		lock.unlock();
+	}
 
 
 }

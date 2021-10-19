@@ -2,16 +2,16 @@ package top.hengshare.interview.pattern.command.struct;
 
 public class ConcreteCommand implements Command {
 
-    private Receiver receiver;
+	private Receiver receiver;
 
-    private String state;
+	private String state;
 
-    public ConcreteCommand(Receiver receiver) {
-        this.receiver = receiver;
-    }
+	public ConcreteCommand(Receiver receiver) {
+		this.receiver = receiver;
+	}
 
-    @Override
-    public void execute() {
-        receiver.action();
-    }
+	@Override
+	public void execute() {
+		receiver.action();
+	}
 }

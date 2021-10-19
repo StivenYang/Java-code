@@ -8,20 +8,20 @@ package top.hengshare.interview.pattern.strategy.struct;
  **/
 public class Context {
 
-    /**
-     * 持有一个具体的策略对象
-     */
-    private Strategy strategy;
+	/**
+	 * 持有一个具体的策略对象
+	 */
+	private Strategy strategy;
 
-    public Context(Strategy strategy) {
-        this.strategy = strategy;
-    }
+	public Context(Strategy strategy) {
+		this.strategy = strategy;
+	}
 
-    /**
-     * 上下文对客户端提供的操作接口
-     */
-    public void contextInterface() {
-        //通常会转调具体的策略对象进行算法运算
-        strategy.algorithmInterface();
-    }
+	/**
+	 * 上下文对客户端提供的操作接口
+	 */
+	public void contextInterface() {
+		//通常会转调具体的策略对象进行算法运算
+		strategy.algorithmInterface();
+	}
 }

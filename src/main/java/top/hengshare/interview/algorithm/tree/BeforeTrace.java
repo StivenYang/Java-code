@@ -11,19 +11,19 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class BeforeTrace {
 
-    public void beforeTrace(TreeNode node) {
-        if (node == null) {
-            return;
-        }
+	public void beforeTrace(TreeNode node) {
+		if (node == null) {
+			return;
+		}
 
-        log.info("{}", node);
+		log.info("{}", node);
 
-        if (node.left != null) {
-            beforeTrace(node.left);
-        }
+		if (node.left != null) {
+			beforeTrace(node.left);
+		}
 
-        if (node.right != null) {
-            beforeTrace(node.right);
-        }
-    }
+		if (node.right != null) {
+			beforeTrace(node.right);
+		}
+	}
 }

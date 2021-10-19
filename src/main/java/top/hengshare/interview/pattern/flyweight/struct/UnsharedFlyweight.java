@@ -8,13 +8,13 @@ package top.hengshare.interview.pattern.flyweight.struct;
  **/
 public class UnsharedFlyweight implements Flyweight {
 
-    /**
-     * 保存的所有状态
-     */
-    private String allState;
+	/**
+	 * 保存的所有状态
+	 */
+	private String allState;
 
-    @Override
-    public void operation(String state) {
+	@Override
+	public void operation(String state) {
 
-    }
+	}
 }

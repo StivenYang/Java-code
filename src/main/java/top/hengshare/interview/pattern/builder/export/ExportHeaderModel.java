@@ -7,13 +7,13 @@ import lombok.Data;
  */
 @Data
 public class ExportHeaderModel {
-    /**
-     * 分公司或者门市点id
-     */
-    private String depId;
+	/**
+	 * 分公司或者门市点id
+	 */
+	private String depId;
 
-    /**
-     * 导出数据的日期
-     */
-    private String exportDate;
+	/**
+	 * 导出数据的日期
+	 */
+	private String exportDate;
 }

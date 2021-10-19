@@ -8,8 +8,8 @@ package top.hengshare.interview.pattern.state.struct;
  **/
 public class ConcreteStateA implements State {
 
-    @Override
-    public void handle(String sampleParameter) {
+	@Override
+	public void handle(String sampleParameter) {
 
-    }
+	}
 }

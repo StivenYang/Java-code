@@ -7,9 +7,9 @@ package top.hengshare.interview.pattern.strategy.logManager;
  * @create: 2019-10-16 10:20
  **/
 public class Client {
-    public static void main(String[] args) {
-        LogContext context = new LogContext();
-        context.log("记录日志");
-        context.log("再次记录日志");
-    }
+	public static void main(String[] args) {
+		LogContext context = new LogContext();
+		context.log("记录日志");
+		context.log("再次记录日志");
+	}
 }

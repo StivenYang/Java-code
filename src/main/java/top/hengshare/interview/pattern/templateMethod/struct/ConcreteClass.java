@@ -8,13 +8,13 @@ package top.hengshare.interview.pattern.templateMethod.struct;
  **/
 public class ConcreteClass extends AbstractClass {
 
-    @Override
-    public void doPrimitiveOperation1() {
-        //具体的实现
-    }
+	@Override
+	public void doPrimitiveOperation1() {
+		//具体的实现
+	}
 
-    @Override
-    public void doPrimitiveOperation2() {
-        //具体实现
-    }
+	@Override
+	public void doPrimitiveOperation2() {
+		//具体实现
+	}
 }

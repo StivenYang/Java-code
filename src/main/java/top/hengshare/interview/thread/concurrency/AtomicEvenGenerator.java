@@ -9,14 +9,14 @@ import java.util.concurrent.atomic.AtomicInteger;
  * @date 2019-04-27 17:09
  **/
 public class AtomicEvenGenerator extends IntGenerator {
-    private AtomicInteger ai = new AtomicInteger(0);
+	private AtomicInteger ai = new AtomicInteger(0);
 
-    @Override
-    public int next() {
-        return ai.addAndGet(2);
-    }
+	@Override
+	public int next() {
+		return ai.addAndGet(2);
+	}
 
-    public static void main(String[] args) {
-        EvenChecker.test(new AtomicEvenGenerator());
-    }
+	public static void main(String[] args) {
+		EvenChecker.test(new AtomicEvenGenerator());
+	}
 }

@@ -8,17 +8,17 @@ package top.hengshare.interview.thread.concurrency;
  * 同步以后的方法每次都会+1+1，所以会一直执行下去，满足我们的预期
  */
 public class SynchronizedEvenGenerator extends IntGenerator {
-    private int currentEvenValue = 0;
+	private int currentEvenValue = 0;
 
-    @Override
-    public synchronized int next() {
-        ++currentEvenValue;
-        Thread.yield();
-        ++currentEvenValue;
-        return currentEvenValue;
-    }
+	@Override
+	public synchronized int next() {
+		++currentEvenValue;
+		Thread.yield();
+		++currentEvenValue;
+		return currentEvenValue;
+	}
 
-    public static void main(String[] args) {
-        EvenChecker.test(new SynchronizedEvenGenerator());
-    }
+	public static void main(String[] args) {
+		EvenChecker.test(new SynchronizedEvenGenerator());
+	}
 }

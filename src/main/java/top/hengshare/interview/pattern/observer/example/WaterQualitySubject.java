@@ -6,17 +6,17 @@ import java.util.List;
 
 public abstract class WaterQualitySubject {
 
-    protected List<WaterObserver> watchers = Lists.newArrayList();
+	protected List<WaterObserver> watchers = Lists.newArrayList();
 
-    public void attach(WaterObserver observer){
-        watchers.add(observer);
-    }
+	public void attach(WaterObserver observer) {
+		watchers.add(observer);
+	}
 
-    public void detach(WaterObserver observer){
-        watchers.remove(observer);
-    }
+	public void detach(WaterObserver observer) {
+		watchers.remove(observer);
+	}
 
-    public abstract void notifyWatchers();
+	public abstract void notifyWatchers();
 
-    public abstract int getPolluteLevel();
+	public abstract int getPolluteLevel();
 }

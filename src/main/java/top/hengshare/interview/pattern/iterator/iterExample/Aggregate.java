@@ -5,9 +5,9 @@ package top.hengshare.interview.pattern.iterator.iterExample;
  */
 public abstract class Aggregate {
 
-    public abstract Iterator createIterator();
+	public abstract Iterator createIterator();
 
-    public abstract int size();
+	public abstract int size();
 
-    public abstract Object get(int index);
+	public abstract Object get(int index);
 }

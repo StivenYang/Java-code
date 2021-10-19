@@ -9,16 +9,16 @@ import java.util.List;
  */
 public class MenuCommand implements Command {
 
-    private List<Command> col = Lists.newArrayList();
+	private List<Command> col = Lists.newArrayList();
 
-    public void addCommand(Command cmd){
-        col.add(cmd);
-    }
+	public void addCommand(Command cmd) {
+		col.add(cmd);
+	}
 
-    @Override
-    public void execute() {
-        for (Command command : col) {
-            command.execute();
-        }
-    }
+	@Override
+	public void execute() {
+		for (Command command : col) {
+			command.execute();
+		}
+	}
 }

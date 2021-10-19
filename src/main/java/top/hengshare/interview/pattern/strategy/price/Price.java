@@ -8,18 +8,18 @@ package top.hengshare.interview.pattern.strategy.price;
  **/
 public class Price {
 
-    private Strategy strategy;
+	private Strategy strategy;
 
-    public Price(Strategy strategy) {
-        this.strategy = strategy;
-    }
+	public Price(Strategy strategy) {
+		this.strategy = strategy;
+	}
 
-    /**
-     * 报价
-     * @param goodsPrice 商品市场价格
-     * @return 应报价格
-     */
-    public double quote(double goodsPrice){
-        return this.strategy.calcPrice(goodsPrice);
-    }
+	/**
+	 * 报价
+	 * @param goodsPrice 商品市场价格
+	 * @return 应报价格
+	 */
+	public double quote(double goodsPrice) {
+		return this.strategy.calcPrice(goodsPrice);
+	}
 }

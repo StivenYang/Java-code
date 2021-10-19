@@ -7,8 +7,8 @@ package top.hengshare.interview.pattern.bridge.struct;
  * @create: 2019-11-02 19:54
  **/
 public class ConcreteImplementorB implements Implementor {
-    @Override
-    public void operationImpl() {
-        //真正的实现
-    }
+	@Override
+	public void operationImpl() {
+		//真正的实现
+	}
 }

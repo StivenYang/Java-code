@@ -7,8 +7,8 @@ package top.hengshare.interview.pattern.decorator.struct;
  * @create: 2019-10-31 15:36
  **/
 public abstract class Component {
-    /**
-     * 示例方法
-     */
-    public abstract void operation();
+	/**
+	 * 示例方法
+	 */
+	public abstract void operation();
 }

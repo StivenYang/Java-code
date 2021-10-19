@@ -10,15 +10,15 @@ import lombok.Setter;
  **/
 public abstract class Handler {
 
-    @Setter
-    protected Handler successor;
+	@Setter
+	protected Handler successor;
 
-    public Object handleRequest(RequestModel requestModel){
-        if (successor != null) {
-            return this.successor.handleRequest(requestModel);
-        }else {
-            System.out.println("没有后续处理，或者暂时不支持这样的功能");
-            return false;
-        }
-    }
+	public Object handleRequest(RequestModel requestModel) {
+		if (successor != null) {
+			return this.successor.handleRequest(requestModel);
+		} else {
+			System.out.println("没有后续处理，或者暂时不支持这样的功能");
+			return false;
+		}
+	}
 }

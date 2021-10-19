@@ -11,18 +11,18 @@ import lombok.Data;
 @Data
 public class ParserModel {
 
-    /**
-     * 是否单个值
-     */
-    private boolean singleValue;
+	/**
+	 * 是否单个值
+	 */
+	private boolean singleValue;
 
-    /**
-     * 是否属性，不是属性就是元素
-     */
-    private boolean propertyValue;
+	/**
+	 * 是否属性，不是属性就是元素
+	 */
+	private boolean propertyValue;
 
-    /**
-     * 是否终结符
-     */
-    private boolean end;
+	/**
+	 * 是否终结符
+	 */
+	private boolean end;
 }

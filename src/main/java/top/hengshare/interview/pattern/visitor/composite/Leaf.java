@@ -9,15 +9,15 @@ import lombok.Getter;
  * @create: 2019-11-05 16:16
  **/
 public class Leaf extends Component {
-    @Getter
-    private String name = "";
+	@Getter
+	private String name = "";
 
-    @Override
-    public void accept(Visitor visitor) {
-        visitor.visitLeaf(this);
-    }
+	@Override
+	public void accept(Visitor visitor) {
+		visitor.visitLeaf(this);
+	}
 
-    public Leaf(String name) {
-        this.name = name;
-    }
+	public Leaf(String name) {
+		this.name = name;
+	}
 }

@@ -9,17 +9,17 @@ package top.hengshare.interview.pattern.templateMethod.templateExample;
 public class WorkerLogin extends LoginTemplate {
 
 
-    @Override
-    public LoginModel findLoginUser(String loginId) {
-        LoginModel model = new LoginModel();
-        model.setPwd("admin");
-        model.setLoginId(loginId);
-        return model;
-    }
+	@Override
+	public LoginModel findLoginUser(String loginId) {
+		LoginModel model = new LoginModel();
+		model.setPwd("admin");
+		model.setLoginId(loginId);
+		return model;
+	}
 
-    @Override
-    public String encryptPwd(String pwd) {
-        System.out.println("使用md5加密了");
-        return pwd;
-    }
+	@Override
+	public String encryptPwd(String pwd) {
+		System.out.println("使用md5加密了");
+		return pwd;
+	}
 }

@@ -11,31 +11,31 @@ package top.hengshare.interview.thread.concurrency;
  * 名字可以通过调用toString方法来获取，可以用来标识一个Thread对象
  */
 public class SimpleThread extends Thread {
-    private int countDown = 5;
-    private static int threadCount = 0;
+	private int countDown = 5;
+	private static int threadCount = 0;
 
-    public SimpleThread() {
-        super(Integer.toString(++threadCount));
-        start();
-    }
+	public SimpleThread() {
+		super(Integer.toString(++threadCount));
+		start();
+	}
 
-    @Override
-    public String toString() {
-        return "这是第" + getName() + "组，第" + countDown + "个线程.";
-    }
+	@Override
+	public String toString() {
+		return "这是第" + getName() + "组，第" + countDown + "个线程.";
+	}
 
-    @Override
-    public void run() {
-        while (true) {
-            System.out.println(this);
-            if (--countDown == 0)
-                return;
-        }
-    }
+	@Override
+	public void run() {
+		while (true) {
+			System.out.println(this);
+			if (--countDown == 0)
+				return;
+		}
+	}
 
-    public static void main(String[] args) {
-        for (int i = 0; i < 10; i++) {
-            new SimpleThread();
-        }
-    }
+	public static void main(String[] args) {
+		for (int i = 0; i < 10; i++) {
+			new SimpleThread();
+		}
+	}
 }

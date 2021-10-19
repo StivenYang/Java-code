@@ -10,5 +10,5 @@ import lombok.Data;
  **/
 @Data
 public class UserModel {
-    private String uuid, userId, pwd, name;
+	private String uuid, userId, pwd, name;
 }

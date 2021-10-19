@@ -8,22 +8,22 @@ import java.util.Set;
  * 删除字符串中重复字符，维持字符顺序
  *
  * @author yjh
- * @since  2021/1/10 6:33 下午
+ * @since 2021/1/10 6:33 下午
  **/
 public class RemoveStringDump {
 
-    public String removeStringDump(String source) throws Exception{
-        if (source == null) {
-            throw new Exception("source can not be null");
-        }
+	public String removeStringDump(String source) throws Exception {
+		if (source == null) {
+			throw new Exception("source can not be null");
+		}
 
-        String[] sourceArray = source.split("");
+		String[] sourceArray = source.split("");
 
-        Set<String> targetSet = new LinkedHashSet<>(Arrays.asList(sourceArray));
-        StringBuilder target = new StringBuilder();
-        for (String s : targetSet) {
-            target.append(s);
-        }
-        return target.toString();
-    }
+		Set<String> targetSet = new LinkedHashSet<>(Arrays.asList(sourceArray));
+		StringBuilder target = new StringBuilder();
+		for (String s : targetSet) {
+			target.append(s);
+		}
+		return target.toString();
+	}
 }

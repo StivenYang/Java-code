@@ -8,18 +8,18 @@ package top.hengshare.interview.pattern.visitor.example1;
  **/
 public class PersonalCustomer extends Customer {
 
-    /**
-     * 电话号码
-     */
-    private String telephone;
+	/**
+	 * 电话号码
+	 */
+	private String telephone;
 
-    /**
-     * 年龄
-     */
-    private int age;
+	/**
+	 * 年龄
+	 */
+	private int age;
 
-    @Override
-    public void accept(Visitor visitor) {
-        visitor.visitPersonCustomer(this);
-    }
+	@Override
+	public void accept(Visitor visitor) {
+		visitor.visitPersonCustomer(this);
+	}
 }

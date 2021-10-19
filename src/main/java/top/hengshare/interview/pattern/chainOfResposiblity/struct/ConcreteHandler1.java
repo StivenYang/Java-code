@@ -8,20 +8,20 @@ package top.hengshare.interview.pattern.chainOfResposiblity.struct;
  **/
 public class ConcreteHandler1 extends Handler {
 
-    @Override
-    public void handleRequest() {
-        boolean someCondition = false;
+	@Override
+	public void handleRequest() {
+		boolean someCondition = false;
 
-        if (this.successor == null) {
-            someCondition= true;
-        }
+		if (this.successor == null) {
+			someCondition = true;
+		}
 
-        if (someCondition) {
-            System.out.println("具体的处理请求1");
-        }else {
-            if (this.successor != null) {
-                this.successor.handleRequest();
-            }
-        }
-    }
+		if (someCondition) {
+			System.out.println("具体的处理请求1");
+		} else {
+			if (this.successor != null) {
+				this.successor.handleRequest();
+			}
+		}
+	}
 }

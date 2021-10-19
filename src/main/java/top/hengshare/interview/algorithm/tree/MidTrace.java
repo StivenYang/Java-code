@@ -11,13 +11,13 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class MidTrace {
 
-    public void midTrace(TreeNode node) {
-        if (node == null) {
-            return;
-        }
+	public void midTrace(TreeNode node) {
+		if (node == null) {
+			return;
+		}
 
-        midTrace(node.left);
-        log.info("{}", node);
-        midTrace(node.right);
-    }
+		midTrace(node.left);
+		log.info("{}", node);
+		midTrace(node.right);
+	}
 }

@@ -7,7 +7,7 @@ package top.hengshare.interview.pattern.flyweight.gc;
  * @create: 2019-10-22 11:54
  **/
 public interface Flyweight {
-    boolean match(String entity, String permit);
+	boolean match(String entity, String permit);
 
-    void add(Flyweight flyweight);
+	void add(Flyweight flyweight);
 }

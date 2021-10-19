@@ -3,9 +3,9 @@ package top.hengshare.interview.pattern.iterator.randomIterator;
 import java.util.Collection;
 
 public interface AggregationIterator {
-    boolean hasNext();
+	boolean hasNext();
 
-    boolean hasPrevious();
+	boolean hasPrevious();
 
-    Collection getPage(int pageNum, int pageShow);
+	Collection getPage(int pageNum, int pageShow);
 }

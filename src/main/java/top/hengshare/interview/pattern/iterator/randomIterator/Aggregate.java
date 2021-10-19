@@ -5,5 +5,5 @@ package top.hengshare.interview.pattern.iterator.randomIterator;
  */
 public abstract class Aggregate {
 
-    public abstract AggregationIterator createIterator();
+	public abstract AggregationIterator createIterator();
 }

@@ -6,13 +6,13 @@ package top.hengshare.interview.pattern.templateMethod.templateExample;
  * @author: Steven Yang
  * @create: 2019-10-15 14:18
  **/
-public class NormalLogin extends LoginTemplate{
+public class NormalLogin extends LoginTemplate {
 
-    @Override
-    public LoginModel findLoginUser(String loginId){
-        LoginModel model = new LoginModel();
-        model.setPwd("admin");
-        model.setLoginId(loginId);
-        return model;
-    }
+	@Override
+	public LoginModel findLoginUser(String loginId) {
+		LoginModel model = new LoginModel();
+		model.setPwd("admin");
+		model.setLoginId(loginId);
+		return model;
+	}
 }

@@ -8,5 +8,5 @@ package top.hengshare.interview.pattern.decorator.aop;
  **/
 public interface GoodsSaleEbi {
 
-    boolean sale(String user, String customer, SaleModel saleModel);
+	boolean sale(String user, String customer, SaleModel saleModel);
 }

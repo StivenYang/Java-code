@@ -7,8 +7,8 @@ package top.hengshare.interview.pattern.strategy.struct;
  * @create: 2019-10-16 09:01
  **/
 public class ConcreteStrategyC implements Strategy {
-    @Override
-    public void algorithmInterface() {
-        //具体实现
-    }
+	@Override
+	public void algorithmInterface() {
+		//具体实现
+	}
 }

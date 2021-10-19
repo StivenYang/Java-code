@@ -11,23 +11,23 @@ import java.util.List;
  */
 public class Adapter implements LogDbOperateAPI {
 
-    private LogFileOperateAPI logFileOperateAPI;
+	private LogFileOperateAPI logFileOperateAPI;
 
-    public Adapter(LogFileOparate logFileOparate) {
-        this.logFileOperateAPI = logFileOparate;
-    }
+	public Adapter(LogFileOparate logFileOparate) {
+		this.logFileOperateAPI = logFileOparate;
+	}
 
-    public void createLog(LogModel logModel) {
-        //打开文件
-        List<LogModel> list = logFileOperateAPI.readLogFile();
-        //插入新的日志对象
-        list.add(logModel);
-        //重新写入文件
-        logFileOperateAPI.writeLogFile(list);
-    }
+	public void createLog(LogModel logModel) {
+		//打开文件
+		List<LogModel> list = logFileOperateAPI.readLogFile();
+		//插入新的日志对象
+		list.add(logModel);
+		//重新写入文件
+		logFileOperateAPI.writeLogFile(list);
+	}
 
-    public List<LogModel> getAllLog() {
-        return logFileOperateAPI.readLogFile();
-    }
+	public List<LogModel> getAllLog() {
+		return logFileOperateAPI.readLogFile();
+	}
 
 }

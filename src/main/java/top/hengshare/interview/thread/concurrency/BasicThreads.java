@@ -6,9 +6,9 @@ package top.hengshare.interview.thread.concurrency;
  * @description: 使用Thread执行任务，产生线程
  */
 public class BasicThreads {
-    public static void main(String[] args) {
-        Thread thread = new Thread(new LiffOff());
-        thread.start();
-        System.out.println("等待发射");
-    }
+	public static void main(String[] args) {
+		Thread thread = new Thread(new LiffOff());
+		thread.start();
+		System.out.println("等待发射");
+	}
 }

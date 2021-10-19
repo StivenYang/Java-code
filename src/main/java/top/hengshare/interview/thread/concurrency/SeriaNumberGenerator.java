@@ -6,9 +6,9 @@ package top.hengshare.interview.thread.concurrency;
  * @description: 序列号生成器
  */
 public class SeriaNumberGenerator {
-    private static volatile int serialNumber = 0;
+	private static volatile int serialNumber = 0;
 
-    public static synchronized int nextSerialNumber() {
-        return serialNumber++;
-    }
+	public static synchronized int nextSerialNumber() {
+		return serialNumber++;
+	}
 }

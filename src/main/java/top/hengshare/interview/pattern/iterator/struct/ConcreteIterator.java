@@ -5,36 +5,36 @@ package top.hengshare.interview.pattern.iterator.struct;
  */
 public class ConcreteIterator implements Iterator {
 
-    private ConcreteAggregate concreteAggregate;
+	private ConcreteAggregate concreteAggregate;
 
-    private int index = -1;
+	private int index = -1;
 
-    public ConcreteIterator(ConcreteAggregate concreteAggregate) {
-        this.concreteAggregate = concreteAggregate;
-    }
+	public ConcreteIterator(ConcreteAggregate concreteAggregate) {
+		this.concreteAggregate = concreteAggregate;
+	}
 
-    @Override
-    public void first() {
-        index = 0;
-    }
+	@Override
+	public void first() {
+		index = 0;
+	}
 
-    @Override
-    public void next() {
-        if (index < this.concreteAggregate.size()) {
-            index = index + 1;
-        }
-    }
+	@Override
+	public void next() {
+		if (index < this.concreteAggregate.size()) {
+			index = index + 1;
+		}
+	}
 
-    @Override
-    public boolean isDone() {
-        if (index == this.concreteAggregate.size()) {
-            return true;
-        }
-        return false;
-    }
+	@Override
+	public boolean isDone() {
+		if (index == this.concreteAggregate.size()) {
+			return true;
+		}
+		return false;
+	}
 
-    @Override
-    public Object currentItem() {
-        return this.concreteAggregate.get(index);
-    }
+	@Override
+	public Object currentItem() {
+		return this.concreteAggregate.get(index);
+	}
 }

@@ -9,16 +9,16 @@ import java.util.concurrent.Callable;
  */
 public class TaskWithResult implements Callable {
 
-    private int id;
+	private int id;
 
-    public TaskWithResult() {
-    }
+	public TaskWithResult() {
+	}
 
-    public TaskWithResult(int id) {
-        this.id = id;
-    }
+	public TaskWithResult(int id) {
+		this.id = id;
+	}
 
-    public Object call() throws Exception {
-        return id + "的返回结果。";
-    }
+	public Object call() throws Exception {
+		return id + "的返回结果。";
+	}
 }

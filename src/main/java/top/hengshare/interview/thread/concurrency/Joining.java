@@ -11,54 +11,54 @@ package top.hengshare.interview.thread.concurrency;
  * 还没有结束的话，join()方法总能返回。
  */
 public class Joining {
-    public static void main(String[] args) {
-        Sleeper sleepy = new Sleeper("小明", 1500);
-//        Sleeper grumpy = new Sleeper("小红", 1500);
-        Joiner dopey = new Joiner("小强", sleepy);
-//        Joiner doc = new Joiner("小张", grumpy);
-//        sleepy.interrupt();
-//        grumpy.interrupt();
-        dopey.interrupt();
-    }
+	public static void main(String[] args) {
+		Sleeper sleepy = new Sleeper("小明", 1500);
+		//        Sleeper grumpy = new Sleeper("小红", 1500);
+		Joiner dopey = new Joiner("小强", sleepy);
+		//        Joiner doc = new Joiner("小张", grumpy);
+		//        sleepy.interrupt();
+		//        grumpy.interrupt();
+		dopey.interrupt();
+	}
 }
 
 class Sleeper extends Thread {
-    private final int duration;
+	private final int duration;
 
-    public Sleeper(String name, int sleepTime) {
-        super(name);
-        duration = sleepTime;
-        start();
-    }
+	public Sleeper(String name, int sleepTime) {
+		super(name);
+		duration = sleepTime;
+		start();
+	}
 
-    @Override
-    public void run() {
-        try {
-            sleep(duration);
-        } catch (InterruptedException e) {
-            System.out.println(getName() + "被打断了。isInterrupted():" + isInterrupted());
-            return;
-        }
-        System.out.println(getName() + "被唤醒（恢复）了。");
-    }
+	@Override
+	public void run() {
+		try {
+			sleep(duration);
+		} catch (InterruptedException e) {
+			System.out.println(getName() + "被打断了。isInterrupted():" + isInterrupted());
+			return;
+		}
+		System.out.println(getName() + "被唤醒（恢复）了。");
+	}
 }
 
 class Joiner extends Thread {
-    private final Sleeper sleeper;
+	private final Sleeper sleeper;
 
-    public Joiner(String name, Sleeper sleeper) {
-        super(name);
-        this.sleeper = sleeper;
-        start();
-    }
+	public Joiner(String name, Sleeper sleeper) {
+		super(name);
+		this.sleeper = sleeper;
+		start();
+	}
 
-    @Override
-    public void run() {
-        try {
-            sleeper.join();
-        } catch (InterruptedException e) {
-            System.out.println(getName() + "被打断了！");
-        }
-        System.out.println(getName() + "join()完成");
-    }
+	@Override
+	public void run() {
+		try {
+			sleeper.join();
+		} catch (InterruptedException e) {
+			System.out.println(getName() + "被打断了！");
+		}
+		System.out.println(getName() + "join()完成");
+	}
 }

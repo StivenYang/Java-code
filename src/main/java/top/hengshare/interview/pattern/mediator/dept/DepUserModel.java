@@ -4,7 +4,7 @@ import lombok.Data;
 
 @Data
 public class DepUserModel {
-    private String depUserId;
-    private String depId;
-    private String userId;
+	private String depUserId;
+	private String depId;
+	private String userId;
 }

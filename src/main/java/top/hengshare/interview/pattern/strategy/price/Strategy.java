@@ -7,10 +7,10 @@ package top.hengshare.interview.pattern.strategy.price;
  * @create: 2019-10-16 09:14
  **/
 public interface Strategy {
-    /**
-     * 计算报价
-     * @param goodsPrice 客户销售原价
-     * @return 计算出来应报价格
-     */
-    double calcPrice(double goodsPrice);
+	/**
+	 * 计算报价
+	 * @param goodsPrice 客户销售原价
+	 * @return 计算出来应报价格
+	 */
+	double calcPrice(double goodsPrice);
 }

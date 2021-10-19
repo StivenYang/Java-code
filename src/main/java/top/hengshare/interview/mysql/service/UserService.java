@@ -4,7 +4,7 @@ import top.hengshare.interview.mysql.model.User;
 
 public interface UserService {
 
-    int addUser(User user);
+	int addUser(User user);
 
-//    int addUserTransaction(User user) throws Exception;
+	//    int addUserTransaction(User user) throws Exception;
 }

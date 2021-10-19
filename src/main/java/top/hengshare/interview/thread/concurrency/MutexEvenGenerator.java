@@ -11,23 +11,23 @@ import java.util.concurrent.locks.ReentrantLock;
  * 使用Lock来替代synchronized实现加锁机制
  */
 public class MutexEvenGenerator extends IntGenerator {
-    private int currentEvenValue = 0;
-    private Lock lock = new ReentrantLock();
+	private int currentEvenValue = 0;
+	private Lock lock = new ReentrantLock();
 
-    @Override
-    public int next() {
-        lock.lock();
-        try {
-            ++currentEvenValue;
-            Thread.yield();
-            ++currentEvenValue;
-            return currentEvenValue;
-        } finally {
-            lock.unlock();
-        }
-    }
+	@Override
+	public int next() {
+		lock.lock();
+		try {
+			++currentEvenValue;
+			Thread.yield();
+			++currentEvenValue;
+			return currentEvenValue;
+		} finally {
+			lock.unlock();
+		}
+	}
 
-    public static void main(String[] args) {
-        EvenChecker.test(new MutexEvenGenerator());
-    }
+	public static void main(String[] args) {
+		EvenChecker.test(new MutexEvenGenerator());
+	}
 }

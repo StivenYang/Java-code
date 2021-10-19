@@ -11,10 +11,10 @@ import java.util.Collection;
  * @create: 2019-11-17 16:42
  **/
 public class Generators {
-    public static <T> Collection<T> fill(Collection<T> coll, Generator<T> gen, int n) {
-        for (int i=0; i<n ; i++){
+	public static <T> Collection<T> fill(Collection<T> coll, Generator<T> gen, int n) {
+		for (int i = 0; i < n; i++) {
 
-        }
-        return null;
-    }
+		}
+		return null;
+	}
 }

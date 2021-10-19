@@ -10,11 +10,11 @@ import java.util.concurrent.Executors;
  * 一般情况下均使用该线程池，特定情况下使用其他线程池
  */
 public class CachedThreadPool {
-    public static void main(String[] args) {
-        ExecutorService exec = Executors.newCachedThreadPool();
-        for (int i = 0; i < 5; i++) {
-            exec.execute(new LiffOff());
-        }
-        exec.shutdown();
-    }
+	public static void main(String[] args) {
+		ExecutorService exec = Executors.newCachedThreadPool();
+		for (int i = 0; i < 5; i++) {
+			exec.execute(new LiffOff());
+		}
+		exec.shutdown();
+	}
 }

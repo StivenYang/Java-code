@@ -8,16 +8,16 @@ package top.hengshare.interview.algorithm.list;
  **/
 public class SwapPairs {
 
-    public ListNode swapPairs(ListNode head){
-        //当链表后面没有节点的时候，返回链表作为结果
-        if (head == null || head.next == null) {
-            return head;
-        }
+	public ListNode swapPairs(ListNode head) {
+		//当链表后面没有节点的时候，返回链表作为结果
+		if (head == null || head.next == null) {
+			return head;
+		}
 
-        ListNode next = head.next;
-        head.next = swapPairs(next.next);
-        next.next = head;
+		ListNode next = head.next;
+		head.next = swapPairs(next.next);
+		next.next = head;
 
-        return next;
-    }
+		return next;
+	}
 }

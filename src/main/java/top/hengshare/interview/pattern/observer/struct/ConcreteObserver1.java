@@ -5,10 +5,10 @@ package top.hengshare.interview.pattern.observer.struct;
  */
 public class ConcreteObserver1 implements Observer {
 
-    private String observerState;
+	private String observerState;
 
-    @Override
-    public void update(Subject subject) {
-        observerState = ((ConcreteSubject)subject).getSubjectState();
-    }
+	@Override
+	public void update(Subject subject) {
+		observerState = ((ConcreteSubject) subject).getSubjectState();
+	}
 }

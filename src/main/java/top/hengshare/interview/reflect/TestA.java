@@ -5,12 +5,12 @@ import lombok.Data;
 @Data
 class TestA {
 
-    private TestB b;
+	private TestB b;
 
-    /**
-     * @return b
-     */
-    public TestB getB() {
-        return b;
-    }
+	/**
+	 * @return b
+	 */
+	public TestB getB() {
+		return b;
+	}
 }

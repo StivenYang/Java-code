@@ -6,21 +6,21 @@ import java.util.Queue;
 
 public class CommandQueue {
 
-    private static Queue<Command> cmds = Queues.newArrayDeque();
+	private static Queue<Command> cmds = Queues.newArrayDeque();
 
-    public synchronized static void addMenu(MenuCommand menu){
-        for (Command cmd : menu.getCmds()) {
-            cmds.add(cmd);
-        }
-    }
+	public synchronized static void addMenu(MenuCommand menu) {
+		for (Command cmd : menu.getCmds()) {
+			cmds.add(cmd);
+		}
+	}
 
-    public synchronized static Command getOneCommand(){
-        Command cmd = null;
+	public synchronized static Command getOneCommand() {
+		Command cmd = null;
 
-        if (cmds.size() > 0) {
-            cmd = cmds.poll();
-        }
+		if (cmds.size() > 0) {
+			cmd = cmds.poll();
+		}
 
-        return cmd;
-    }
+		return cmd;
+	}
 }

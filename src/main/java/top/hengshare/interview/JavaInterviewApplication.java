@@ -13,13 +13,13 @@ import org.springframework.web.bind.annotation.RestController;
 @EnableAspectJAutoProxy
 public class JavaInterviewApplication {
 
-    @RequestMapping("/")
-    public String home() {
-        return "Hello World!";
-    }
+	@RequestMapping("/")
+	public String home() {
+		return "Hello World!";
+	}
 
-    public static void main(String[] args) {
-        SpringApplication.run(JavaInterviewApplication.class, args);
-    }
+	public static void main(String[] args) {
+		SpringApplication.run(JavaInterviewApplication.class, args);
+	}
 
 }

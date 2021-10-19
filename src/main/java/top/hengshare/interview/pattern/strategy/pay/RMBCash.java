@@ -7,8 +7,8 @@ package top.hengshare.interview.pattern.strategy.pay;
  * @create: 2019-10-16 09:44
  **/
 public class RMBCash implements PaymentStrategy {
-    @Override
-    public void pay(PaymentContext ctx) {
-        System.out.println("现在给：" + ctx.getUsername() + "发放：" + ctx.getMoney() + "元");
-    }
+	@Override
+	public void pay(PaymentContext ctx) {
+		System.out.println("现在给：" + ctx.getUsername() + "发放：" + ctx.getMoney() + "元");
+	}
 }

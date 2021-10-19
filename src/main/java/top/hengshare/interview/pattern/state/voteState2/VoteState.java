@@ -7,5 +7,5 @@ package top.hengshare.interview.pattern.state.voteState2;
  * @create: 2019-10-17 20:18
  **/
 public interface VoteState {
-    void vote(String user, String voteItem, VoteManager votemanager);
+	void vote(String user, String voteItem, VoteManager votemanager);
 }

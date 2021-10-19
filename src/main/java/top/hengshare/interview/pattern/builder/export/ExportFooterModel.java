@@ -7,8 +7,8 @@ import lombok.Data;
  */
 @Data
 public class ExportFooterModel {
-    /**
-     * 输出人
-     */
-    private String exportUser;
+	/**
+	 * 输出人
+	 */
+	private String exportUser;
 }

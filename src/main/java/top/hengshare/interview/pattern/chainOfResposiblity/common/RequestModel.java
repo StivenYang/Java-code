@@ -10,10 +10,10 @@ import lombok.Getter;
  **/
 public class RequestModel {
 
-    @Getter
-    private String type;
+	@Getter
+	private String type;
 
-    public RequestModel(String type) {
-        this.type = type;
-    }
+	public RequestModel(String type) {
+		this.type = type;
+	}
 }

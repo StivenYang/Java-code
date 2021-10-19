@@ -7,7 +7,7 @@ package top.hengshare.interview.pattern.flyweight.struct;
  * @create: 2019-10-22 11:44
  **/
 public class Client {
-    public static void main(String[] args) {
+	public static void main(String[] args) {
 
-    }
+	}
 }

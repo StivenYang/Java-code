@@ -13,31 +13,31 @@ package top.hengshare.interview.thread.concurrency;
  * 这是优选Executor启动线程而不是显式的创建Thread对象的另外一个原因。
  */
 public class SelfManaged implements Runnable {
-    private int countDown = 10;
-    private Thread t = new Thread(this);
+	private int countDown = 10;
+	private Thread t = new Thread(this);
 
-    public SelfManaged() {
-        t.start();
-    }
+	public SelfManaged() {
+		t.start();
+	}
 
-    @Override
-    public String toString() {
-        return "当前是" + Thread.currentThread().getName() + "对象的第" + countDown + "个线程。";
-    }
+	@Override
+	public String toString() {
+		return "当前是" + Thread.currentThread().getName() + "对象的第" + countDown + "个线程。";
+	}
 
-    @Override
-    public void run() {
-        while (true) {
-            System.out.println(this);
-            if (--countDown == 0) {
-                return;
-            }
-        }
-    }
+	@Override
+	public void run() {
+		while (true) {
+			System.out.println(this);
+			if (--countDown == 0) {
+				return;
+			}
+		}
+	}
 
-    public static void main(String[] args) {
-        for (int i = 0; i < 10; i++) {
-            new SelfManaged();
-        }
-    }
+	public static void main(String[] args) {
+		for (int i = 0; i < 10; i++) {
+			new SelfManaged();
+		}
+	}
 }

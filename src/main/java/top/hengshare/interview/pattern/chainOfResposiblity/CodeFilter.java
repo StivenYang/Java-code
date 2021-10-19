@@ -13,20 +13,21 @@ import java.io.IOException;
 public class CodeFilter implements Filter {
 
 
-    @Override
-    public void init(FilterConfig filterConfig) throws ServletException {
+	@Override
+	public void init(FilterConfig filterConfig) throws ServletException {
 
-    }
+	}
 
-    @Override
-    public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
-        HttpServletRequest request = (HttpServletRequest) servletRequest;
-        request.getAttribute("");
-        filterChain.doFilter(request, servletResponse);
-    }
+	@Override
+	public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain)
+			throws IOException, ServletException {
+		HttpServletRequest request = (HttpServletRequest) servletRequest;
+		request.getAttribute("");
+		filterChain.doFilter(request, servletResponse);
+	}
 
-    @Override
-    public void destroy() {
+	@Override
+	public void destroy() {
 
-    }
+	}
 }

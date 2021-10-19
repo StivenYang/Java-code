@@ -5,6 +5,6 @@ package top.hengshare.interview.thread.concurrency.ThreadPoolDemo;
  */
 public interface Indexalculation {
 
-    Result calculation(Object obj);
+	Result calculation(Object obj);
 
 }

@@ -10,18 +10,18 @@ import lombok.Data;
  **/
 @Data
 public class CacheConfModel {
-    /**
-     * 缓存开始时间
-     */
-    private long beginTime;
+	/**
+	 * 缓存开始时间
+	 */
+	private long beginTime;
 
-    /**
-     * 缓存持续时间
-     */
-    private double durableTime;
+	/**
+	 * 缓存持续时间
+	 */
+	private double durableTime;
 
-    /**
-     * 缓存对象需要被永久删除
-     */
-    private boolean forever;
+	/**
+	 * 缓存对象需要被永久删除
+	 */
+	private boolean forever;
 }

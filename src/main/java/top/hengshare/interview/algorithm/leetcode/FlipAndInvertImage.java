@@ -8,29 +8,29 @@ package top.hengshare.interview.algorithm.leetcode;
  **/
 public class FlipAndInvertImage {
 
-    public int[][] flipAndInvertImage(int[][] A) {
-        int row = A.length;
-        int col = A[0].length;
-        int[][] b = new int[row][col];
+	public int[][] flipAndInvertImage(int[][] A) {
+		int row = A.length;
+		int col = A[0].length;
+		int[][] b = new int[row][col];
 
-        for (int i = 0; i < row; i++) {
-            for (int j = 0; j < col; j++) {
-                b[i][col - j - 1] = A[i][j] ^ 1;
-            }
-        }
+		for (int i = 0; i < row; i++) {
+			for (int j = 0; j < col; j++) {
+				b[i][col - j - 1] = A[i][j] ^ 1;
+			}
+		}
 
-        return b;
-    }
+		return b;
+	}
 
-    public int[][] flipAndInvertImage1(int[][] A) {
-        int C = A[0].length;
-        for (int[] row : A)
-            for (int i = 0; i < (C + 1) / 2; ++i) {
-                int tmp = row[i] ^ 1;
-                row[i] = row[C - 1 - i] ^ 1;
-                row[C - 1 - i] = tmp;
-            }
+	public int[][] flipAndInvertImage1(int[][] A) {
+		int C = A[0].length;
+		for (int[] row : A)
+			for (int i = 0; i < (C + 1) / 2; ++i) {
+				int tmp = row[i] ^ 1;
+				row[i] = row[C - 1 - i] ^ 1;
+				row[C - 1 - i] = tmp;
+			}
 
-        return A;
-    }
+		return A;
+	}
 }

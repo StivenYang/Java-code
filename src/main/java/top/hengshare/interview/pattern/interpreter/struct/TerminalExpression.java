@@ -7,8 +7,8 @@ package top.hengshare.interview.pattern.interpreter.struct;
  * @create: 2019-10-24 20:33
  **/
 public class TerminalExpression extends Expression {
-    @Override
-    public void interpret(Context ctx) {
-        //终结符表达式对应的解释方法
-    }
+	@Override
+	public void interpret(Context ctx) {
+		//终结符表达式对应的解释方法
+	}
 }

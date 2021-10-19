@@ -8,5 +8,5 @@ package top.hengshare.interview.pattern.bridge.example;
  **/
 public interface Message {
 
-    void send(String message, String toUser);
+	void send(String message, String toUser);
 }

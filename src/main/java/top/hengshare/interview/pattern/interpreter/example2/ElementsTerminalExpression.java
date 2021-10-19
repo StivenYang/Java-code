@@ -13,37 +13,37 @@ import java.util.List;
  **/
 public class ElementsTerminalExpression extends ReadXMLExpression {
 
-    /**
-     * 元素的名称
-     */
-    private String eleName;
+	/**
+	 * 元素的名称
+	 */
+	private String eleName;
 
-    public ElementsTerminalExpression(String eleName) {
-        this.eleName = eleName;
-    }
+	public ElementsTerminalExpression(String eleName) {
+		this.eleName = eleName;
+	}
 
-    /**
-     *
-     * @param ctx 上下文
-     * @return
-     */
-    @Override
-    public String[] interpret(Context ctx) {
-        //取出上下文的父级元素
-        List<Element> preEles = ctx.getPreEles();
+	/**
+	 *
+	 * @param ctx 上下文
+	 * @return
+	 */
+	@Override
+	public String[] interpret(Context ctx) {
+		//取出上下文的父级元素
+		List<Element> preEles = ctx.getPreEles();
 
-        //获取当前的多个元素
-        List<Element> nowElements = Lists.newArrayList();
+		//获取当前的多个元素
+		List<Element> nowElements = Lists.newArrayList();
 
-        for (Element preEle : preEles) {
-            nowElements.addAll(ctx.getNowEles(preEle, eleName));
-        }
+		for (Element preEle : preEles) {
+			nowElements.addAll(ctx.getNowEles(preEle, eleName));
+		}
 
-        //然后来获取这些元素的值
-        String[] ss = new String[nowElements.size()];
-        for (int i=0; i<ss.length; i++){
-            ss[i] = nowElements.get(i).getFirstChild().getNodeValue();
-        }
-        return ss;
-    }
+		//然后来获取这些元素的值
+		String[] ss = new String[nowElements.size()];
+		for (int i = 0; i < ss.length; i++) {
+			ss[i] = nowElements.get(i).getFirstChild().getNodeValue();
+		}
+		return ss;
+	}
 }
