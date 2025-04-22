@@ -6,7 +6,7 @@ spring:
     driver-class-name: com.mysql.jdbc.Driver
     url: jdbc:mysql://localhost:3306/test?useSSL=false
     username: root
-    password: root
+    password: 123456
     druid:
       initial-size: 5
       max-active: 30
@@ -31,3 +31,7 @@ spring:
     host: 127.0.0.1
     port: 6379
     timeout: 3000
+  cloud:
+    nacos:
+      discovery:
+        enabled: false
